@@ -1,0 +1,7 @@
+---
+import type { TechTag } from '../types/tag'
+
+const { color, icon, id, name }: TechTag = Astro.props
+---
+
+<div class={`px-4 py-2 rounded-md border border-[${color}]`}></div>

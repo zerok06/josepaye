@@ -1,0 +1,39 @@
+---
+const MENU = [
+  {
+    name: 'Home',
+    href: '#home',
+  },
+  {
+    name: 'Proyectos',
+    href: '#home',
+  },
+  {
+    name: 'Blog',
+    href: '#home',
+  },
+  {
+    name: 'Tutoriales',
+    href: '#home',
+  },
+]
+---
+
+<div class="sticky top-0 left-0 right-0 z-50 h-0 flex justify-center">
+  <div>
+    <nav
+      class="relative bg-black px-2 py-[6px] border-white/20 border bg-white/5 text-sm backdrop-blur text-white mt-5 rounded-full flex gap-1 items-end"
+    >
+      {
+        MENU.map(item => (
+          <a
+            href={item.href}
+            class="px-3 py-[3px] rounded-full hover:bg-white/10 transition duration-300"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</div>

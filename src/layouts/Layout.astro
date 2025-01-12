@@ -1,14 +1,16 @@
 ---
 import '@fontsource/poppins'
 import '@fontsource-variable/inter'
-import RootLayout from '../components/RootLayout.astro'
+import RootLayout from '../layouts/RootLayout.astro'
+import '../styles/base.css'
 ---
 
 <html>
   <head>
     <title>Jose Paye - Home</title>
+    <meta charset="utf-8" />
   </head>
-  <body>
+  <body class="bg-black antialiased">
     <RootLayout>
       <slot />
     </RootLayout>

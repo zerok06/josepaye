@@ -1,0 +1,25 @@
+---
+import type { TechTag } from '../../types/tag'
+import TagTecnologie from '../TagTecnologie.astro'
+
+interface Props {
+  title: string
+  desc: string
+  image: string
+  tecnologies: TechTag[]
+}
+
+const { desc, image, tecnologies, title } = Astro.props
+---
+
+<div class="min-w-[312px]">
+  <div
+    class="border p-6 rounded-3xl bg-black/30 backdrop-filter border-white/10"
+  >
+    <div class="flex justify-end gap-2 flex-wrap">
+      {tecnologies.map(tecnology => <TagTecnologie {...tecnology} />)}
+    </div>
+    <h3 class="font-bold font-poppins text-xl mb-2 text-white">{title}</h3>
+    <p class="font-inter text-sm text-white/70">{desc}</p>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+---
+import Wrapper from '../Wrapper.astro'
+
+const BRANDS = [
+  {
+    name: 'simbig',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+  {
+    name: 'unam',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+  {
+    name: 'unam',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+  {
+    name: 'unam',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+  {
+    name: 'unam',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+  {
+    name: 'unam',
+    href: 'https://simbig.org/',
+    src: '/assets/images/brands/logo_text-white.svg',
+  },
+]
+---
+
+<div class="my-36">
+  <Wrapper>
+    <div
+      class="flex flex-row flex-wrap items-center justify-center gap-y-6 md:gap-y-10 gap-10 md:gap-x-20"
+    >
+      {
+        BRANDS.map(brand => (
+          <a
+            href={brand.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="max-w-[calc(100%/3)] md:max-w-[calc(100%/6)] min-w-[75px]  md:min-w-[100px]"
+          >
+            <img
+              src={brand.src}
+              alt={brand.name}
+              class="brightness-0 invert-[1]"
+            />
+          </a>
+        ))
+      }
+    </div>
+    <h3
+      class="font-semibold font-inter text-lg text-center bg-gradient-to-r from-gray-500 mt-14 via-white to-gray-500 text-transparent bg-clip-text"
+    >
+      Algunas empresas o organizaciones con las que he colaborado.
+    </h3>
+  </Wrapper>
+</div>

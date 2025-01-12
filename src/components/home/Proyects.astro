@@ -1,0 +1,36 @@
+---
+import Wrapper from '../Wrapper.astro'
+import ProyectItem from './ProyectItem.astro'
+import { techTags } from '../../types/tag'
+
+const PROYECTS = [
+  {
+    title: 'Proyecto 1',
+    desc: 'desc ',
+    image: '',
+    tecnologies: [techTags.react],
+  },
+  {
+    title: 'Proyecto 1',
+    desc: 'desc ',
+    image: '',
+    tecnologies: [techTags.react],
+  },
+]
+---
+
+<div class="bg-gradient-radial-invert-primary rounded-3xl py-36 px-8">
+  <Wrapper>
+    <h3
+      class="font-bold font-poppins mb-4 text-2xl w-[300px] mx-auto md:text-5xl text-center bg-gradient-to-r from-gray-500 mt-14 via-white to-gray-500 text-transparent bg-clip-text"
+    >
+      Proyectos
+    </h3>
+    <p class="text-white/70 font-inter font-normal text-center">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      {PROYECTS.map(proyect => <ProyectItem {...proyect} />)}
+    </div>
+  </Wrapper>
+</div>

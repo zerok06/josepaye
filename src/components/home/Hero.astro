@@ -1,0 +1,58 @@
+---
+import Linkedin from '../../assets/icons/linkedin.astro'
+import Download from '../../assets/icons/download.astro'
+import Wrapper from '../Wrapper.astro'
+
+const LINKS = [
+  {
+    name: 'Linkedin',
+    href: 'https://www.linkedin.com/in/josepaye/',
+    icon: 'linkedin',
+  },
+  {
+    name: 'Descarga CV',
+    href: '/cv.pdf',
+    icon: 'download',
+  },
+]
+---
+
+<section
+  class="h-[calc(100vh-64px-40px)] bg-gradient-radial-primary rounded-3xl overflow-hidden flex flex-col justify-end items-center pb-44 px-8"
+>
+  <Wrapper>
+    <div class="flex flex-col gap-4 items-center">
+      <div>
+        <h3 class="text-2xl font-semibold text-center text-white">Im</h3>
+        <h1
+          class="font-poppins text-6xl font-extrabold text-center bg-gradient-to-r from-gray-200 via-white to-gray-200 inline-block text-transparent bg-clip-text"
+        >
+          Jose Paye.
+        </h1>
+      </div>
+      <p class="text-lg text-center text-white md:max-w-[70%] max-w-full">
+        Web Developer con experiencia en plataformas web, SEO y soluciones
+        tecnológicas. Especializado en Machine Learning para proyectos como
+        detección de cáncer y calidad agrícola. Enfocado en UX, automatización y
+        productos de alta calidad, con proyectos que integran innovación y
+        eficiencia.
+      </p>
+      <div class="flex gap-2 mt-2">
+        <a
+          href={LINKS[0].href}
+          class="rounded-full flex items-center gap-2 border border-white/80 text-white font-inter font-medium py-2 px-5"
+        >
+          <Linkedin />
+          {LINKS[0].name}
+        </a>
+        <a
+          href={LINKS[1].href}
+          class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
+        >
+          <Download />
+          {LINKS[1].name}
+        </a>
+      </div>
+    </div>
+  </Wrapper>
+</section>

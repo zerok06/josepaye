@@ -6,20 +6,33 @@ interface Props {
   title: string
   desc: string
   image: string
+  logo: string
   tecnologies: TechTag[]
 }
 
-const { desc, image, tecnologies, title } = Astro.props
+const { desc, image, tecnologies, title, logo } = Astro.props
 ---
 
-<div class="min-w-[312px]">
-  <div
-    class="border p-6 rounded-3xl bg-black/30 backdrop-filter border-white/10"
-  >
-    <div class="flex justify-end gap-2 flex-wrap">
-      {tecnologies.map(tecnology => <TagTecnologie {...tecnology} />)}
+<div class="min-w-[312px] text-white">
+  <div class="border rounded-3xl bg-white/5 backdrop-filter border-white/10">
+    <div class="px-10 pt-10">
+      <div class="flex justify-end gap-2 flex-wrap mb-8">
+        {tecnologies.map(tecnology => <TagTecnologie {...tecnology} />)}
+      </div>
+      <p class="text-primary-400 text-sm my-2">
+        Lorem ipsum dolor sit amet consectetur.
+      </p>
+      <h3 class="font-medium font-inter text-2xl mb-2 text-white">{title}</h3>
+      <p class="text-white/70 leading-relaxed text-pretty mb-6">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem hic
+        alias. Fuga pariatur impedit laboriosam dolore maxime veniam blanditiis,
+        in quis optio laudantium soluta quia expedita placeat. Ad, ut?
+      </p>
     </div>
-    <h3 class="font-bold font-poppins text-xl mb-2 text-white">{title}</h3>
-    <p class="font-inter text-sm text-white/70">{desc}</p>
+    <div>
+      <div class="w-full aspect-[16/11] relative overflow-hidden">
+        <img src={image} alt={title} />
+      </div>
+    </div>
   </div>
 </div>

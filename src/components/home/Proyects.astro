@@ -5,31 +5,42 @@ import { techTags } from '../../types/tag'
 
 const PROYECTS = [
   {
-    title: 'Proyecto 1',
+    title: 'SIMBig24 - Ilo',
     desc: 'desc ',
-    image: '',
-    tecnologies: [techTags.react],
+    image: '/assets/images/proyects/1.png',
+    logo: '/assets/images/proyects/logo_text-white.svg',
+    tecnologies: [
+      techTags.astro,
+      techTags.express,
+      techTags.tailwind,
+      techTags.typescript,
+    ],
   },
   {
     title: 'Proyecto 1',
     desc: 'desc ',
     image: '',
-    tecnologies: [techTags.react],
+    logo: '',
+    tecnologies: [techTags.preact],
   },
 ]
 ---
 
-<div class="bg-gradient-radial-invert-primary rounded-3xl py-36 px-8">
+<div class="relative rounded-3xl py-36 px-8 overflow-hidden">
+  <div
+    class="absolute top-0 left-0 right-0 bg-gradient-radial-invert-primary h-[400px] z-[-1]"
+  >
+  </div>
   <Wrapper>
     <h3
-      class="font-bold font-poppins mb-4 text-2xl w-[300px] mx-auto md:text-5xl text-center bg-gradient-to-r from-gray-500 mt-14 via-white to-gray-500 text-transparent bg-clip-text"
+      class="font-semibold font-inter mb-4 text-2xl text-white mx-auto md:text-5xl text-center"
     >
       Proyectos
     </h3>
-    <p class="text-white/70 font-inter font-normal text-center">
+    <p class="text-white/70 font-inter font-medium text-center mb-8">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
     </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
       {PROYECTS.map(proyect => <ProyectItem {...proyect} />)}
     </div>
   </Wrapper>

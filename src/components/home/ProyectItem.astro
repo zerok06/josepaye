@@ -14,7 +14,7 @@ const { desc, image, tecnologies, title, logo } = Astro.props
 ---
 
 <div class="min-w-[312px] text-white">
-  <div class="border rounded-3xl bg-white/5 backdrop-filter border-white/10">
+  <div class="border rounded-3xl backdrop-filter bg-white/5 border-white/10">
     <div class="px-10 pt-10">
       <div class="flex justify-end gap-2 flex-wrap mb-8">
         {tecnologies.map(tecnology => <TagTecnologie {...tecnology} />)}

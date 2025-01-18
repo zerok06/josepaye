@@ -79,4 +79,40 @@ export const techTags = {
         color: '#F7DF1E',
         icon: '/assets/images/tecnologies/javascript.svg',
     },
+    python: {
+        id: 'python',
+        name: 'Python',
+        color: '#3776AB',
+        icon: '/assets/images/tecnologies/python.svg',
+    },
+    colab: {
+        id: 'colab',
+        name: 'Colab',
+        color: '#FBC02D',
+        icon: '/assets/images/tecnologies/Google_Colaboratory.svg',
+    },
+    figma: {
+        id: 'figma',
+        name: 'Figma',
+        color: '#F24E1E',
+        icon: '/assets/images/tecnologies/figma.svg',
+    },
+    tensor: {
+        id: 'tensor',
+        name: 'TensorFlow',
+        color: '#FF6F00',
+        icon: '/assets/images/tecnologies/tensorflow.svg',
+    },
+    notion: {
+        id: 'notion',
+        name: 'Notion',
+        color: '#000000',
+        icon: '/assets/images/tecnologies/notion.svg',
+    },
+    vscode: {
+        id: 'vscode',
+        name: 'VSCode',
+        color: '#007ACC',
+        icon: '/assets/images/tecnologies/vscode.svg',
+    },
 }

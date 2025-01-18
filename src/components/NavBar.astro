@@ -7,13 +7,15 @@ import NavFixed from './NavFixed.astro'
 <!-- nav fixed -->
 <NavFixed />
 
-<nav class="py-6 px-4 flex justify-between">
-  <Logo />
-  <a
-    href="https://github.com/josepaye"
-    class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-1 px-4"
-  >
-    <Github />
-    GitHub
-  </a>
+<nav class="h-20 px-4 flex items-center">
+  <div class="justify-between flex-1 hidden sm:flex">
+    <Logo />
+    <a
+      href="https://github.com/josepaye"
+      class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-1 px-4"
+    >
+      <Github />
+      GitHub
+    </a>
+  </div>
 </nav>

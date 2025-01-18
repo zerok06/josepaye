@@ -18,38 +18,55 @@ const LINKS = [
 ---
 
 <section
-  class="h-[calc(100vh-64px-40px)] bg-gradient-radial-primary rounded-3xl overflow-hidden flex flex-col justify-end items-center pb-44 px-8"
+  class="h-[calc(100vh-64px-40px)] bg-gradient-radial-primary rounded-3xl overflow-hidden flex items-center"
 >
   <Wrapper>
-    <div class="flex flex-col gap-4 items-center">
-      <div>
-        <h3 class="text-2xl font-semibold text-center text-white">Im</h3>
-        <h1 class="font-inter text-6xl text-white font-semibold text-center">
-          Jose Paye.
-        </h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-white px-4">
+      <div class="[grid-row:2] md:[grid-row:1]">
+        <div class="flex flex-col justify-start gap-2 md:gap-4">
+          <h3
+            class="text-lg md:text-2xl font-medium font-inter md:text-left text-center"
+          >
+            I'm Jose Paye
+          </h3>
+          <h1
+            class="text-3xl sm:text-4xl md:text-6xl font-bold font-inter md:text-left text-center"
+          >
+            Web Developer + Student Aspiring to Machine Learning Engineer
+          </h1>
+          <p
+            class="text-white/70 mt-2 text-base md:text-lg md:text-left text-center"
+          >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa
+            nesciunt illum possimus ipsum sequi fugiat non est provident impedit
+            consectetur?
+          </p>
+          <div class="flex gap-2 mt-2 md:justify-start justify-center">
+            <a
+              href={LINKS[0].href}
+              class="rounded-full flex items-center gap-2 border border-white/80 text-white font-inter font-medium py-2 px-5"
+            >
+              <Linkedin />
+              {LINKS[0].name}
+            </a>
+            <a
+              href={LINKS[1].href}
+              class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
+            >
+              <Download />
+              {LINKS[1].name}
+            </a>
+          </div>
+        </div>
       </div>
-      <p class="text-lg text-center text-white/70 md:max-w-[70%] max-w-full">
-        Web Developer con experiencia en plataformas web, SEO y soluciones
-        tecnológicas. Especializado en Machine Learning para proyectos como
-        detección de cáncer y calidad agrícola. Enfocado en UX, automatización y
-        productos de alta calidad, con proyectos que integran innovación y
-        eficiencia.
-      </p>
-      <div class="flex gap-2 mt-2">
-        <a
-          href={LINKS[0].href}
-          class="rounded-full flex items-center gap-2 border border-white/80 text-white font-inter font-medium py-2 px-5"
-        >
-          <Linkedin />
-          {LINKS[0].name}
-        </a>
-        <a
-          href={LINKS[1].href}
-          class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
-        >
-          <Download />
-          {LINKS[1].name}
-        </a>
+      <div class="[grid-row:1] md:[grid-row:1]">
+        <div class="flex justify-center items-center">
+          <img
+            src=""
+            class="bg-white h-[300px] md:h-[500px] aspect-square rounded-3xl rotate-3"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </Wrapper>

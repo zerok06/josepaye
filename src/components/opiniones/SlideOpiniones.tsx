@@ -84,14 +84,14 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
           <AnimatePresence mode="wait">
             {opiniones[position] && (
               <motion.div key={opiniones[position].name}>
-                <div className="p-6 flex gap-6">
+                <div className="p-6 flex gap-6 md:flex-row flex-col">
                   <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.7, ease: 'easeInOut', delay: 0 }}
                     src={opiniones[position].image}
-                    className="aspect-square h-[200px] bg-white object-top object-cover rounded-lg"
+                    className="aspect-square h-[300px] md:h-[200px] bg-white object-top object-cover rounded-lg"
                     alt={opiniones[position].name}
                   />
                   <div className="flex flex-col justify-center gap-3">
@@ -119,7 +119,7 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
                         ease: 'easeInOut',
                         delay: 0.05,
                       }}
-                      className="italic text-white/70 text-balance"
+                      className="italic text-white/70 text-pretty"
                     >
                       "{opiniones[position].description}"
                     </motion.p>

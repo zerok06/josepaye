@@ -70,4 +70,36 @@ export const PROYECTS = [
             techTags.mysql,
         ],
     },
+    {
+        title: 'Grafos',
+        desc: 'Es una aplicación web que te permite visualizar y crear grafos a partir de imágenes.',
+        image: '/assets/images/proyects/5.png',
+        tecnologies: [
+            techTags.figma,
+            techTags.react,
+            techTags.typescript,
+            techTags.html,
+            techTags.css,
+            techTags.vercel,
+            techTags.vscode,
+        ],
+    },
+    {
+        title: 'Clinica',
+        desc: 'Es una aplicación web que te permite visualizar y crear grafos a partir de imágenes.',
+        image: '/assets/images/proyects/6.png',
+        tecnologies: [
+            techTags.tailwind,
+            techTags.figma,
+            techTags.next,
+            techTags.react,
+            techTags.typescript,
+            techTags.html,
+            techTags.css,
+            techTags.vercel,
+            techTags.vscode,
+            techTags.posgresql,
+            techTags.postman
+        ],
+    },
 ]

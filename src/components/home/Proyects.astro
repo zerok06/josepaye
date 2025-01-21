@@ -1,29 +1,9 @@
 ---
 import Wrapper from '../Wrapper.astro'
 import ProyectItem from './ProyectItem.astro'
-import { techTags } from '../../types/tag'
+import { PROYECTS } from '../../lib/proyects'
 
-const PROYECTS = [
-  {
-    title: 'SIMBig24 - Ilo',
-    desc: 'desc ',
-    image: '/assets/images/proyects/1.png',
-    logo: '/assets/images/proyects/logo_text-white.svg',
-    tecnologies: [
-      techTags.astro,
-      techTags.express,
-      techTags.tailwind,
-      techTags.typescript,
-    ],
-  },
-  {
-    title: 'Proyecto 1',
-    desc: 'desc ',
-    image: '',
-    logo: '',
-    tecnologies: [techTags.preact],
-  },
-]
+const cut = PROYECTS.slice(0, 4)
 ---
 
 <div class="relative rounded-3xl py-36 px-8 overflow-hidden">
@@ -41,7 +21,15 @@ const PROYECTS = [
       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-      {PROYECTS.map(proyect => <ProyectItem {...proyect} />)}
+      {cut.map(proyect => <ProyectItem {...proyect} />)}
+    </div>
+    <div class="flex justify-center mt-16">
+      <a
+        href="/proyects"
+        class="px-4 py-2 border border-white/20 rounded-full bg-white/10"
+      >
+        View all</a
+      >
     </div>
   </Wrapper>
 </div>

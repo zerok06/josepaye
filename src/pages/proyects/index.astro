@@ -1,0 +1,33 @@
+---
+import ProyectItem from '../../components/home/ProyectItem.astro'
+import Proyects from '../../components/home/Proyects.astro'
+import NavBar from '../../components/NavBar.astro'
+import Wrapper from '../../components/Wrapper.astro'
+import Layout from '../../layouts/Layout.astro'
+import { PROYECTS } from '../../lib/proyects'
+import { techTags } from '../../types/tag'
+---
+
+<Layout>
+  <NavBar />
+
+  <div class="relative rounded-3xl py-36 px-8 overflow-hidden">
+    <div
+      class="absolute top-0 left-0 right-0 bg-gradient-radial-invert-primary h-[400px] z-[-1]"
+    >
+    </div>
+    <Wrapper>
+      <h3
+        class="text-2xl md:text-5xl font-semibold text-center text-white font-inter md:max-w-[50%] mx-auto max-w-full mb-3"
+      >
+        Proyectos realizados con pasión y dedicación.
+      </h3>
+      <p class="text-white/70 font-inter text-center mb-8">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        {PROYECTS.map(proyect => <ProyectItem {...proyect} />)}
+      </div>
+    </Wrapper>
+  </div>
+</Layout>

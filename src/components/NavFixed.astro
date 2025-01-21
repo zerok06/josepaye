@@ -1,24 +1,23 @@
 ---
 import Arrow from '../assets/icons/Arrow.astro'
-import Github from '../assets/icons/github.astro'
 import Logo from './Logo.astro'
 
 const MENU = [
   {
     name: 'Home',
-    href: '#home',
+    href: '/',
   },
   {
     name: 'Proyectos',
-    href: '#home',
+    href: '/proyects',
   },
   {
     name: 'Blog',
-    href: '#home',
+    href: '/blog',
   },
   {
     name: 'Tutoriales',
-    href: '#home',
+    href: '/tutorials',
   },
 ]
 ---
@@ -28,7 +27,7 @@ const MENU = [
   id="menu-fixed"
 >
   <div
-    class="fixed top-0 left-0 right-0 h-full w-full bg-black/90 pt-[80px] text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto group-[.isopen]/open:opacity-100 transition duration-300"
+    class="fixed top-0 left-0 right-0 h-full w-full bg-black/90 pt-[80px] text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto sm:group-[.isopen]/open:pointer-events-none group-[.isopen]/open:opacity-100 sm:group-[.isopen]/open:opacity-0 transition duration-300"
   >
     {
       MENU.map(item => (

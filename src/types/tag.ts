@@ -115,4 +115,34 @@ export const techTags = {
         color: '#007ACC',
         icon: '/assets/images/tecnologies/vscode.svg',
     },
+    mongodb: {
+        id: 'mongodb',
+        name: 'MongoDB',
+        color: '#47A248',
+        icon: '/assets/images/tecnologies/mongodb.svg',
+    },
+    mysql: {
+        id: 'mysql',
+        name: 'MySQL',
+        color: '#4479A1',
+        icon: '/assets/images/tecnologies/mysql.svg',
+    },
+    posgresql: {
+        id: 'postgresql',
+        name: 'PostgreSQL',
+        color: '#336791',
+        icon: '/assets/images/tecnologies/postgresql.svg',
+    },
+    postman: {
+        id: 'postman',
+        name: 'Postman',
+        color: '#FF6C37',
+        icon: '/assets/images/tecnologies/postman.svg',
+    },
+    prisma: {
+        id: 'prisma',
+        name: 'Prisma',
+        color: '#2D3748',
+        icon: '/assets/images/tecnologies/prisma.svg',
+    },
 }

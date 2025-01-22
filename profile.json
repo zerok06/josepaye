@@ -6,5 +6,17 @@
         "linkedin": "https://www.linkedin.com/in/josepaye/",
         "github": "https://github.com/zerok06",
         "x": "https://x.com/ZkZerok"
+    },
+    "siteData": {
+        "author": "Jose Paye",
+        "title": "Jose Paye - Desarrollador Web y Machine Learning",
+        "description": "Explora desarrollo web, machine learning y deep learning con tutoriales, posts y papers. Todo lo que necesitas para aprender e innovar.",
+        "url": "josepaye.vercel.app",
+        "image": {
+            "src": "/og.png",
+            "alt": "Jose Paye - Desarrollador Web y Machine Learning"
+        },
+        "keywords": "Desarrollador Web, Machine Learning, Deep Learning, Python, JavaScript, React, Node.js, TensorFlow, PyTorch, Keras, OpenCV, IA, Inteligencia Artificial, Data Science, Ciencia de Datos, Web Development, Desarrollo Web, Frontend, Backend, Fullstack, Tutoriales, Papers, Análisis, Conceptos Avanzados, Enthusiast, Entusiasta, Developer, Desarrollador, Web, Machine, Learning, Deep, Python, JavaScript, React, Node, TensorFlow, PyTorch, Keras, OpenCV, AI, Artificial Intelligence, Data, Science, Web, Development, Frontend, Backend, Fullstack, Tutorials, Papers, Analysis, Advanced, Concepts, Enthusiast, Developer",
+        "robots": ""
     }
 }

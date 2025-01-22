@@ -5,7 +5,7 @@ const { color, icon, id, name } = Astro.props as TechTag
 ---
 
 <div
-  class={`px-3 py-0.5 text-sm rounded-lg border flex gap-2 items-center text-white cursor-default`}
+  class={`px-3 py-0.5 text-sm rounded-lg border flex gap-2 items-center text-black/70 dark:text-white cursor-default`}
   style={{
     background: `linear-gradient(135deg, color-mix(in srgb,${color} 40%, transparent), color-mix(in srgb,${color} 10%, transparent))`,
     borderColor: color,

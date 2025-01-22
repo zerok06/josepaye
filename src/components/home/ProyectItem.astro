@@ -12,17 +12,23 @@ interface Props {
 const { desc, image, tecnologies, title } = Astro.props
 ---
 
-<div class="min-w-[312px] text-white">
-  <div class="border rounded-3xl backdrop-filter bg-white/5 border-white/10">
+<div class="min-w-[312px] dark:text-white text-light">
+  <div
+    class="border rounded-3xl backdrop-filter dark:bg-white/5 bg-black/5 border-black/10 dark:border-white/10"
+  >
     <div class="px-10 pt-10">
       <div class="flex justify-end gap-2 items-start flex-wrap mb-8">
         {tecnologies.map(tecnology => <TagTecnologie {...tecnology} />)}
       </div>
-      <p class="text-primary-400 text-sm my-2">
-        Lorem ipsum dolor sit amet consectetur.
-      </p>
-      <h3 class="font-medium font-inter text-2xl mb-2 text-white">{title}</h3>
-      <p class="text-white/70 leading-relaxed text-pretty mb-6">
+      <p class="text-primary-400 text-sm my-2 font-medium">PROYECTO</p>
+      <h3
+        class="font-medium font-inter text-2xl mb-2 dark:text-white text-light"
+      >
+        {title}
+      </h3>
+      <p
+        class="text-light/70 dark:text-white/70 leading-relaxed text-pretty mb-6"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor autem hic
         alias. Fuga pariatur impedit laboriosam dolore maxime veniam blanditiis,
         in quis optio laudantium soluta quia expedita placeat. Ad, ut?

@@ -6,19 +6,22 @@ import { PROYECTS } from '../../lib/proyects'
 const cut = PROYECTS.slice(0, 4)
 ---
 
-<div class="relative rounded-3xl py-36 px-8 overflow-hidden">
+<div
+  class="relative rounded-3xl py-36 px-8 overflow-hidden bg-linear-gradient-primary dark:bg-none"
+>
   <div
-    class="absolute top-0 left-0 right-0 bg-gradient-radial-invert-primary h-[400px] z-[-1]"
+    class="absolute top-0 left-0 right-0 dark:bg-gradient-radial-invert-primary h-[400px] z-[-1]"
   >
   </div>
   <Wrapper>
-    <h3
-      class="text-2xl md:text-5xl font-semibold text-center text-white font-inter md:max-w-[50%] mx-auto max-w-full mb-3"
+    <h2
+      class="text-2xl md:text-5xl font-semibold text-center text-light dark:text-white font-inter md:max-w-[50%] mx-auto max-w-full mb-3"
     >
       Proyectos realizados con pasión y dedicación.
-    </h3>
-    <p class="text-white/70 font-inter text-center mb-8">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    </h2>
+    <p class="text-light/70 dark:text-white/70 text-center mb-6">
+      Cada proyecto refleja mi compromiso por crear soluciones útiles y de
+      impacto, combinando innovación y excelencia.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
       {cut.map(proyect => <ProyectItem {...proyect} />)}
@@ -26,7 +29,7 @@ const cut = PROYECTS.slice(0, 4)
     <div class="flex justify-center mt-16">
       <a
         href="/proyects"
-        class="px-4 py-2 border border-white/20 rounded-full bg-white/10"
+        class="px-4 py-2 border border-primary-500 dark:border-white/20 rounded-full bg-white/10 dark:bg-white/10 text-primary-500 dark:text-white/70"
       >
         View all</a
       >

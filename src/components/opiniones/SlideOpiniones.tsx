@@ -62,11 +62,11 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
   }
 
   return (
-    <section className=" text-white">
+    <section className=" text-light dark:text-white">
       <div className="max-w-[700px] mx-auto relative">
         <button
           onClick={handlePrev}
-          className="absolute top-[calc(50%-20px)] -left-16 border border-white/10 h-10 w-10 bg-primary-900 rounded-full flex items-center justify-center"
+          className="absolute top-[calc(50%-20px)] -left-16 border border-primary-100 dark:border-white/10 h-10 w-10 bg-none dark:bg-primary-900 rounded-full flex items-center justify-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
             ></path>
           </svg>
         </button>
-        <div className="text-white relative border border-white/20 rounded-2xl backdrop-blur bg-white/5 overflow-hidden">
+        <div className="text-white relative border border-primary-100 dark:border-white/20 rounded-2xl backdrop-blur bg-white/5 overflow-hidden">
           <AnimatePresence mode="wait">
             {opiniones[position] && (
               <motion.div key={opiniones[position].name}>
@@ -105,7 +105,7 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
                         ease: 'easeInOut',
                         delay: 0,
                       }}
-                      className="font-inter font-medium text-2xl"
+                      className="font-inter font-medium text-2xl dark:text-white text-light"
                     >
                       {opiniones[position].name}
                     </motion.h3>
@@ -119,7 +119,7 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
                         ease: 'easeInOut',
                         delay: 0.05,
                       }}
-                      className="italic text-white/70 text-pretty"
+                      className="italic dark:text-white/70 text-light/70 text-pretty"
                     >
                       "{opiniones[position].description}"
                     </motion.p>
@@ -135,10 +135,12 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
                         delay: 0.1,
                       }}
                     >
-                      <p className="text-white/70">
+                      <p className="dark:text-white/70 text-light/70">
                         {opiniones[position].title}
                       </p>
-                      <p>{opiniones[position].job}</p>
+                      <p className="dark:text-white/70 text-light/70">
+                        {opiniones[position].job}
+                      </p>
                     </motion.div>
                   </div>
                 </div>
@@ -148,7 +150,7 @@ const SlideOpiniones: React.FC<Props> = ({ opiniones = [] }) => {
         </div>
         <button
           onClick={handleNext}
-          className="absolute top-[calc(50%-20px)] -right-16 rotate-180 border border-white/10 h-10 w-10 bg-primary-900 rounded-full flex items-center justify-center"
+          className="absolute top-[calc(50%-20px)] -right-16 rotate-180 border border-primary-100 dark:border-white/10 h-10 w-10 bg-none dark:bg-primary-900 rounded-full flex items-center justify-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

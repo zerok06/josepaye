@@ -1,7 +1,12 @@
 ---
 import Linkedin from '../../assets/icons/linkedin.astro'
+import X from '../../assets/icons/x.astro'
 import Download from '../../assets/icons/download.astro'
 import Wrapper from '../Wrapper.astro'
+import DATA from '../../../profile.json'
+import Github from '../../assets/icons/github.astro'
+
+const { social } = DATA
 
 const LINKS = [
   {
@@ -18,58 +23,80 @@ const LINKS = [
 ---
 
 <section
-  class="h-[calc(100vh-64px-40px)] bg-gradient-radial-primary rounded-3xl overflow-hidden flex items-center"
+  class="h-[calc(100vh-64px-40px)] dark:bg-gradient-radial-primary bg-linear-gradient-primary rounded-3xl overflow-hidden flex items-center"
 >
   <Wrapper>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-white px-4">
       <div class="[grid-row:2] md:[grid-row:1]">
         <div class="flex flex-col justify-start gap-2 md:gap-4">
           <h3
-            class="text-lg md:text-2xl font-medium font-inter md:text-left text-center"
+            class="dark:text-white text-primary-900 text-lg md:text-2xl font-medium font-inter md:text-left text-center"
           >
             I'm Jose Paye
           </h3>
           <h1
-            class="text-3xl sm:text-4xl md:text-6xl font-bold font-inter md:text-left text-center"
+            class="dark:text-white text-primary-900 text-3xl sm:text-4xl md:text-6xl font-bold font-inter md:text-left text-center"
           >
             Web Developer + Student Aspiring to Machine Learning Engineer
           </h1>
           <p
-            class="text-white/70 mt-2 text-base md:text-lg md:text-left text-center"
+            class="dark:text-white/70 text-light/70 mt-2 text-base md:text-lg md:text-left text-center"
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa
-            nesciunt illum possimus ipsum sequi fugiat non est provident impedit
-            consectetur?
+            Soy un apasionado por la tecnología, enfocado en el desarrollo web y
+            en expandir mis conocimientos hacia la inteligencia artificial. Creo
+            soluciones innovadoras que combinan creatividad, diseño y
+            funcionalidad.
           </p>
           <div class="flex gap-2 mt-2 md:justify-start justify-center">
             <a
-              href={LINKS[0].href}
-              class="rounded-full flex items-center gap-2 border border-white/80 text-white font-inter font-medium py-2 px-5"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin />
-              {LINKS[0].name}
-            </a>
-            <a
               href={LINKS[1].href}
-              class="rounded-full flex items-center gap-2 bg-white text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
+              class="rounded-full flex items-center gap-2 bg-button-light dark:bg-none dark:bg-white text-white dark:text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Download />
               {LINKS[1].name}
             </a>
+            <a
+              href={social.linkedin}
+              class="rounded-full flex items-center justify-center gap-2 border border-primary-500 dark:border-white/80 text-primary-500 dark:text-white font-inter font-medium size-10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin />
+            </a>
+            <a
+              href={social.github}
+              class="rounded-full flex items-center justify-center gap-2 border border-primary-500 dark:border-white/80 text-primary-500 dark:text-white font-inter font-medium size-10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github />
+            </a>
+            <a
+              href={social.x}
+              class="rounded-full flex items-center justify-center gap-2 border border-primary-500 dark:border-white/80 text-primary-500 dark:text-white font-inter font-medium size-10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <X />
+            </a>
           </div>
         </div>
       </div>
       <div class="[grid-row:1] md:[grid-row:1]">
         <div class="flex justify-center items-center">
-          <img
-            src="/assets/images/portada.png"
-            class="bg-white h-[300px] md:h-[450px] aspect-square rounded-3xl -rotate-3"
-            alt=""
-          />
+          <picture>
+            <source
+              srcset="/assets/images/portada-light.png"
+              media="(prefers-color-scheme: light)"
+            />
+            <img
+              src="/assets/images/portada.png"
+              class="bg-white h-[300px] md:h-[450px] aspect-square rounded-3xl -rotate-3"
+              alt=""
+            />
+          </picture>
         </div>
       </div>
     </div>

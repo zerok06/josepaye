@@ -1,6 +1,7 @@
 ---
 import Arrow from '../assets/icons/Arrow.astro'
 import Logo from './Logo.astro'
+import ToggleDark from './ToggleDark'
 
 const MENU = [
   {
@@ -27,13 +28,13 @@ const MENU = [
   id="menu-fixed"
 >
   <div
-    class="fixed top-0 left-0 right-0 h-full w-full bg-black/90 pt-[80px] text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto sm:group-[.isopen]/open:pointer-events-none group-[.isopen]/open:opacity-100 sm:group-[.isopen]/open:opacity-0 transition duration-300"
+    class="fixed top-0 left-0 right-0 h-full w-full bg-white/70 dark:bg-black/90 pt-[80px] text-lightdark:text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto sm:group-[.isopen]/open:pointer-events-none group-[.isopen]/open:opacity-100 sm:group-[.isopen]/open:opacity-0 transition duration-300"
   >
     {
       MENU.map(item => (
         <a
           href={item.href}
-          class="py-4 border-b border-white/20 hover:opacity-70 transition duration-300 flex items-center justify-between group"
+          class="py-4 border-b border-primary-200 dark:border-white/20 hover:opacity-70 transition duration-300 flex items-center justify-between group"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,14 +48,14 @@ const MENU = [
   </div>
   <div class="sm:w-auto w-full">
     <nav
-      class="relative bg-black px-2 h-10 flex items-center border-white/20 border bg-white/5 text-sm backdrop-blur text-white mt-5 rounded-full"
+      class="relative px-2 h-10 flex items-center border-primary-100 dark:border-white/20 border bg-white/5 text-sm backdrop-blur text-white mt-5 rounded-full"
     >
-      <div class="justify-between flex sm:hidden w-full">
+      <div class="justify-between items-center flex sm:hidden w-full">
         <Logo />
         <div class="flex gap-2">
           <a
             href={'https://www.linkedin.com/in/zerok06/'}
-            class="px-3 py-[3px] rounded-full hover:bg-white/80 bg-white text-primary-500 transition duration-300 flex items-center gap-1 group cursor-pointer"
+            class="px-3 py-[3px] rounded-full bg-button-light dark:bg-none hover:bg-white/80 dark:bg-white text-white dark:text-primary-500 transition duration-300 flex items-center gap-1 group cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -72,7 +73,7 @@ const MENU = [
             >
           </a>
           <button
-            class="px-3 py-[3px] border border-white/20 rounded-full bg-white/10"
+            class="px-3 py-[3px] border border-primary-100 dark:border-white/20 rounded-full bg-primary-100 dark:text-white text-light dark:bg-white/10"
             id="menu-button"
           >
             <svg
@@ -93,21 +94,24 @@ const MENU = [
           MENU.map(item => (
             <a
               href={item.href}
-              class="px-3 py-[3px] rounded-full hover:bg-white/10 transition duration-300"
+              class="px-3 py-[3px] dark:text-white text-light rounded-full dark:hover:bg-white/10 hover:bg-primary-100 transition duration-300"
             >
               {item.name}
             </a>
           ))
         }
+
+        <ToggleDark client:load />
+
         <a
           href={'https://www.linkedin.com/in/zerok06/'}
-          class="px-3 py-[3px] rounded-full hover:bg-white/80 bg-white text-primary-500 transition duration-300 flex items-center gap-1 group/linkedin cursor-pointer"
+          class="px-3 py-[3px] rounded-full bg-button-light dark:bg-none dark:bg-white hover:bg-white/80 text-white dark:text-primary-500 transition duration-300 flex items-center gap-1 group cursor-pointer"
           target="_blank"
           rel="noopener noreferrer"
         >
           Ir a Linkedin
           <svg
-            class="rotate-180 group-hover/linkedin:translate-x-1 transition duration-300"
+            class="rotate-180 group-hover:translate-x-1 transition duration-300"
             xmlns="http://www.w3.org/2000/svg"
             width="12"
             height="12"

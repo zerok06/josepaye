@@ -1,0 +1,30 @@
+---
+import { getCollection, getEntries } from 'astro:content'
+
+export async function getStaticPaths() {
+  const data = await getCollection('tutoriales')
+  return data.map(tutorial => ({
+    params: { slug: tutorial.slug },
+    props: { tutorial },
+  }))
+}
+
+/* One Tutorial */
+
+const { tutorial } = Astro.props
+
+const {
+  data: { title, posts },
+} = tutorial
+
+const postsEntry = await getEntries(tutorial.data.posts)
+
+const { Content } = await tutorial.render()
+---
+
+<div>
+  {title}
+  {JSON.stringify(postsEntry)}
+</div>
+
+<Content />

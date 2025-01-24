@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
 
 const opiniones = defineCollection({
     type: 'data',
@@ -14,11 +14,39 @@ const opiniones = defineCollection({
     ),
 });
 
+/* Blog */
+
+const publicaciones = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        shortTitle: z.string(),
+        description: z.string(),
+        publishDate: z.date(),
+        timeReadMins: z.number(),
+        heroImage: z.string(),
+        tags: z.array(z.string()),
+    }),
+});
 
 
-
+const tutoriales = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        shortTitle: z.string(),
+        description: z.string(),
+        publishDate: z.date(),
+        timeReadMins: z.number(),
+        heroImage: z.string(),
+        tags: z.array(z.string()),
+        posts: z.array(reference('publicaciones')),
+    }),
+});
 
 
 export const collections = {
-    opiniones
+    opiniones,
+    publicaciones,
+    tutoriales
 }

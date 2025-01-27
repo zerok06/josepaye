@@ -1,12 +1,59 @@
 ---
+import { getCollection } from 'astro:content'
 import NavBar from '../../components/NavBar.astro'
 import Wrapper from '../../components/Wrapper.astro'
 import Layout from '../../layouts/Layout.astro'
+import RootLayout from '../../layouts/RootLayout.astro'
+import Footer from '../../components/Footer.astro'
+
+const posts = await getCollection('publicaciones')
+
+const firstPost = posts[0]
+const otherPosts = posts.slice(1)
 ---
 
 <Layout>
-  <NavBar />
-  <Wrapper>
-    <h1 class="text-2xl font-medium font-inter text-center">Coming soon..</h1>
-  </Wrapper>
+  <RootLayout>
+    <NavBar />
+  </RootLayout>
+  <section class="bg-gray-100 dark:bg-none">
+    <RootLayout>
+      <Wrapper>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
+          <article class="col-span-1 md:col-span-2 group">
+            <div
+              class="h-[480px] border grid grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white"
+            >
+              <div>
+                <img
+                  class="w-full h-full object-cover"
+                  src={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                  alt={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                />
+              </div>
+              <div class="relative">
+                <div
+                  class="bg-blue-500 absolute group-hover:-left-20 -left-10 top-0 w-full h-full transition-all duration-300"
+                >
+                </div>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="h-[480px] border">asd</div>
+          </article>
+          <article>
+            <div class="h-[480px] border">asd</div>
+          </article>
+          <article>
+            <div class="h-[480px] border">asd</div>
+          </article>
+          <article>
+            <div class="h-[480px] border">asd</div>
+          </article>
+        </section>
+      </Wrapper>
+      <Footer />
+    </RootLayout>
+  </section>
 </Layout>

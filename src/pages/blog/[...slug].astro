@@ -1,5 +1,12 @@
 ---
 import { getCollection } from 'astro:content'
+import LayoutPost from '../../layouts/LayoutPost.astro'
+import NavFixed from '../../components/NavFixed.astro'
+import section from '../../components/Wrapper.astro'
+import WrapperPost from '../../components/WrapperPost.astro'
+import Logo from '../../components/Logo.astro'
+import Footer from '../../components/Footer.astro'
+import MarkdownContainer from '../../layouts/MarkdownContainer.astro'
 
 export async function getStaticPaths() {
   const data = await getCollection('publicaciones')
@@ -9,8 +16,59 @@ export async function getStaticPaths() {
 /* Solo publicacion */
 
 const { post } = Astro.props
+const {
+  data: { title, description, tags, shortTitle },
+} = post
 
-const { Content } = await post.render()
+const { Content, headings } = await post.render()
+
+const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
 ---
 
-<Content />
+<LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
+  <NavFixed />
+  <header>
+    <nav class="h-20">
+      <section>
+        <div class="h-20 border flex items-center justify-between">
+          <Logo />
+        </div>
+      </section>
+    </nav>
+  </header>
+  <main>
+    <section class="max-w-5xl mx-auto px-5">
+      <div class="py-10">
+        <h1 class="text-4xl text-center font-medium font-roboto_slab mb-6">
+          {title}
+        </h1>
+        <img
+          src={image}
+          class="aspect-video md:rounded-3xl rounded-xl"
+          alt={title}
+        />
+      </div>
+    </section>
+    <WrapperPost>
+      <!-- <section class="p-4 border border-gray-500/20 rounded-2xl my-4">
+        <h3 class="text-2xl font-medium font-roboto_slab mb-2">Content</h3>
+        <ul>
+          {
+            headings.map(heading => (
+              <li
+                class="text-sm font-roboto_slab py-0.5 hover:text-primary-500  transition duration-300 cursor-pointer"
+                style={{ marginLeft: `${heading.depth - 1}rem` }}
+              >
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section> -->
+      <MarkdownContainer>
+        <Content />
+      </MarkdownContainer>
+    </WrapperPost>
+  </main>
+  <Footer />
+</LayoutPost>

@@ -1,5 +1,12 @@
 ---
 import { getCollection, getEntries } from 'astro:content'
+import WrapperPost from '../../components/WrapperPost.astro'
+import LayoutPost from '../../layouts/LayoutPost.astro'
+import NavFixed from '../../components/NavFixed.astro'
+import Logo from '../../components/Logo.astro'
+import MarkdownContainer from '../../layouts/MarkdownContainer.astro'
+import Footer from '../../components/Footer.astro'
+import Arrow from '../../assets/icons/Arrow.astro'
 
 export async function getStaticPaths() {
   const data = await getCollection('tutoriales')
@@ -14,17 +21,71 @@ export async function getStaticPaths() {
 const { tutorial } = Astro.props
 
 const {
-  data: { title, posts },
+  data: { title, posts, shortTitle, description, tags },
 } = tutorial
 
 const postsEntry = await getEntries(tutorial.data.posts)
 
 const { Content } = await tutorial.render()
+const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
 ---
 
-<div>
-  {title}
-  {JSON.stringify(postsEntry)}
-</div>
-
-<Content />
+<LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
+  <NavFixed />
+  <header>
+    <nav class="h-20">
+      <section>
+        <div class="h-20 border flex items-center justify-between">
+          <Logo />
+        </div>
+      </section>
+    </nav>
+  </header>
+  <main>
+    <section class="max-w-5xl mx-auto px-5">
+      <div class="py-10">
+        <h1 class="text-4xl text-center font-medium font-roboto_slab mb-6">
+          {title}
+        </h1>
+        <img
+          src={image}
+          class="aspect-video md:rounded-3xl rounded-xl"
+          alt={title}
+        />
+      </div>
+    </section>
+    <WrapperPost>
+      <MarkdownContainer>
+        <Content />
+      </MarkdownContainer>
+      <section class="my-4">
+        <h3 class="text-2xl font-medium font-roboto_slab">Capitulos</h3>
+        <section class="py-4 font-inter">
+          {
+            postsEntry.map(post => (
+              <div class="border rounded-lg overflow-hidden">
+                <input type="checkbox" id="accordion1" class="hidden peer" />
+                <label
+                  for="accordion1"
+                  class="flex justify-between items-center p-4 opacity-90 hover:opacity-100 hover:text-primary-500 cursor-pointer"
+                >
+                  <span class="font-semibold">{post.data.title}</span>
+                  <span class="transform transition-transform duration-300 rotate-90">
+                    <Arrow />
+                  </span>
+                </label>
+                <div class="p-4 hidden peer-checked:block">
+                  <p>
+                    Este es el contenido de la sección 1. Puedes agregar
+                    cualquier cosa aquí, como texto, imágenes, enlaces, etc.
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </section>
+      </section>
+    </WrapperPost>
+    <Footer />
+  </main>
+</LayoutPost>

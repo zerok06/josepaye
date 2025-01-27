@@ -14,14 +14,13 @@ const {
 
 <!-- SEO -->
 <link rel="canonical" href={url} />
-
 <meta name="description" content={description || DEFAULT_DESCRIPTION} />
 <meta name="keywords" content={siteData.keywords} />
 <meta name="author" content={siteData.author} />
 
 <!-- Open Graph -->
-<meta property="og:site_name" content="SIMBig 2024" />
-<meta property="og:title" content={title} />
+<meta property="og:site_name" content={siteData?.title && title} />
+<meta property="og:title" content={siteData?.title && title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={image?.src || siteData.image.src} />

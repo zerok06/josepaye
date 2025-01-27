@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string
+  description: string
+  url?: string
+  keywords: string
+}
+
+const { description, title, url = Astro.url, keywords } = Astro.props as Props
+
+const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
+---
+
+<!-- SEO -->
+<link rel="canonical" href={url} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content={title} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={image} />
+<meta property="og:image:url" content={image} />
+<meta property="og:image:secure_url" content={image} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content={title} />
+
+<!-- Twitter -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:image:alt" content={title} />
+<meta name="twitter:domain" content={import.meta.env.SITE} />
+
+<meta name="robots" content="noindex, nofollow" />

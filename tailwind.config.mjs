@@ -6,7 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
-				poppins: ['Poppins', 'sans-serif'],
+				roboto_slab: ["Roboto Slab", 'sans-serif'],
 			},
 			colors: {
 				primary: {
@@ -29,6 +29,6 @@ export default {
 				'button-light': 'linear-gradient(65deg,var(--500),var(--300))'
 			},
 		},
-		plugins: [],
-	}
+	},
+	plugins: [require('@tailwindcss/typography')],
 }

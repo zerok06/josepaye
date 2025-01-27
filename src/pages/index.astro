@@ -7,14 +7,17 @@ import Layout from '../layouts/Layout.astro'
 import Opiniones from '../components/home/Opiniones.astro'
 import Skills from '../components/home/Skills.astro'
 import Footer from '../components/Footer.astro'
+import RootLayout from '../layouts/RootLayout.astro'
 ---
 
 <Layout>
-  <NavBar />
-  <Hero />
-  <!-- <Brands /> -->
-  <Skills />
-  <Proyects />
-  <Opiniones />
-  <Footer />
+  <RootLayout>
+    <NavBar />
+    <Hero />
+    <!-- <Brands /> -->
+    <Skills />
+    <Proyects />
+    <Opiniones />
+    <Footer />
+  </RootLayout>
 </Layout>

@@ -24,17 +24,17 @@ const MENU = [
 ---
 
 <div
-  class="sticky top-0 left-0 right-0 z-50 h-0 flex justify-center sm:w-auto w-full group/open"
+  class="sticky top-0 left-0 right-0 z-50 h-0 flex justify-center sm:w-auto w-full group/open font-inter"
   id="menu-fixed"
 >
   <div
-    class="fixed top-0 left-0 right-0 h-full w-full bg-white/70 dark:bg-black/90 pt-[80px] text-lightdark:text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto sm:group-[.isopen]/open:pointer-events-none group-[.isopen]/open:opacity-100 sm:group-[.isopen]/open:opacity-0 transition duration-300"
+    class="fixed top-0 left-0 right-0 h-full w-full bg-white dark:bg-black/90 pt-[80px] text-light dark:text-white flex flex-col px-8 pointer-events-none opacity-0 group-[.isopen]/open:pointer-events-auto sm:group-[.isopen]/open:pointer-events-none group-[.isopen]/open:opacity-100 sm:group-[.isopen]/open:opacity-0 transition duration-300"
   >
     {
       MENU.map(item => (
         <a
           href={item.href}
-          class="py-4 border-b border-primary-200 dark:border-white/20 hover:opacity-70 transition duration-300 flex items-center justify-between group"
+          class="py-4 border-b font-inter border-primary-200 dark:border-white/20 hover:opacity-70 transition duration-300 flex items-center justify-between group"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -48,7 +48,7 @@ const MENU = [
   </div>
   <div class="sm:w-auto w-full">
     <nav
-      class="relative px-2 h-10 flex items-center border-primary-100 dark:border-white/20 border bg-white/5 text-sm backdrop-blur text-white mt-5 rounded-full"
+      class="relative px-2 h-10 flex items-center border-primary-100 dark:border-white/20 border bg-white/80 dark:bg-black/30 text-sm backdrop-blur text-white mt-5 rounded-full"
     >
       <div class="justify-between items-center flex sm:hidden w-full">
         <Logo />

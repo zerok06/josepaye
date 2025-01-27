@@ -5,6 +5,7 @@ import Wrapper from '../../components/Wrapper.astro'
 import Layout from '../../layouts/Layout.astro'
 import RootLayout from '../../layouts/RootLayout.astro'
 import Footer from '../../components/Footer.astro'
+import FormatterDate from '../../components/FormatterDate.astro'
 
 const posts = await getCollection('publicaciones')
 
@@ -16,31 +17,82 @@ const otherPosts = posts.slice(1)
   <RootLayout>
     <NavBar />
   </RootLayout>
-  <section class="bg-gray-100 dark:bg-none">
+  <section class="bg-gray-100 dark:bg-white/5 dark:bg-none">
     <RootLayout>
       <Wrapper>
         <section class="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
           <article class="col-span-1 md:col-span-2 group">
-            <div
-              class="h-[480px] border grid grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white"
-            >
-              <div>
-                <img
-                  class="w-full h-full object-cover"
-                  src={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
-                  alt={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
-                />
-              </div>
-              <div class="relative">
-                <div
-                  class="bg-blue-500 absolute group-hover:-left-20 -left-10 top-0 w-full h-full transition-all duration-300"
-                >
+            <a href={`/blog/${firstPost.slug}`}>
+              <div
+                class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
+              >
+                <div>
+                  <img
+                    class="w-full h-full object-cover"
+                    src={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                    alt={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                  />
+                </div>
+                <div class="relative">
+                  <div
+                    class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute w-full h-full transition-all duration-300
+         md:group-hover:-left-20 md:-left-10
+         group-hover:-top-5 top-0
+         md:group-hover:top-0 md:top-0"
+                  >
+                    <p
+                      class="leading-none text-sm text-primary-500 dark:text-primary-500 dark:opacity-100 uppercase font-semibold font-inter opacity-90"
+                    >
+                      <FormatterDate date={firstPost.data.publishDate} />
+                    </p>
+                    <h2
+                      class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
+                    >
+                      Zorin OS 17.2 Has Landed
+                    </h2>
+                    <p class="font-inter text-black/70 dark:text-white/70">
+                      Our most capable, customisable, and compatible version
+                      yet.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </article>
-          <article>
-            <div class="h-[480px] border">asd</div>
+          <article class="group">
+            <a href="#">
+              <div
+                class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white"
+              >
+                <div class="">
+                  <img
+                    class="w-full h-full object-cover"
+                    src={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                    alt={`https://open-graph-blog-image-jose.vercel.app/api/og?title=${firstPost.data.title}`}
+                  />
+                </div>
+                <div class="relative dark:bg-black">
+                  <div
+                    class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute group-hover:-top-5 top-0 left-0 w-full h-full transition-all duration-300"
+                  >
+                    <p
+                      class="leading-none text-sm dark:text-primary-500 dark:opacity-100 uppercase text-primary-500 font-semibold font-inter opacity-90"
+                    >
+                      <FormatterDate date={firstPost.data.publishDate} />
+                    </p>
+                    <h2
+                      class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
+                    >
+                      Zorin OS 17.2 Has Landed
+                    </h2>
+                    <p class="font-inter text-black/70 dark:text-white/70">
+                      Our most capable, customisable, and compatible version
+                      yet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
           </article>
           <article>
             <div class="h-[480px] border">asd</div>

@@ -1,23 +1,100 @@
 ---
-import Brands from '../components/home/Brands.astro'
-import Hero from '../components/home/Hero.astro'
-import Proyects from '../components/home/Proyects.astro'
+import { getCollection } from 'astro:content'
 import NavBar from '../components/NavBar.astro'
+import Wrapper from '../components/Wrapper.astro'
 import Layout from '../layouts/Layout.astro'
-import Opiniones from '../components/home/Opiniones.astro'
-import Skills from '../components/home/Skills.astro'
-import Footer from '../components/Footer.astro'
 import RootLayout from '../layouts/RootLayout.astro'
+import Footer from '../components/Footer.astro'
+import FormatterDate from '../components/FormatterDate.astro'
+import Anchor from '../components/Anchor.astro'
+
+const posts = await getCollection('publicaciones')
+
+const firstPost = posts[0]
+const otherPosts = posts.slice(1)
 ---
 
 <Layout>
   <RootLayout>
     <NavBar />
-    <Hero />
-    <!-- <Brands /> -->
-    <Skills />
-    <Proyects />
-    <Opiniones />
-    <Footer />
   </RootLayout>
+  <section class="bg-gray-100 dark:bg-white/5 dark:bg-none">
+    <RootLayout>
+      <Wrapper>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
+          <article class="col-span-1 md:col-span-2 group">
+            <a href={`/blog/${firstPost.slug}`}>
+              <div
+                class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
+              >
+                <div>
+                  <img
+                    class="w-full h-full object-cover"
+                    src={firstPost.data.heroImage}
+                    alt={firstPost.data.title}
+                  />
+                </div>
+                <div class="relative">
+                  <div
+                    class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute w-full h-full transition-all duration-300
+         md:group-hover:-left-20 md:-left-10
+         group-hover:-top-5 top-0
+         md:group-hover:top-0 md:top-0"
+                  >
+                    <p
+                      class="leading-none text-sm text-primary-500 dark:text-primary-500 dark:opacity-100 uppercase font-semibold font-inter opacity-90"
+                    >
+                      <FormatterDate date={firstPost.data.publishDate} />
+                    </p>
+                    <h2
+                      class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
+                    >
+                      {firstPost.data.title}
+                    </h2>
+                    <p class="font-inter text-black/70 dark:text-white/70">
+                      {firstPost.data.description.slice(0, 100)}...
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article>
+          {
+            otherPosts.map(post => (
+              <article class="group">
+                <a href="#">
+                  <div class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
+                    <div class="">
+                      <img
+                        class="w-full h-full object-cover"
+                        src={post.data.heroImage}
+                        alt={post.data.title}
+                      />
+                    </div>
+                    <div class="relative dark:bg-black">
+                      <div class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute group-hover:-top-5 top-0 left-0 w-full h-full transition-all duration-300">
+                        <p class="leading-none text-sm dark:text-primary-500 dark:opacity-100 uppercase text-primary-500 font-semibold font-inter opacity-90">
+                          <FormatterDate date={post.data.publishDate} />
+                        </p>
+                        <h2 class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none">
+                          {post.data.title}
+                        </h2>
+                        <p class="font-inter text-black/70 dark:text-white/70">
+                          {post.data.description.slice(0, 100)}...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
+        </section>
+        <div class="flex justify-center">
+          <Anchor href="/blog"> Anteriores </Anchor>
+        </div>
+      </Wrapper>
+      <Footer />
+    </RootLayout>
+  </section>
 </Layout>

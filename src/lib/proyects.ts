@@ -3,7 +3,7 @@ import { techTags } from '../types/tag'
 export const PROYECTS = [
     {
         title: 'SIMBig24 - Ilo',
-        desc: 'desc ',
+        desc: 'SIMBig is one of the first conferences in Latin America grouping areas such as Artificial Intelligence, Machine Learning, Deep Learning, Healthcare Informatics, Natural Language Processing, Semantic Web, Software Engineering, among others. ',
         image: '/assets/images/proyects/1.png',
         tecnologies: [
             techTags.astro,
@@ -15,12 +15,13 @@ export const PROYECTS = [
             techTags.figma,
             techTags.vscode,
             techTags.vercel,
-            techTags.posgresql
+            techTags.posgresql,
+            techTags.postman,
         ],
     },
     {
         title: 'CISCCOM - Ilo',
-        desc: 'desc ',
+        desc: 'CISCCOM reúne a un conjunto diverso de profesionales, investigadores y estudiantes de diversas partes del mundo y de distintas etapas de sus carreras. Este ambiente propicia el encuentro y la conexión entre los asistentes e invitados para enriquecer sus redes profesionales y abrir puertas a futuras colaboraciones, proyectos conjuntos y oportunidades de empleo. ',
         image: '/assets/images/proyects/2.png',
         tecnologies: [
             techTags.tailwind,
@@ -37,8 +38,8 @@ export const PROYECTS = [
         ],
     },
     {
-        title: 'Raymi',
-        desc: 'desc ',
+        title: 'Raymi Social - ILo',
+        desc: 'Es una aplicación web que te permite compartir publicaciones, fotos y videos con tus amigos.',
         image: '/assets/images/proyects/3.png',
         tecnologies: [
             techTags.tailwind,
@@ -54,8 +55,8 @@ export const PROYECTS = [
         ],
     },
     {
-        title: 'Clinica Americana',
-        desc: 'desc ',
+        title: 'Acortador de URL',
+        desc: 'Es una aplicación web que te permite acortar URLs.',
         image: '/assets/images/proyects/4.png',
         tecnologies: [
             techTags.tailwind,
@@ -85,8 +86,8 @@ export const PROYECTS = [
         ],
     },
     {
-        title: 'Clinica',
-        desc: 'Es una aplicación web que te permite visualizar y crear grafos a partir de imágenes.',
+        title: 'Clinica Americana',
+        desc: 'Es una aplicación web que permite administar una clinica dental tendiendo en consideracion odontogramas y citas.',
         image: '/assets/images/proyects/6.png',
         tecnologies: [
             techTags.tailwind,
@@ -100,6 +101,20 @@ export const PROYECTS = [
             techTags.vscode,
             techTags.posgresql,
             techTags.postman
+        ],
+    },
+    {
+        title: 'Colora.',
+        desc: 'Es una aplicación web que te permite genera, exportar, copiar y compartir paletas de colores.',
+        image: '/assets/images/proyects/7.png',
+        tecnologies: [
+            techTags.tailwind,
+            techTags.figma,
+            techTags.next,
+            techTags.react,
+            techTags.javascript,
+            techTags.vercel,
+            techTags.vscode,
         ],
     },
 ]

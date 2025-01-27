@@ -10,78 +10,40 @@ import Arrow from '../../assets/icons/Arrow.astro'
 import Anchor from '../../components/Anchor.astro'
 
 const posts = await getCollection('publicaciones')
-
-const firstPost = posts[0]
-const otherPosts = posts.slice(1)
 ---
 
 <Layout>
   <RootLayout>
     <NavBar />
   </RootLayout>
-  <section class="bg-gray-100 dark:bg-white/5 dark:bg-none">
+  <section class="dark:bg-none">
     <RootLayout>
       <Wrapper>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
-          <article class="col-span-1 md:col-span-2 group">
-            <a href={`/blog/${firstPost.slug}`}>
-              <div
-                class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
-              >
-                <div>
-                  <img
-                    class="w-full h-full object-cover"
-                    src={firstPost.data.heroImage}
-                    alt={firstPost.data.title}
-                  />
-                </div>
-                <div class="relative">
-                  <div
-                    class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute w-full h-full transition-all duration-300
-         md:group-hover:-left-20 md:-left-10
-         group-hover:-top-5 top-0
-         md:group-hover:top-0 md:top-0"
-                  >
-                    <p
-                      class="leading-none text-sm text-primary-500 dark:text-primary-500 dark:opacity-100 uppercase font-semibold font-inter opacity-90"
-                    >
-                      <FormatterDate date={firstPost.data.publishDate} />
-                    </p>
-                    <h2
-                      class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
-                    >
-                      {firstPost.data.title}
-                    </h2>
-                    <p class="font-inter text-black/70 dark:text-white/70">
-                      {firstPost.data.description.slice(0, 100)}...
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </article>
+        <section class="py-10 flex flex-col gap-4">
           {
-            otherPosts.map(post => (
+            posts.map(post => (
               <article class="group">
-                <a href="#">
-                  <div class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
-                    <div class="">
+                <a href={`/blog/${post.slug}`}>
+                  <div class="h-[350px] md:h-[250px] shadow-3xl shadow-black/5 grid grid-cols-1 grid-rows-[2fr_1fr] md:grid-rows-1 md:grid-cols-[2fr_3fr] lg:grid-cols-[1fr_4fr]">
+                    <div>
                       <img
-                        class="w-full h-full object-cover"
-                        src={post.data.heroImage}
+                        class="w-full h-full object-cover rounded-2xl overflow-hidden shadow"
+                        src={
+                          'https://images.unsplash.com/pshoto-1736580602800-0d455b2d4b49?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                        }
                         alt={post.data.title}
                       />
                     </div>
-                    <div class="relative dark:bg-black">
-                      <div class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute group-hover:-top-5 top-0 left-0 w-full h-full transition-all duration-300">
-                        <p class="leading-none text-sm dark:text-primary-500 dark:opacity-100 uppercase text-primary-500 font-semibold font-inter opacity-90">
+                    <div class="relative">
+                      <div class="bg-white h-full dark:bg-black pl-10 flex flex-col gap-2 justify-center">
+                        <p class="font-inter text-white/50 group-hover:text-primary-500 transition-colors duration-300  font-semibold uppercase text-sm">
                           <FormatterDate date={post.data.publishDate} />
                         </p>
-                        <h2 class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none">
+                        <h3 class="text-4xl font-roboto_slab group-hover:text-primary-500 transition-colors duration-300 font-semibold">
                           {post.data.title}
-                        </h2>
-                        <p class="font-inter text-black/70 dark:text-white/70">
-                          {post.data.description.slice(0, 100)}...
+                        </h3>
+                        <p class="font-inter text-black/70 group-hover:text-primary-500 transition-colors duration-300 dark:text-white/70">
+                          {post.data.description.slice(0, 200)}...
                         </p>
                       </div>
                     </div>
@@ -91,9 +53,6 @@ const otherPosts = posts.slice(1)
             ))
           }
         </section>
-        <div class="flex justify-center">
-          <Anchor href="/blog"> Anteriores </Anchor>
-        </div>
       </Wrapper>
       <Footer />
     </RootLayout>

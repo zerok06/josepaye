@@ -1,5 +1,6 @@
 ---
 import SEOPost from '../components/SEOPost.astro'
+import VerifyDarkMode from '../components/VerifyDarkMode.astro'
 import '../styles/base.css'
 
 interface Props {
@@ -12,7 +13,7 @@ const { description, shortTitle, tags } = Astro.props
 const keywords = tags.join(', ')
 ---
 
-<html lang="es" class="dark">
+<html lang="es">
   <head>
     <title>{shortTitle}</title>
     <meta charset="utf-8" />
@@ -32,7 +33,8 @@ const keywords = tags.join(', ')
 
     <SEOPost title={shortTitle} description={description} keywords={keywords} />
   </head>
-  <body class="dark:bg-black bg-white dark:text-white text-black">
+  <body class="dark:bg-black bg-white dark:text-white text-black antialiased">
     <slot />
+    <VerifyDarkMode />
   </body>
 </html>

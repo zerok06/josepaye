@@ -1,9 +1,10 @@
 ---
 import '../styles/base.css'
 import SEO from '../components/SEO.astro'
+import VerifyDarkMode from '../components/VerifyDarkMode.astro'
 ---
 
-<html lang="es" class="dark">
+<html lang="es">
   <head>
     <title>Jose Paye - Desarrollador Web y Machine Learning</title>
     <meta charset="utf-8" />
@@ -27,5 +28,6 @@ import SEO from '../components/SEO.astro'
   </head>
   <body class="dark:bg-black bg-white antialiased text-light dark:text-white">
     <slot />
+    <VerifyDarkMode />
   </body>
 </html>

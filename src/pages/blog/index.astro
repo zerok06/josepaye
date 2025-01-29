@@ -6,8 +6,6 @@ import Layout from '../../layouts/Layout.astro'
 import RootLayout from '../../layouts/RootLayout.astro'
 import Footer from '../../components/Footer.astro'
 import FormatterDate from '../../components/FormatterDate.astro'
-import Arrow from '../../assets/icons/Arrow.astro'
-import Anchor from '../../components/Anchor.astro'
 
 const posts = await getCollection('publicaciones')
 ---
@@ -16,45 +14,45 @@ const posts = await getCollection('publicaciones')
   <RootLayout>
     <NavBar />
   </RootLayout>
-  <section class="dark:bg-none">
-    <RootLayout>
-      <Wrapper>
-        <section class="py-10 flex flex-col gap-4">
-          {
-            posts.map(post => (
-              <article class="group">
-                <a href={`/blog/${post.slug}`}>
-                  <div class="h-[350px] md:h-[250px] shadow-3xl shadow-black/5 grid grid-cols-1 grid-rows-[2fr_1fr] md:grid-rows-1 md:grid-cols-[2fr_3fr] lg:grid-cols-[1fr_4fr]">
-                    <div>
-                      <img
-                        class="w-full h-full object-cover rounded-2xl overflow-hidden shadow"
-                        src={
-                          'https://images.unsplash.com/pshoto-1736580602800-0d455b2d4b49?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-                        }
-                        alt={post.data.title}
-                      />
-                    </div>
-                    <div class="relative">
-                      <div class="bg-white h-full dark:bg-black pl-10 flex flex-col gap-2 justify-center">
-                        <p class="font-inter text-white/50 group-hover:text-primary-500 transition-colors duration-300  font-semibold uppercase text-sm">
-                          <FormatterDate date={post.data.publishDate} />
-                        </p>
-                        <h3 class="text-4xl font-roboto_slab group-hover:text-primary-500 transition-colors duration-300 font-semibold">
-                          {post.data.title}
-                        </h3>
-                        <p class="font-inter text-black/70 group-hover:text-primary-500 transition-colors duration-300 dark:text-white/70">
-                          {post.data.description.slice(0, 200)}...
-                        </p>
-                      </div>
+</Layout>
+<section class="dark:bg-none">
+  <RootLayout>
+    <Wrapper>
+      <section class="py-10 flex flex-col gap-4">
+        {
+          posts.map(post => (
+            <article class="group">
+              <a href={`/blog/${post.slug}`}>
+                <div class="h-[350px] md:h-[250px] shadow-3xl shadow-black/5 grid grid-cols-1 grid-rows-[2fr_1fr] md:grid-rows-1 md:grid-cols-[2fr_3fr] lg:grid-cols-[1fr_4fr]">
+                  <div>
+                    <img
+                      class="w-full h-full object-cover rounded-2xl overflow-hidden shadow"
+                      src={
+                        'https://images.unsplash.com/pshoto-1736580602800-0d455b2d4b49?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                      }
+                      alt={post.data.title}
+                    />
+                  </div>
+                  <div class="relative">
+                    <div class="bg-white h-full dark:bg-black pl-10 flex flex-col gap-2 justify-center">
+                      <p class="font-inter text-white/50 group-hover:text-primary-500 transition-colors duration-300  font-semibold uppercase text-sm">
+                        <FormatterDate date={post.data.publishDate} />
+                      </p>
+                      <h3 class="text-4xl font-roboto_slab group-hover:text-primary-500 transition-colors duration-300 font-semibold">
+                        {post.data.title}
+                      </h3>
+                      <p class="font-inter text-black/70 group-hover:text-primary-500 transition-colors duration-300 dark:text-white/70">
+                        {post.data.description.slice(0, 200)}...
+                      </p>
                     </div>
                   </div>
-                </a>
-              </article>
-            ))
-          }
-        </section>
-      </Wrapper>
-      <Footer />
-    </RootLayout>
-  </section>
-</Layout>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </section>
+    </Wrapper>
+    <Footer />
+  </RootLayout>
+</section>

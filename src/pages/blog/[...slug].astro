@@ -7,6 +7,8 @@ import WrapperPost from '../../components/WrapperPost.astro'
 import Logo from '../../components/Logo.astro'
 import Footer from '../../components/Footer.astro'
 import MarkdownContainer from '../../layouts/MarkdownContainer.astro'
+import RootLayout from '../../layouts/RootLayout.astro'
+import NavBar from '../../components/NavBar.astro'
 
 export async function getStaticPaths() {
   const data = await getCollection('publicaciones')
@@ -26,16 +28,9 @@ const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${titl
 ---
 
 <LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
-  <NavFixed />
-  <header>
-    <nav class="h-20">
-      <section>
-        <div class="h-20 flex items-center justify-between">
-          <Logo />
-        </div>
-      </section>
-    </nav>
-  </header>
+  <RootLayout>
+    <NavBar />
+  </RootLayout>
   <main>
     <section class="max-w-5xl mx-auto px-5">
       <div class="py-10">

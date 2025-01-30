@@ -19,14 +19,18 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const {
-  data: { title, description, tags, shortTitle, heroImage },
+  data: { title, description, tags, shortTitle, heroImage, keywords },
   slug,
 } = post
 
 const { Content, headings } = await post.render()
 ---
 
-<LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
+<LayoutPost
+  shortTitle={shortTitle}
+  description={description}
+  keywordsArr={keywords}
+>
   <RootLayout>
     <NavBar />
     <main>
@@ -38,7 +42,7 @@ const { Content, headings } = await post.render()
           <img
             src={heroImage}
             transition:name={slug}
-            transition:animate="slide"
+            transition:animate="fade"
             class="aspect-video md:rounded-3xl rounded-xl"
             alt={title}
           />

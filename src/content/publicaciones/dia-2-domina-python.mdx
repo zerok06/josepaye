@@ -1,0 +1,136 @@
+---
+    title: 'Día 2: Estructuras de control (condicionales y bucles)'
+    shortTitle: 'Día 2: Estructuras de control (condicionales y bucles)'
+    description: 'En este segundo día de aprendizaje, aprenderás sobre las estructuras de control en Python, como condicionales y bucles.'
+    publishDate: 2021-01-02
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'estructuras de control', 'condicionales', 'bucles', 'if', 'else', 'elif', 'for', 'while']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 2 de tu viaje para dominar Python! 🎉
+
+Hoy es un día emocionante porque aprenderás sobre las estructuras de control, que son herramientas fundamentales para darle lógica y dinamismo a tus programas. Con ellas, podrás tomar decisiones y repetir tareas de manera eficiente.
+
+En este día, explorarás:
+
+- **Condicionales**: Aprenderás a usar if, else y elif para que tu programa tome decisiones basadas en condiciones.
+- **Bucles**: Descubrirás cómo repetir tareas con for y while, ahorrando tiempo y esfuerzo.
+- **Control de bucles**: Dominarás el uso de break, continue y pass para manejar el flujo de tus bucles.
+
+Empezemos a descubrir estas poderosas herramientas juntos. ¡Vamos a sumergirnos en el mundo de las estructuras de control! 🚀
+
+### Condicionales:
+
+Los condicionales te permiten ejecutar bloques de código solo si se cumple una condición específica.
+
+#### Condicion `if`
+El condicional `if` se utiliza para ejecutar un bloque de código si la condición es verdadera.
+
+```python
+# Ejemplo de condicional if
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad.") 
+```
+
+#### Condicion `else`
+El condicional `else` se utiliza para ejecutar un bloque de código si la condición del `if` es falsa.
+
+```python
+edad = 18
+
+if edad >= 18:
+    print("Eres mayor de edad.")  # Se ejecuta si la condición es verdadera.
+else:
+    print("Eres menor de edad.")  # Se ejecuta si la condición es falsa.
+```
+
+#### Condicion `elif`
+El condicional `elif` es una combinación de `else` e `if`. Permite verificar múltiples condiciones.
+
+```python
+puntaje = 85
+
+if puntaje >= 90:
+    print("Excelente trabajo.")
+elif puntaje >= 70:
+    print("Buen trabajo.")  # Esta condición se cumple.
+else:
+    print("Necesitas mejorar.")
+```
+
+#### Operador ternario
+Los operadores ternarios son más conocidos en Python como expresiones condicionales. 
+
+***Estructura:***
+```python
+condition_true if condition else condition_false
+```
+***Ejemplo:***
+```python
+# Operador ternario
+edad = 18
+mensaje = "Eres mayor de edad." if edad >= 18 else "Eres menor de edad."
+print(mensaje)
+```
+
+### Bucles:
+Los bucles te permiten repetir un bloque de código varias veces.
+
+#### Bucle `for`
+El bucle `for` se utiliza para iterar sobre una secuencia (como una lista, tupla, diccionario o rango) y ejecutar un bloque de código para cada elemento.
+
+```python
+frutas = ["manzana", "banana", "naranja"]
+for fruta in frutas:
+    print("Me gusta la " + fruta)
+```
+
+#### Bucle `while`
+El bucle `while` se utiliza para ejecutar un bloque de código mientras se cumpla una condición.
+
+```python
+contador = 0
+while contador < 3:
+    print(f"Contador: {contador}")
+    contador += 1  # Incrementa el contador en 1.
+```
+
+### Control de bucles:
+Estas palabras clave te permiten controlar el flujo de los bucles.
+
+- `break`: Detiene el bucle por completo.
+- `continue`: Salta a la siguiente iteración del bucle.
+- `pass`: Es una declaración nula. No hace nada, pero se usa como marcador de posición.
+
+#### Ejemplo de `break`:
+```python
+for i in range(10):
+    if i == 5:
+        break  # Detiene el bucle cuando i es 5.
+    print(i)
+```
+
+#### Ejemplo de `continue`:
+```python
+for i in range(5):
+    if i == 2:
+        continue  # Salta la iteración cuando i es 2.
+    print(i)
+```
+
+#### Ejemplo de `pass`:
+```python
+for i in range(5):
+    if i == 3:
+        pass  # No hace nada cuando i es 3.
+    print(i)
+```
+
+
+¡Felicidades! Has completado el Día 2. Ahora tienes las herramientas para tomar decisiones y repetir tareas en tus programas. ¡Sigue practicando y nos vemos en el Día 3! 🚀✨

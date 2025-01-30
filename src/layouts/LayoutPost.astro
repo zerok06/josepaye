@@ -7,11 +7,11 @@ import '../styles/base.css'
 interface Props {
   shortTitle: string
   description: string
-  tags: string[]
+  keywordsArr: string[]
 }
 
-const { description, shortTitle, tags } = Astro.props
-const keywords = tags.join(', ')
+const { description, shortTitle, keywordsArr } = Astro.props
+const keywords = keywordsArr.join(', ')
 ---
 
 <html lang="es">

@@ -10,6 +10,13 @@ import Anchor from '../components/Anchor.astro'
 
 const posts = await getCollection('publicaciones')
 
+posts.sort((a, b) => {
+  return (
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime()
+  )
+})
+
 const firstPost = posts[0]
 const otherPosts = posts.slice(1)
 ---
@@ -32,7 +39,7 @@ const otherPosts = posts.slice(1)
                     class="w-full h-full sm:h-[480px] object-cover"
                     src={firstPost.data.heroImage}
                     transition:name={firstPost.slug}
-                    transition:animate="slide"
+                    transition:animate="fade"
                     alt={firstPost.data.title}
                   />
                 </div>
@@ -63,12 +70,14 @@ const otherPosts = posts.slice(1)
           {
             otherPosts.map(post => (
               <article class="group">
-                <a href="#">
+                <a href={`/blog/${post.slug}`}>
                   <div class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
                     <div class="">
                       <img
                         class="w-full h-full object-cover"
                         src={post.data.heroImage}
+                        transition:name={post.slug}
+                        transition:animate="fade"
                         alt={post.data.title}
                       />
                     </div>

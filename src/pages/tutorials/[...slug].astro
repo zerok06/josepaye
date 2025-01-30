@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 const { tutorial } = Astro.props
 
 const {
-  data: { title, posts, shortTitle, description, tags, heroImage },
+  data: { title, posts, shortTitle, description, heroImage, keywords },
 } = tutorial
 
 const postsEntry = await getEntries(tutorial.data.posts)
@@ -31,7 +31,11 @@ const postsEntry = await getEntries(tutorial.data.posts)
 const { Content } = await tutorial.render()
 ---
 
-<LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
+<LayoutPost
+  shortTitle={shortTitle}
+  description={description}
+  keywordsArr={keywords}
+>
   <RootLayout>
     <NavBar />
   </RootLayout>

@@ -28,6 +28,8 @@ const posts = await getCollection('publicaciones')
                     <img
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out :"
                       src={post.data.heroImage}
+                      transition:name={post.slug}
+                      transition:animate="fade"
                       alt={post.data.title}
                     />
                   </div>

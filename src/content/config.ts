@@ -26,6 +26,7 @@ const publicaciones = defineCollection({
         timeReadMins: z.number(),
         heroImage: z.string(),
         tags: z.array(z.string()),
+        keywords: z.array(z.string()),
     }),
 });
 
@@ -41,6 +42,7 @@ const tutoriales = defineCollection({
         heroImage: z.string(),
         tags: z.array(z.string()),
         posts: z.array(reference('publicaciones')),
+        keywords: z.array(z.string()),
     }),
 });
 

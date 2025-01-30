@@ -18,6 +18,9 @@ const {
 <meta name="keywords" content={siteData.keywords} />
 <meta name="author" content={siteData.author} />
 
+<!-- Language -->
+<meta http-equiv="Content-Language" content="es" />
+
 <!-- Open Graph -->
 <meta property="og:site_name" content={siteData?.title && title} />
 <meta property="og:title" content={siteData?.title && title} />
@@ -41,5 +44,11 @@ const {
 <meta name="twitter:image" content={image?.src || siteData.image.src} />
 <meta name="twitter:image:alt" content={title} />
 <meta name="twitter:domain" content={import.meta.env.SITE} />
+
+<!-- Compatibility -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Robots -->
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 {robots && <meta name="robots" content="noindex, nofollow" />}

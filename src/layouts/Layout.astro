@@ -5,7 +5,7 @@ import VerifyDarkMode from '../components/VerifyDarkMode.astro'
 import { ClientRouter } from 'astro:transitions'
 ---
 
-<html lang="es">
+<html lang="es" class="">
   <head>
     <title>Jose Paye - Desarrollador Web y Machine Learning</title>
     <meta charset="utf-8" />
@@ -29,6 +29,6 @@ import { ClientRouter } from 'astro:transitions'
   </head>
   <body class="dark:bg-black bg-white antialiased text-light dark:text-white">
     <slot />
-    <VerifyDarkMode />
+    <!-- <VerifyDarkMode /> -->
   </body>
 </html>

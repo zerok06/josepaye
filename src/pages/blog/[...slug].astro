@@ -20,6 +20,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 const {
   data: { title, description, tags, shortTitle, heroImage },
+  slug,
 } = post
 
 const { Content, headings } = await post.render()
@@ -36,6 +37,8 @@ const { Content, headings } = await post.render()
           </h1>
           <img
             src={heroImage}
+            transition:name={slug}
+            transition:animate="slide"
             class="aspect-video md:rounded-3xl rounded-xl"
             alt={title}
           />

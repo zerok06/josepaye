@@ -2,6 +2,7 @@
 import '../styles/base.css'
 import SEO from '../components/SEO.astro'
 import VerifyDarkMode from '../components/VerifyDarkMode.astro'
+import { ClientRouter } from 'astro:transitions'
 ---
 
 <html lang="es">
@@ -23,7 +24,7 @@ import VerifyDarkMode from '../components/VerifyDarkMode.astro'
       href="/assets/logos/logo_positive.svg"
       type="image/x-icon"
     />
-
+    <ClientRouter />
     <SEO />
   </head>
   <body class="dark:bg-black bg-white antialiased text-light dark:text-white">

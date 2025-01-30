@@ -1,0 +1,87 @@
+---
+    title: 'Día 3: Funciones en Python'
+    shortTitle: 'Día 3: Funciones en Python'
+    description: 'En este tercer día de aprendizaje, aprenderás sobre funciones en Python y cómo usarlas para organizar tu código y hacerlo más eficiente.'
+    publishDate: 2021-01-03
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'funciones', 'parámetros', 'argumentos', 'return', 'alcance de variables']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 3 de tu viaje para dominar Python! 🎉
+
+Hoy es un día especialmente emocionante porque aprenderás sobre funciones, una de las herramientas más poderosas en programación. Las funciones te permiten organizar tu código, evitar repetir tareas y hacer que tus programas sean más eficientes y fáciles de entender.
+
+En este día, explorarás:
+
+- Cómo definir funciones usando `def`.
+- Cómo trabajar con parámetros y argumentos para que tus funciones sean más flexibles.
+- Cómo retornar valores con return para obtener resultados útiles.
+- El alcance de las variables, es decir, dónde pueden ser usadas dentro de tu código.
+
+¡Prepárate para sumergirte en el mundo de las funciones y descubrir todo lo que pueden hacer por ti! 🚀
+
+### Definir funciones:
+
+Las funciones se definen usando la palabra clave `def`. Una función es un bloque de código que realiza una tarea específica y puede ser llamada en cualquier parte del programa.
+
+```python
+def saludar():
+    print("¡Hola, bienvenido al Día 3!")
+
+# Llamar a la función
+saludar()  # Imprime: ¡Hola, bienvenido al Día 3!
+```
+
+### Parámetros y argumentos
+Las funciones pueden recibir datos a través de **parámetros**. Cuando llamas a una función, los valores que pasas se llaman **argumentos**.
+
+```python
+def saludar(nombre):
+    print("¡Hola, " + nombre + "!")
+
+# Llamar a la función con un argumento
+saludar("Jose")
+```
+
+### Retorno de valores
+Las funciones pueden devolver valores usando la palabra clave **return**. Esto es útil cuando quieres que la función calcule algo y te dé un resultado.
+
+```python
+def sumar(a, b):
+    return a + b
+
+# Llamar a la función y guardar el resultado
+resultado = sumar(5, 3)
+print(resultado)  # Imprime: 8
+```
+
+### Alcance de las variables
+El **alcance** de una variable se refiere a dónde puede ser usada dentro de tu código. Las variables pueden ser locales (solo dentro de la función) o globales (en todo el programa).
+
+#### Variables locales
+Las variables definidas dentro de una función son locales y solo pueden ser usadas dentro de esa función.
+
+#### Variables globales
+Las variables definidas fuera de una función son globales y pueden ser usadas en cualquier parte del programa.
+
+```python
+# Variable global
+mensaje = "Hola desde el ámbito global."
+
+def mostrar_mensaje():
+    # Variable local
+    mensaje_local = "Hola desde el ámbito local."
+    print(mensaje_local)
+    print(mensaje)  # Accede a la variable global.
+
+mostrar_mensaje()
+# Imprime:
+# Hola desde el ámbito local.
+# Hola desde el ámbito global.
+
+# print(mensaje_local)  # ❌ Error: mensaje_local no está definido fuera de la función.
+```

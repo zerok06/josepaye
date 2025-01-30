@@ -31,6 +31,8 @@ const otherPosts = posts.slice(1)
                   <img
                     class="w-full h-full sm:h-[480px] object-cover"
                     src={firstPost.data.heroImage}
+                    transition:name={firstPost.slug}
+                    transition:animate="slide"
                     alt={firstPost.data.title}
                   />
                 </div>

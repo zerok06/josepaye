@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions'
 import SEOPost from '../components/SEOPost.astro'
 import VerifyDarkMode from '../components/VerifyDarkMode.astro'
 import '../styles/base.css'
@@ -30,6 +31,7 @@ const keywords = tags.join(', ')
       href="/assets/logos/logo_positive.svg"
       type="image/x-icon"
     />
+    <ClientRouter />
 
     <SEOPost title={shortTitle} description={description} keywords={keywords} />
   </head>

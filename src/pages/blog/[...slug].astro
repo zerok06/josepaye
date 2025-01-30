@@ -19,51 +19,52 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const {
-  data: { title, description, tags, shortTitle },
+  data: { title, description, tags, shortTitle, heroImage },
 } = post
 
 const { Content, headings } = await post.render()
-
-const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
 ---
 
 <LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
   <RootLayout>
     <NavBar />
+    <main>
+      <section class="max-w-5xl mx-auto px-3">
+        <div class="py-10">
+          <h1 class="text-4xl text-center font-medium font-roboto_slab mb-6">
+            {title}
+          </h1>
+          <img
+            src={heroImage}
+            class="aspect-video md:rounded-3xl rounded-xl"
+            alt={title}
+          />
+        </div>
+      </section>
+      <WrapperPost>
+        <section class="p-4 border border-gray-500/20 rounded-2xl my-10">
+          <h3 class="text-2xl font-medium font-roboto_slab mb-2">
+            Tabla de contenido
+          </h3>
+          <ul>
+            {
+              headings.map(heading => (
+                <li
+                  class="text-base font-inter py-0.5 text-black/70 dark:text-white/70 hover:text-primary-500 hover:underline transition duration-300 cursor-pointer"
+                  style={{ marginLeft: `${heading.depth - 1}rem` }}
+                >
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <MarkdownContainer>
+          <Content />
+        </MarkdownContainer>
+      </WrapperPost>
+    </main>
   </RootLayout>
-  <main>
-    <section class="max-w-5xl mx-auto px-5">
-      <div class="py-10">
-        <h1 class="text-4xl text-center font-medium font-roboto_slab mb-6">
-          {title}
-        </h1>
-        <img
-          src={image}
-          class="aspect-video md:rounded-3xl rounded-xl"
-          alt={title}
-        />
-      </div>
-    </section>
-    <WrapperPost>
-      <!-- <section class="p-4 border border-gray-500/20 rounded-2xl my-4">
-        <h3 class="text-2xl font-medium font-roboto_slab mb-2">Content</h3>
-        <ul>
-          {
-            headings.map(heading => (
-              <li
-                class="text-sm font-roboto_slab py-0.5 hover:text-primary-500  transition duration-300 cursor-pointer"
-                style={{ marginLeft: `${heading.depth - 1}rem` }}
-              >
-                <a href={`#${heading.slug}`}>{heading.text}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section> -->
-      <MarkdownContainer>
-        <Content />
-      </MarkdownContainer>
-    </WrapperPost>
-  </main>
+
   <Footer />
 </LayoutPost>

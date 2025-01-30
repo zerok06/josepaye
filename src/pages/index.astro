@@ -29,7 +29,7 @@ const otherPosts = posts.slice(1)
               >
                 <div>
                   <img
-                    class="w-full h-full object-cover"
+                    class="w-full h-full sm:h-[480px] object-cover"
                     src={firstPost.data.heroImage}
                     alt={firstPost.data.title}
                   />
@@ -44,12 +44,14 @@ const otherPosts = posts.slice(1)
                       <FormatterDate date={firstPost.data.publishDate} />
                     </p>
                     <h2
-                      class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
+                      class="font-roboto_slab text-xl md:text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
                     >
                       {firstPost.data.title}
                     </h2>
-                    <p class="font-inter text-black/70 dark:text-white/70">
-                      {firstPost.data.description.slice(0, 100)}...
+                    <p
+                      class="font-inter text-black/70 md:text-base text-sm dark:text-white/70"
+                    >
+                      {firstPost.data.description.slice(0, 50)}...
                     </p>
                   </div>
                 </div>

@@ -1,0 +1,267 @@
+---
+    title: 'Dia 1: Introducción a Python y sintaxis básica'
+    shortTitle: 'Dia 1: Introducción a Python y sintaxis básica'
+    description: 'En este primer día, aprenderás los conceptos básicos de Python y la sintaxis fundamental que necesitas para comenzar a programar.'
+    publishDate: 2021-01-01
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 1 de tu viaje para dominar Python! 🎉
+
+Hoy es el comienzo de una emocionante aventura en el mundo de la programación. En este primer día, te sumergirás en los conceptos básicos de Python, un lenguaje poderoso, versátil y amigable para principiantes. Aprenderás a escribir tu primer programa, entenderás la importancia de la sintaxis y descubrirás cómo trabajar con variables, tipos de datos y operadores. 
+
+Este es el primer paso para convertirte en un héroe de la programación. No importa si eres completamente nuevo en esto o si ya tienes algo de experiencia, cada línea de código que escribas te acercará más a dominar Python. ¡Así que prepárate para explorar, experimentar y disfrutar del proceso!
+
+Recuerda:
+- **La práctica es clave**. No temas probar cosas nuevas y cometer errores, ¡es la mejor manera de aprender!
+- **La consistencia es tu aliada**. Dedica tiempo cada día a reforzar lo que aprendes.
+- **Diviértete**. Programar es como resolver puzzles, ¡disfruta del desafío!
+
+¡Vamos a empezar con energía y entusiasmo! 🚀
+
+## Tu primer programa: "Hola mundo!"
+
+```python
+print('Hola mundo!')
+```
+
+Este es el primer programa que casi todos los programadores escriben cuando comienzan con un nuevo lenguaje. ` print() ` es una función que te permite mostrar texto en la consola. En este caso, estamos imprimiendo la frase "Hola mundo!".
+
+## Comentarios en Python
+
+Los comentarios son útiles para documentar tu código y hacerlo más comprensible para ti y para otros.
+
+### **Comentarios de una línea:**
+```python
+# Este es un comentario de una línea
+print('Hola mundo!')  # Este es otro comentario
+```
+
+### **Comentarios multilínea:**
+```python
+"""
+Este es un comentario
+que abarca varias líneas.
+"""
+print('Hola mundo!')
+```
+## Indentación en Python
+La indentación es crucial en Python porque define los bloques de código. A diferencia de otros lenguajes que usan llaves `{}`, Python usa la indentación para estructurar el código.
+
+- **Correcto:**
+```python
+if 5 > 2:
+    print('5 es mayor que 2') # Este código está indentado ✅
+```
+
+- **Incorrecto:**
+```python
+if 5 > 2:
+print('5 es mayor que 2')  # Esto dará un error ❌
+```
+
+## Variables en Python
+Las variables son contenedores que almacenan datos. En Python, no necesitas declarar el tipo de variable, simplemente asigna un valor y Python se encargará del resto.
+
+```python
+nombre = 'Jose'
+edad = 21
+
+print(nombre)  # Jose
+print(edad)    # 21
+```
+
+### Conversión de tipos de datos
+Puedes convertir un tipo de dato en otro utilizando funciones como `int()`, `float()`, `str()`, etc.
+
+```python
+manzanas = str(10)  # '10'
+manzanas = int(10)  # 10
+manzanas = float(10)  # 10.0
+```
+### Obtener el tipo de dato
+Puedes verificar el tipo de dato de una variable utilizando la función `type()`.
+
+```python
+naranja = 10
+print(type(naranja))  # <class 'int'>
+```
+
+### Distinción entre mayúsculas y minúsculas
+Python distingue entre mayúsculas y minúsculas, por lo que `nombre` y `Nombre` son variables diferentes.
+
+```python
+nombre = 'Jose'
+Nombre = 'Maria'
+
+print(x)  # Jose
+print(X)  # Maria
+```
+
+### Declarar múltiples variables
+Puedes declarar múltiples variables en una sola línea.
+
+```python
+frutas, verduras, carnes = 'manzana', 'cebolla', 'pollo'
+
+print(frutas)  # manzana
+print(verduras)  # cebolla
+print(carnes)  # pollo
+```
+
+### Asignar un valor a varias variables
+Puedes asignar el mismo valor a varias variables en una sola línea.
+
+```python
+color1 = color2 = color3 = 'rojo'
+
+print(color1)  # rojo
+print(color2)  # rojo
+print(color3)  # rojo
+```
+
+### Salida por consola
+Puedes mostrar múltiples valores en la consola utilizando comas.
+
+```python
+nombre = 'Jose'
+edad = 21
+
+print(nombre, edad)  # Jose 21
+print(nombre + ' ' + str(edad))  # Jose 21
+```
+
+### Tipos de datos numéricos
+Python tiene varios tipos de datos numéricos, como `int`, `float` y `complex`.
+
+- **int:** Números enteros, como 5, -3, 0.
+```python
+x = 10
+print(type(x))  # <class 'int'>
+```
+- **float:** Números decimales, como 3.14, -0.001, 2.0.
+```python
+y = 10.0
+print(type(y))  # <class 'float'>
+```
+- **complex:** Números complejos, como 1 + 2j, 3 - 4j.
+```python
+z = 1 + 2j
+print(type(z))  # <class 'complex'>
+```
+
+### Cadenas de texto
+Las cadenas de texto se definen entre comillas simples `' '` o dobles `" "`.
+
+```python
+nombre = "Jose"
+mensaje = 'El se llama "Juan"'
+```
+
+### Longitud de una cadena
+Puedes obtener la longitud de una cadena utilizando la función `len()`.
+
+```python
+nombre = 'Jose'
+longitud = len(nombre)
+print(longitud)  # 4
+```
+
+### Comprobar cadenas
+Puedes comprobar si una cadena contiene un cierto texto utilizando la palabra clave `in`.
+
+```python
+msg = 'Esta es una manzana'
+print('manzana' in msg)  # True
+print('manzana' not in msg)  # False
+```
+
+### Valores booleanos
+Python tiene dos valores booleanos: `True` y `False`.
+
+```python
+print(True)  # True
+print(False)  # False
+```
+
+## Operadores
+### Operadores aritméticos
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `+` | Suma | `x + y` |
+| `-` | Resta | `x - y` |
+| `*` | Multiplicación | `x * y` |
+| `/` | División | `x / y` |
+| `%` | Módulo | `x % y` |
+| `**` | Exponente | `x ** y` |
+| `//` | División entera | `x // y` |
+
+### Operadores de asignación
+| Operador | Ejemplo | Equivalente |
+|----------|---------|-------------|
+| `=` | `x = 5` | `x = 5` |
+| `+=` | `x += 3` | `x = x + 3` |
+| `-=` | `x -= 3` | `x = x - 3` |
+| `*=` | `x *= 3` | `x = x * 3` |
+| `/=` | `x /= 3` | `x = x / 3` |
+| `%=` | `x %= 3` | `x = x % 3` |
+| `//=` | `x //= 3` | `x = x // 3` |
+| `**=` | `x **= 3` | `x = x ** 3` |
+
+### Operadores de comparación
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `==` | Igual a | `x == y` |
+| `!=` | Diferente de | `x != y` |
+| `>` | Mayor que | `x > y` |
+
+### Operadores lógicos
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `and` | Devuelve `True` si ambos son `True` | `x < 5 and  x < 10` |
+| `or` | Devuelve `True` si uno de ellos es `True` | `x < 5 or x < 4` |
+| `not` | Invierte el resultado | `not(x < 5 and x < 10)` |
+
+### Operadores de identidad
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `is` | Devuelve `True` si ambas variables son el mismo objeto | `x is y` |
+| `is not` | Devuelve `True` si ambas variables no son el mismo objeto | `x is not y` |
+
+### Operadores de pertenencia
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `in` | Devuelve `True` si un valor está presente en la secuencia | `x in y` |
+| `not in` | Devuelve `True` si un valor no está presente en la secuencia | `x not in y` |
+
+### Operadores de bits
+| Operador | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `&` | AND | `x & y` |
+| `|` | OR | `x | y` |
+| `^` | XOR | `x ^ y` |
+| `~` | NOT | `~x` |
+| `<<` | Desplazamiento a la izquierda | `x << y` |
+| `>>` | Desplazamiento a la derecha | `x >> y` |
+
+### Prioridad de los operadores
+Los operadores se evalúan en un orden específico. Puedes usar paréntesis `()` para forzar el orden de evaluación.
+
+1. `()` Paréntesis
+2. `**` Exponente
+3. `+x`, `-x` Positivo, Negativo
+4. `*`, `/`, `%`, `//` Multiplicación, División, Módulo, División entera
+5. `+`, `-` Suma, Resta
+6. `<<`, `>>` Desplazamiento de bits
+7. `&` AND
+8. `^`, `|` XOR, OR
+9. `<=`, `<`, `>`, `>=` Comparación
+10. `==`, `!=` Igualdad
+11. `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `//=`, `**=` Asignación
+
+
+

@@ -23,13 +23,12 @@ export async function getStaticPaths() {
 const { tutorial } = Astro.props
 
 const {
-  data: { title, posts, shortTitle, description, tags },
+  data: { title, posts, shortTitle, description, tags, heroImage },
 } = tutorial
 
 const postsEntry = await getEntries(tutorial.data.posts)
 
 const { Content } = await tutorial.render()
-const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
 ---
 
 <LayoutPost shortTitle={shortTitle} description={description} tags={tags}>
@@ -43,8 +42,8 @@ const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${titl
           {title}
         </h1>
         <img
-          src={image}
-          class="aspect-video md:rounded-3xl rounded-xl"
+          src={heroImage}
+          class="aspect-[64/17] md:rounded-3xl rounded-xl"
           alt={title}
         />
       </div>
@@ -70,10 +69,7 @@ const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${titl
                   </span>
                 </label>
                 <div class="p-4 hidden peer-checked:block">
-                  <p>
-                    Este es el contenido de la sección 1. Puedes agregar
-                    cualquier cosa aquí, como texto, imágenes, enlaces, etc.
-                  </p>
+                  <p>{post.data.description}</p>
                 </div>
               </div>
             ))

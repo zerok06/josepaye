@@ -30,24 +30,26 @@ const LINKS = [
       <div class="[grid-row:2] md:[grid-row:1]">
         <div class="flex flex-col justify-start gap-2 md:gap-4">
           <h3
-            class="dark:text-white text-primary-900 text-lg md:text-2xl font-medium font-inter md:text-left text-center"
+            class="dark:text-white text-primary-900 text-base sm:text-lg md:text-2xl font-medium font-inter md:text-left text-center"
           >
             I'm Jose Paye
           </h3>
           <h1
-            class="dark:text-white text-primary-900 text-3xl sm:text-4xl md:text-6xl font-bold font-inter md:text-left text-center"
+            class="dark:text-white text-primary-900 text-2xl sm:text-4xl md:text-6xl font-bold font-inter md:text-left text-center"
           >
             Web Developer + Student Aspiring to Machine Learning Engineer
           </h1>
           <p
-            class="dark:text-white/70 text-light/70 mt-2 text-base md:text-lg md:text-left text-center"
+            class="dark:text-white/70 text-light/70 mt-2 text-sm md:text-lg md:text-left text-center"
           >
             Soy un apasionado por la tecnología, enfocado en el desarrollo web y
             en expandir mis conocimientos hacia la inteligencia artificial. Creo
             soluciones innovadoras que combinan creatividad, diseño y
             funcionalidad.
           </p>
-          <div class="flex gap-2 mt-2 md:justify-start justify-center">
+          <div
+            class="flex gap-2 mt-2 md:justify-start flex-wrap justify-center"
+          >
             <a
               href={LINKS[1].href}
               class="rounded-full flex items-center gap-2 bg-button-light dark:bg-none dark:bg-white text-white dark:text-black font-inter font-medium py-2 px-5 hover:opacity-80 transition duration-300"
@@ -93,7 +95,7 @@ const LINKS = [
             />
             <img
               src="/assets/images/portada.png"
-              class="bg-white h-[300px] md:h-[450px] aspect-square rounded-3xl -rotate-3"
+              class="bg-white h-[200px] sm:h-[300px] md:h-[450px] aspect-square rounded-3xl -rotate-3"
               alt=""
             />
           </picture>

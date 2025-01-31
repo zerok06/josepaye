@@ -1,0 +1,85 @@
+---
+    title: 'Día 7: Módulos y paquetes'
+    shortTitle: 'Día 7: Módulos y paquetes'
+    description: 'En este séptimo día de aprendizaje, aprenderás a organizar tu código en módulos y paquetes, y a utilizar algunas de las librerías estándar más populares de Python.'
+    publishDate: 2021-01-07
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['import', 'from ... import', 'módulo', 'paquete', 'math', 'random', 'datetime', 'init.py']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 7 de tu viaje para dominar Python! 🎉
+
+Hoy es un día emocionante porque aprenderás a organizar tu código en módulos y paquetes, lo que te permitirá reutilizar funciones y clases en diferentes proyectos. Además, descubrirás algunas de las librerías estándar más populares, como math, random y datetime, que te ayudarán a realizar tareas comunes de manera más eficiente.
+
+### Importar módulos en Python
+Los módulos son archivos que contienen código Python reutilizable. Puedes importarlos usando `import` o `from ... import`.
+
+#### Importar un módulo completo
+Puedes importar un módulo completo utilizando la palabra clave `import`.
+
+```python
+import math
+print(math.sqrt(16))  # Imprime: 4.0 (raíz cuadrada de 16)
+```
+
+#### Importar funciones específicas
+Puedes importar funciones específicas de un módulo utilizando la palabra clave `from ... import`.
+
+```python
+from random import randint
+print(randint(1, 10))  # Imprime un número aleatorio entre 1 y 10
+```
+
+#### Importar un módulo con un alias
+Puedes importar un módulo con un alias para simplificar su uso.
+
+```python
+import datetime as dt
+print(dt.datetime.now())  # Imprime la fecha y hora actual
+```
+
+### Crear módulos y paquetes en Python
+Puedes crear tus propios módulos simplemente guardando funciones en un archivo `.py` y luego importándolo.
+
+#### Ejemplo de módulo
+Crea un archivo llamado `operaciones.py` con las siguientes funciones:
+
+```python
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+```
+
+#### Importar un módulo personalizado
+Puedes importar tu módulo personalizado de la misma manera que importas los módulos estándar.
+
+```python
+import operaciones
+print(operaciones.suma(5, 3))  # Imprime: 8
+```
+
+#### Crear un paquete
+Un paquete es una carpeta que contiene varios módulos relacionados. Para crear un paquete, simplemente crea una carpeta con un archivo `__init__.py` dentro.
+
+```plaintext
+mi_paquete/
+    __init__.py
+    modulo1.py
+    modulo2.py
+```
+
+#### Importar desde un paquete
+
+```python
+from mi_paquete import modulo1
+print(modulo1.funcion())
+```
+
+¡Felicidades! Has completado el Día 7. Ahora sabes cómo organizar tu código en módulos y paquetes, y cómo usar algunas de las librerías estándar más útiles. ¡Nos vemos en el Día 8! 🚀✨
+

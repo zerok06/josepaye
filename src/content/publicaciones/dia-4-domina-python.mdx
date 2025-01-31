@@ -1,0 +1,115 @@
+---
+    title: 'Día 4: Listas y tuplas'
+    shortTitle: 'Día 4: Listas y tuplas'
+    description: 'En este cuarto día de aprendizaje, aprenderás sobre listas y tuplas en Python, dos estructuras de datos esenciales.'
+    publishDate: 2021-01-04
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'listas', 'tuplas', 'slicing', 'estructuras de datos']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 4 de tu viaje para dominar Python! 🎉
+
+Hoy es un día clave porque aprenderás sobre listas y tuplas, dos estructuras de datos esenciales en Python. Las listas te permiten almacenar y manipular colecciones de datos de manera flexible, mientras que las tuplas son ideales para datos inmutables. Además, descubrirás el slicing, una técnica poderosa para trabajar con subconjuntos de estas estructuras.
+
+### Listas en Python
+Las listas son colecciones ordenadas de elementos que pueden ser modificadas.
+
+#### Creación de listas
+Puedes crear una lista utilizando corchetes `[]` y separando los elementos con comas.
+
+```python
+numeros = [1, 2, 3, 4, 5]
+nombres = ['Alice', 'Bob', 'Charlie', 'David']
+```
+
+#### Acceso a elementos
+Puedes acceder a los elementos de una lista utilizando su índice, que comienza en 0.
+
+```python
+print(numeros[0])  # Imprime el primer elemento de la lista
+print(nombres[2])  # Imprime el tercer elemento de la lista
+```
+
+#### Modificación de elementos
+Puedes modificar los elementos de una lista asignando un nuevo valor a un índice específico.
+
+```python
+nombres[1] = 'Barbara'
+print(nombres)  # Imprime la lista actualizada
+```
+
+#### Longitud de una lista
+Puedes obtener la longitud de una lista utilizando la función `len()`.
+
+```python
+print(len(numeros))  # Imprime la cantidad de elementos en la lista
+```
+
+#### Metodos de listas
+Las listas en Python tienen varios métodos útiles para agregar, eliminar y manipular elementos.
+
+| Método | Ejemplo | Descripción |
+| ------ | ------- | ----------- |
+| `append()` | `nombres.append('Eve')` | Agrega un elemento al final de la lista. |
+| `insert()` | `nombres.insert(1, 'Alice')` | Inserta un elemento en una posición específica. |
+| `remove()` | `nombres.remove('Bob')` | Elimina el primer elemento con el valor dado. |
+| `pop()` | `nombres.pop()` | Elimina y devuelve el último elemento de la lista. |
+| `clear()` | `nombres.clear()` | Elimina todos los elementos de la lista. |
+
+### Tuplas en Python
+Las tuplas son colecciones ordenadas e inmutables de elementos.
+
+#### Creación de tuplas
+Puedes crear una tupla utilizando paréntesis `()` y separando los elementos con comas.
+
+```python
+coordenadas = (3, 4)
+colores = ('rojo', 'verde', 'azul')
+```
+
+#### Acceso a elementos
+Puedes acceder a los elementos de una tupla utilizando su índice, al igual que con las listas.
+
+```python
+print(coordenadas[0])  # Imprime el primer elemento de la tupla
+print(colores[2])  # Imprime el tercer elemento de la tupla
+```
+
+#### Desempaquetado de tuplas
+Puedes asignar los elementos de una tupla a variables individuales en una sola línea.
+
+```python
+x, y = coordenadas
+print(x, y)  # Imprime los valores de x e y
+```
+
+#### Inmutabilidad
+Las tuplas son inmutables, lo que significa que no puedes modificar sus elementos una vez creadas.
+
+```python
+# Esto generará un error ❌
+colores[0] = 'amarillo'
+```
+
+### Slicing en Python
+El slicing te permite acceder a subconjuntos de una lista o tupla utilizando la notación `[inicio:fin]`.
+
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sublista = numeros[2:5]  # Obtiene los elementos desde el índice 2 hasta el 4
+print(sublista)  # Imprime [3, 4, 5]
+```
+#### Slicing con saltos
+Puedes especificar un tercer número en la notación de slicing para obtener elementos con un salto específico utilizando la notacion `[inicio:fin:paso]`.
+
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sublista = numeros[1:9:2]  # Obtiene los elementos desde el índice 1 hasta el 8 con un salto de 2
+print(sublista)  # Imprime [2, 4, 6, 8]
+```
+
+¡Felicidades! Has completado el Día 4. Ahora sabes cómo trabajar con listas y tuplas, y cómo manipular sus elementos. ¡Nos vemos en el Día 5! 🚀✨

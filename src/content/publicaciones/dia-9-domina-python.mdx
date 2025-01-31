@@ -1,0 +1,67 @@
+---
+    title: 'Día 9: Manejo de excepciones y errores'
+    shortTitle: 'Día 9: Manejo de excepciones y errores'
+    description: 'Aprenderemos a manejar excepciones y errores en Python para evitar errores y mejorar la calidad del código.'
+    publishDate: 2021-01-09
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'excepciones', 'errores', 'manejo de excepciones', 'manejo de errores']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 9 de tu viaje para dominar Python! 🎉
+
+Hoy es un día importante porque aprenderás a manejar errores y excepciones en tus programas. Esto te permitirá anticipar problemas, como divisiones por cero o entradas inválidas, y asegurarte de que tu programa siga funcionando sin interrupciones. Además, descubrirás cómo lanzar tus propias excepciones para controlar el flujo de tu código.
+
+## Tipos de errores
+
+| Tipos de errores | Descripción |
+| --- | --- |
+| `ZeroDivisionError` | Se produce cuando se intenta dividir un número por cero. |
+| `IndexError` | Se produce cuando se intenta acceder a un elemento de una lista fuera de rango. |
+| `KeyError` | Se produce cuando se intenta acceder a una clave inexistente en un diccionario. |
+| `ValueError` | Se produce cuando se intenta convertir un valor no valido a un tipo de dato. |
+| `TypeError` | Se produce cuando se intenta realizar una operación de un tipo incompatible. |
+| `NameError` | Se produce cuando se intenta acceder a una variable no declarada. |
+
+## Capturar excepciones
+
+Para manejar excepciones, usamos bloques `try`, `except`, `else` y `finally`.
+
+- **Bloque try**: Contiene el código que podría generar una excepción.
+- **Bloque except**: Captura y maneja la excepción.
+- **Bloque else**: Se ejecuta si no se produce ninguna excepción.
+- **Bloque finally**: Siempre se ejecuta, independientemente de si hubo una excepción.
+
+```python
+try:
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Error: No puedes dividir por cero.")
+else:
+    print(f"El resultado es: {resultado}")
+finally:
+    print("Este bloque siempre se ejecuta.")
+```
+
+## Lanzar excepciones
+
+Para lanzar una excepción personalizada, usamos la palabra clave `raise`. Por ejemplo:
+
+```python
+def dividir(a, b):
+    if b == 0:
+        raise ZeroDivisionError("No puedes dividir por cero.")
+    return a / b
+
+try:
+    resultado = dividir(10, 0)
+else:
+    print(f"El resultado es: {resultado}")
+except ZeroDivisionError as e:
+    print(f"Error: {e}")
+```
+
+¡Felicidades! Has completado el Día 9. Ahora sabes cómo manejar errores y excepciones en Python, lo que te permitirá escribir programas más robustos y confiables. ¡Nos vemos en el Día 10! 🚀✨

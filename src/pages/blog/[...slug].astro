@@ -57,10 +57,12 @@ const { Content, headings } = await post.render()
             {
               headings.map(heading => (
                 <li
-                  class="text-base font-inter py-0.5 text-black/70 dark:text-white/70 hover:text-primary-500 hover:underline transition duration-300 cursor-pointer"
+                  class="text-base font-inter py-0.5 text-black/70 w-full dark:text-white/70 hover:text-primary-500 hover:underline transition duration-300 cursor-pointer"
                   style={{ marginLeft: `${heading.depth - 1}rem` }}
                 >
-                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                  <a href={`#${heading.slug}`} class="w-full">
+                    {heading.text}
+                  </a>
                 </li>
               ))
             }

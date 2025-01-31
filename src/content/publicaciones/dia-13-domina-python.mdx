@@ -1,0 +1,89 @@
+---
+    title: 'Día 13: Trabajo con fechas y horas'
+    shortTitle: 'Día 13: Trabajo con fechas y horas'
+    description: 'Aprenderemos a trabajar con fechas y horas en Python, lo que te permitirá manejar datos temporales en tus programas.'
+    publishDate: 2021-01-13
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'fechas', 'horas', 'manejo de fechas', 'manejo de horas']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 13 de tu viaje para dominar Python! 🎉
+
+Hoy es un día importante porque aprenderás a trabajar con fechas y horas, lo que te permitirá manejar datos temporales en tus programas. Ya sea que necesites calcular la diferencia entre dos fechas, formatear una fecha o realizar operaciones con horas, el módulo datetime será tu mejor aliado.
+
+## Módulo `datetime`
+
+El módulo `datetime` te permite trabajar con fechas y horas en Python. Puedes crear objetos de fecha y hora, obtener información sobre ellas y realizar operaciones con ellas.
+
+### `date`: Trabaja con fechas (año, mes, día).
+```python
+from datetime import date
+hoy = date.today()
+print(hoy)  # Imprime la fecha actual, por ejemplo: 2023-10-05
+```
+
+### `time`: Trabaja con horas (hora, minutos, segundos).
+```python
+from datetime import time
+hora_actual = time.now()
+print(hora_actual)  # Imprime la hora actual, por ejemplo: 12:34:56
+```
+
+### `datetime`: Trabaja con fechas y horas.
+```python
+from datetime import datetime
+fecha_hora_actual = datetime.now()
+print(fecha_hora_actual)  # Imprime la fecha y hora actual, por ejemplo: 2023-10-05 12:34:56
+```
+
+## Formateo de fechas y horas
+
+El módulo `datetime` te permite formatear fechas y horas para que sean legibles y entendibles. Por ejemplo:
+
+### `strftime()`: Formatea una fecha o hora en un formato específico.
+```python
+ahora = datetime.now()
+formato = ahora.strftime("%d/%m/%Y %H:%M:%S")
+print(formato)  # Imprime: 05/10/2023 14:30:45
+```
+
+### `strptime()`: Convierte una cadena de texto en una fecha o hora.
+```python
+cadena = "05/10/2023 14:30:45"
+fecha = datetime.strptime(cadena, "%d/%m/%Y %H:%M:%S")
+print(fecha)  # Imprime: 2023-10-05 14:30:45
+```
+
+## Operaciones con fechas y horas
+
+El módulo `datetime` te permite realizar operaciones con fechas y horas. Por ejemplo:
+
+### `timedelta`: Representa una diferencia entre dos fechas o horas.
+```python
+from datetime import timedelta
+
+hoy = datetime.now()
+mañana = hoy + timedelta(days=1)
+ayer = hoy - timedelta(days=1)
+
+print("Hoy:", hoy)
+print("Mañana:", mañana)
+print("Ayer:", ayer)
+```
+
+### Comparar fechas y horas
+```python
+fecha1 = datetime(2023, 10, 5)
+fecha2 = datetime(2023, 10, 10)
+
+if fecha1 < fecha2:
+    print("fecha1 es anterior a fecha2")
+else:
+    print("fecha1 es posterior a fecha2")
+```
+
+¡Felicidades! Has completado el Día 13. Ahora sabes cómo trabajar con fechas y horas en Python, lo que te permitirá manejar datos temporales en tus programas. ¡Nos vemos en el Día 14! 🚀✨

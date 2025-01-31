@@ -1,0 +1,78 @@
+---
+    title: 'Día 6: Manejo de archivos'
+    shortTitle: 'Día 6: Manejo de archivos'
+    description: 'En este sexto día de aprendizaje, aprenderás a leer y escribir archivos en Python, una habilidad esencial para trabajar con datos.'
+    publishDate: 2021-01-06
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'archivos', 'leer', 'escribir', 'manejo de errores', 'persistencia de datos']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 6 de tu viaje para dominar Python! 🎉
+
+Hoy es un día importante porque aprenderás a trabajar con archivos, lo que te permitirá guardar y recuperar datos de manera persistente. Ya sea que necesites leer un archivo de texto, escribir datos en un archivo o manejar errores, este día te dará las herramientas necesarias para hacerlo.
+
+### Abrir y cerrar archivos en Python
+Para trabajar con archivos, primero debes abrirlos usando la función `open()` y luego cerrarlos con `close()`.
+
+#### Abrir un archivo
+Puedes abrir un archivo en modo de lectura (`'r'`), escritura (`'w'`) o apéndice (`'a'`). Si el archivo no existe, se creará automáticamente en modo de escritura.
+
+```python
+archivo = open('datos.txt', 'r')
+```
+
+#### Cerrar un archivo
+Es importante cerrar un archivo después de terminar de trabajar con él para liberar recursos.
+
+```python
+archivo.close()
+```
+
+#### Leer archivos en Python
+Puedes leer el contenido de un archivo utilizando los métodos `read()`, `readline()` o `readlines()`.
+- `read()`: Lee todo el contenido del archivo.
+- `readline()`: Lee una línea del archivo.
+- `readlines()`: Lee todas las líneas del archivo y las devuelve como una lista.
+
+```python
+archivo = open('datos.txt', 'r')
+contenido = archivo.read()
+print(contenido)
+archivo.close()
+```
+
+#### Escribir archivos en Python
+Puedes escribir en un archivo utilizando el método `write()`.
+
+```python
+archivo = open('datos.txt', 'w')
+archivo.write('¡Hola, mundo!')
+archivo.close()
+```
+
+### Manejo de errores al trabajar con archivos
+Es importante manejar los errores al trabajar con archivos para evitar que tu programa se bloquee si algo sale mal.
+
+#### Manejo de errores con `try` y `except`
+Puedes usar bloques `try` y `except` para manejar errores de manera elegante.
+
+```python
+try:
+    archivo = open('datos.txt', 'r')
+    contenido = archivo.read()
+    print(contenido)
+    archivo.close()
+except FileNotFoundError:
+    print('El archivo no existe.')
+finally:
+    archivo.close()
+```
+
+¡Felicidades! Has completado el Día 6. Ahora sabes cómo manejar archivos en Python, lo que te permitirá trabajar con datos persistentes y hacer que tus programas sean más útiles. ¡Nos vemos en el Día 7! 🚀✨
+
+
+

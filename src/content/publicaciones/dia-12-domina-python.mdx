@@ -1,0 +1,63 @@
+---
+    title: 'Día 12: Decoradores y funciones avanzadas'
+    shortTitle: 'Día 12: Decoradores y funciones avanzadas'
+    description: 'Aprenderemos a usar decoradores y funciones avanzadas en Python para mejorar la estructura y la eficiencia de nuestro código.'
+    publishDate: 2021-01-12
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'decoradores', 'funciones avanzadas', 'manejo de decoradores', 'manejo de funciones avanzadas']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 12 de tu viaje para dominar Python! 🎉
+
+Hoy es un día emocionante porque aprenderás sobre decoradores y funciones avanzadas, herramientas que te permitirán modificar y extender el comportamiento de tus funciones de manera elegante. Además, descubrirás las funciones lambda, que son perfectas para tareas rápidas y sencillas.
+
+## Funciones como objetos
+
+En Python, las funciones son objetos, lo que significa que puedes crear funciones como variables y pasarlas como argumentos a otras funciones. Esto te permite crear funciones dinámicas y flexibles.
+
+### Ejemplo de funciones como objetos
+```python
+def saludar(nombre):
+    def mensaje():
+        return f"Hola, {nombre}!"
+    return mensaje()
+
+print(saludar("Jose"))  # Imprime: Hola, Jose!
+```
+
+### Decoradores
+Los decoradores son funciones que se usan para modificar el comportamiento de otras funciones. Puedes crearlos usando la sintaxis `def` con la palabra clave `@` en lugar de `return`.
+
+#### Ejemplo de decorador
+```python
+def decorador(funcion):
+    def envoltura(*args, **kwargs):
+        print("Antes de llamar a la función")
+        resultado = funcion(*args, **kwargs)
+        print("Después de llamar a la función")
+        return resultado
+    return envoltura
+
+@decorador
+def suma(a, b):
+    return a + b
+
+resultado = suma(5, 3)
+print(resultado)  # Imprime: 8
+```
+
+### Funciones lambda
+Las funciones lambda son funciones anonimas que se crean usando la sintaxis `lambda`. Son perfectas para tareas pequeñas y sencillas. Por ejemplo:
+
+```python
+sumar = lambda x, y: x + y
+
+print(sumar(5, 3))  # Imprime: 8
+```
+
+¡Felicidades! Has completado el Día 12. Ahora sabes cómo usar decoradores y funciones avanzadas para modificar y extender el comportamiento de tus funciones, y cómo trabajar con funciones lambda para tareas rápidas. ¡Nos vemos en el Día 13! 🚀✨
+

@@ -1,0 +1,40 @@
+---
+    title: 'Día 10: Expresiones regulares (regex)'
+    shortTitle: 'Día 10: Expresiones regulares (regex)'
+    description: 'Aprenderemos a usar expresiones regulares en Python para realizar busquedas y manipulaciones de cadenas de texto.'
+    publishDate: 2021-01-10
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'excepciones', 'errores', 'manejo de excepciones', 'manejo de errores']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 10 de tu viaje para dominar Python! 🎉
+
+Hoy es un día emocionante porque aprenderás a usar expresiones regulares (regex), una herramienta esencial para trabajar con texto. Ya sea que necesites validar un correo electrónico, extraer números de un texto o reemplazar patrones específicos, las regex te permitirán hacerlo de manera eficiente y precisa.
+
+## Introducción a regex
+
+Las expresiones regulares (regex) son secuencias de caracteres que definen un patrón de búsqueda. En Python, se usan con el módulo `re`.
+
+```python
+import re
+```
+
+## Aplicacaciones comunes de regex
+
+- **Búsqueda**: Encontrar un patrón en una cadena.
+- **Coincidencia**: Verificar si un patrón coincide con el inicio de una cadena.
+- **Sustitución**: Reemplazar un patrón en una cadena.
+
+## Metodos de regex
+
+| Método | Ejemplo | Descripción |
+| --- | --- | --- |
+| `findall()` | `re.findall(r'\d+', '123abc456def789')` | Encuentra todas las ocurrencias de un patrón en una cadena. |
+| `search()` | `re.search(r'\d+', 'abc123')` | Encuentra la primera ocurrencia de un patrón en una cadena. |
+| `sub()` | `re.sub(r'\d+', 'X', '123abc456def789')` | Reemplaza todas las ocurrencias de un patrón en una cadena. |
+| `split()` | `re.split(r'\s+', 'a b c')` | Divide una cadena en una lista de substrings basados en un patrón. |
+| `match()` | `re.match(r'^\d+', '123abc456def789')` | Encuentra la primera ocurrencia de un patrón al inicio de una cadena. |

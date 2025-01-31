@@ -1,0 +1,81 @@
+---
+    title: 'Día 11: Iteradores y generadores'
+    shortTitle: 'Día 11: Iteradores y generadores'
+    description: 'Aprenderemos a usar iteradores y generadores en Python para trabajar con secuencias de datos de manera eficiente.'
+    publishDate: 2021-01-11
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'iteradores', 'generadores', 'manejo de iteradores', 'manejo de generadores']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 11 de tu viaje para dominar Python! 🎉
+
+Hoy es un día emocionante porque aprenderás sobre iteradores y generadores, herramientas que te permiten manejar secuencias de datos de manera eficiente. Los iteradores te ayudarán a recorrer colecciones, mientras que los generadores te permitirán crear secuencias que generan valores bajo demanda, ahorrando memoria y tiempo.
+
+## Aplicaciones comunes de iteradores y generadores
+
+- **Iteración**: Recorrer una secuencia de datos.
+- **Generación**: Crear secuencias de datos bajo demanda.
+
+## Iteradores y generadores en Python
+
+### Iteradores
+Los iteradores son objetos que permiten recorrer secuencias de datos. Puedes crearlos usando la sintaxis `for` o la función `iter()`.
+
+#### Ejemplo de iterador
+```python
+numeros = [1, 2, 3, 4, 5]
+iterador = iter(numeros)  # Convierte la lista en un iterador.
+
+print(next(iterador))  # Imprime: 1
+print(next(iterador))  # Imprime: 2
+print(next(iterador))  # Imprime: 3
+```
+
+#### Iterador infinito
+
+```python
+def numeros_infinitos():
+    num = 1
+    while True:
+        yield num
+        num += 1
+
+iterador = numeros_infinitos()
+print(next(iterador))  # Imprime: 1
+print(next(iterador))  # Imprime: 2
+print(next(iterador))  # Imprime: 3
+```
+
+### Generadores
+Los generadores son funciones que devuelven un iterador. Puedes crearlos usando la sintaxis `def` con la palabra clave `yield` en lugar de `return`.
+
+#### Ejemplo de generador
+```python
+def numeros_pares():
+    for num in range(2, 11, 2):
+        yield num
+
+iterador = numeros_pares()
+print(next(iterador))  # Imprime: 2
+print(next(iterador))  # Imprime: 4
+print(next(iterador))  # Imprime: 6
+```
+
+### Comprensión de listas y generadores
+Los generadores pueden ser usados en comprensiones de listas para crear listas de manera eficiente.
+
+#### Ejemplo de comprensión de listas
+```python
+numeros = [1, 2, 3, 4, 5]
+
+cuadrados = [num ** 2 for num in numeros]
+
+print(cuadrados)  # Imprime: [1, 4, 9, 16, 25]
+```
+
+¡Felicidades! Has completado el Día 11. Ahora sabes cómo usar iteradores y generadores para manejar secuencias de datos de manera eficiente. ¡Nos vemos en el Día 12! 🚀✨
+

@@ -1,0 +1,164 @@
+---
+    title: 'Día 8: Programación orientada a objetos (POO)'
+    shortTitle: 'Día 8: Programación orientada a objetos (POO)'
+    description: 'Aprenderemos la programación orientada a objetos (POO) en Python y sus beneficios para la eficiencia y mantenibilidad del código.'
+    publishDate: 2021-01-08
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'POO', 'clases', 'objetos', 'herencia', 'polimorfismo']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 8 de tu viaje para dominar Python! 🎉
+
+Hoy es un día crucial porque aprenderás los fundamentos de la Programación Orientada a Objetos (POO). Descubrirás cómo crear clases, definir atributos y métodos, y trabajar con conceptos avanzados como herencia y polimorfismo. Además, practicarás creando clases y objetos para modelar problemas del mundo real.
+
+## Clases y objetos en Python
+
+En Python, las clases son plantillas para crear objetos. Un objeto es una instancia de una clase y puede tener sus propios atributos y métodos.
+
+### Definición de una clase
+
+```python
+class Coche:
+    # Atributos (características del coche)
+    marca = "Toyota"
+    modelo = "Corolla"
+    año = 2020
+
+    # Métodos (acciones que puede realizar el coche)
+    def arrancar(self):
+        print("El coche ha arrancado.")
+
+    def detener(self):
+        print("El coche se ha detenido.")
+```
+### Creación de objetos
+
+```python
+mi_coche = Coche()  # Crear un objeto de la clase Coche.
+print(mi_coche.marca)  # Imprime: Toyota
+mi_coche.arrancar()    # Imprime: El coche ha arrancado.
+mi_coche.detener()     # Imprime: El coche se ha detenido.
+```
+
+### Constructores (`__init__`)
+
+Los constructores (`__init__`) son métodos especiales que se ejecutan cuando se crea un objeto de una clase. Permite inicializar los atributos de la clase con valores predeterminados.
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+
+    def arrancar(self):
+        print(f"El {self.marca} {self.modelo} ha arrancado.")
+
+    def detener(self):
+        print(f"El {self.marca} {self.modelo} se ha detenido.")
+```
+
+### Herencia de clases
+
+Las clases pueden heredar de otras clases. En este caso, la clase `Coche` hereda de la clase `Vehiculo`.
+
+```python
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def arrancar(self):
+        print(f"El {self.marca} {self.modelo} ha arrancado.")
+
+    def detener(self):
+        print(f"El {self.marca} {self.modelo} se ha detenido.")
+
+class Coche(Vehiculo):  # Coche hereda de Vehiculo.
+    def __init__(self, marca, modelo, num_puertas):
+        super().__init__(marca, modelo)
+        self.num_puertas = num_puertas
+
+    def abrir_puertas(self):
+        print(f"El {self.marca} {self.modelo} tiene {self.num_puertas} puertas.")
+
+mi_coche = Coche("Toyota", "Corolla", 4)
+mi_coche.arrancar()  # Imprime: El Toyota Corolla ha arrancado.
+mi_coche.abrir_puertas()  # Imprime: El Toyota Corolla tiene 4 puertas.
+```
+### Polimorfismo
+
+En Python, las clases pueden tener diferentes métodos para la misma acción. Esto se llama polimorfismo.
+
+```python
+class Vehiculo:
+    def arrancar(self):
+        print("El vehículo ha arrancado.")
+
+class Coche(Vehiculo):
+    def arrancar(self):
+        print("El coche ha arrancado.")
+
+mi_coche = Coche()
+mi_coche.arrancar()  # Imprime: El coche ha arrancado.
+mi_vehiculo = Vehiculo()
+mi_vehiculo.arrancar()  # Imprime: El vehículo ha arrancado.
+```
+
+## Metodos estáticos
+
+Los métodos estáticos son métodos que no dependen de la instancia del objeto. En otras palabras, son métodos que se pueden llamar sin crear un objeto de la clase.
+
+```python
+class Coche:
+    @staticmethod
+    def arrancar():
+        print("El coche ha arrancado.")
+
+Coche.arrancar()  # Imprime: El coche ha arrancado.
+```
+## Métodos especiales
+
+Los métodos especiales son métodos que se llaman automáticamente en ciertas situaciones. Por ejemplo, el metodo `__init__` se llama cuando se crea un objeto de la clase.
+
+### `__str__`
+
+El metodo `__str__` se llama cuando se imprime un objeto de la clase. Por ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+
+    def __str__(self):
+        return f"{self.marca} {self.modelo} ({self.año})"
+
+mi_coche = Coche("Toyota", "Corolla", 2020)
+print(mi_coche)  # Imprime: Toyota Corolla (2020)
+```
+
+### `__len__`
+
+El metodo `__len__` se llama cuando se llama a la longitud de un objeto de la clase. Por ejemplo:
+
+```python
+class Coche:
+    def __init__(self, marca, modelo, num_puertas):
+        self.marca = marca
+        self.modelo = modelo
+        self.num_puertas = num_puertas
+
+    def __len__(self):
+        return self.num_puertas
+
+mi_coche = Coche("Toyota", "Corolla", 4)
+print(len(mi_coche))  # Imprime: 4
+```
+
+¡Felicidades! Has completado el Día 8. Ahora sabes cómo trabajar con clases, objetos, herencia y polimorfismo en Python. ¡Nos vemos en el Día 9! 🚀✨

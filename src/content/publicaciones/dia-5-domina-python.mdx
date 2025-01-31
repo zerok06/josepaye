@@ -1,0 +1,116 @@
+---
+    title: 'Día 5: Diccionarios y conjuntos'
+    shortTitle: 'Día 5: Diccionarios y conjuntos'
+    description: 'En este quinto día de aprendizaje, aprenderás sobre diccionarios y conjuntos en Python, dos estructuras de datos poderosas.'
+    publishDate: 2021-01-05
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/Dia 1: Introducción a Python y sintaxis básica.png'
+    tags: ['coding', 'python']
+    keywords: ['Python', 'diccionarios', 'conjuntos', 'estructuras de datos', 'pares clave-valor', 'elementos únicos']
+---
+
+## Bienvenida
+
+¡Bienvenido al Día 5 de tu viaje para dominar Python! 🎉
+
+Hoy explorarás dos estructuras de datos increíblemente útiles: diccionarios y conjuntos. Los diccionarios te permiten almacenar información en pares clave-valor, como un directorio telefónico, mientras que los conjuntos son perfectos para trabajar con colecciones de elementos únicos, como eliminar duplicados de una lista.
+
+### Diccionarios en Python
+Los diccionarios son colecciones no ordenadas de pares clave-valor. Cada clave es única y se asocia a un valor.
+
+#### Creación de diccionarios
+Puedes crear un diccionario utilizando llaves `{}` y separando los pares clave-valor con comas.
+
+```python
+# Creación de un diccionario
+persona = {
+    'nombre': 'Alice',
+    'edad': 25,
+    'ciudad': 'Madrid'
+}
+```
+
+#### Acceso a elementos
+Puedes acceder a los valores de un diccionario utilizando su clave.
+
+```python
+print(persona['nombre'])  # Imprime el valor asociado a la clave 'nombre'
+print(persona['edad'])    # Imprime el valor asociado a la clave 'edad'
+```
+
+#### Modificación de elementos
+Puedes modificar los valores de un diccionario asignando un nuevo valor a una clave específica.
+
+```python
+persona['edad'] = 26
+print(persona)  # Imprime el diccionario actualizado
+```
+
+#### Eliminación de elementos
+Puedes eliminar un par clave-valor de un diccionario utilizando la palabra clave `del`.
+
+```python
+del persona['ciudad']
+print(persona)  # Imprime el diccionario sin la clave 'ciudad'
+```
+
+#### Métodos de diccionarios
+Los diccionarios en Python tienen varios métodos útiles para agregar, eliminar y manipular elementos.
+
+| Método | Ejemplo | Descripción |
+| ------ | ------- | ----------- |
+| `keys()` | `persona.keys()` | Devuelve una lista con las claves del diccionario. |
+| `values()` | `persona.values()` | Devuelve una lista con los valores del diccionario. |
+| `items()` | `persona.items()` | Devuelve una lista de tuplas con los pares clave-valor. |
+| `get()` | `persona.get('nombre')` | Devuelve el valor asociado a una clave. |
+
+### Conjuntos en Python
+Los conjuntos son colecciones no ordenadas de elementos únicos.
+
+#### Creación de conjuntos
+Puedes crear un conjunto utilizando llaves `{}` o la función `set()`.
+
+```python
+# Creación de un conjunto
+colores = {'rojo', 'verde', 'azul'}
+numeros = set([1, 2, 3, 4, 5])
+```
+
+#### Acceso a elementos
+Debido a que los conjuntos no están ordenados, no puedes acceder a elementos por índice. Sin embargo, puedes comprobar si un elemento está presente en un conjunto.
+
+```python
+print('rojo' in colores)  # True
+print('amarillo' in colores)  # False
+```
+
+#### Eliminación de elementos
+Puedes eliminar un elemento de un conjunto utilizando el método `remove()`.
+
+```python
+colores.remove('verde')
+print(colores)  # Imprime el conjunto sin el elemento 'verde'
+```
+
+#### Eliminación de elementos duplicados
+Los conjuntos son útiles para eliminar elementos duplicados de una lista.
+
+```python
+numeros = [1, 2, 3, 4, 2, 3, 5]
+numeros_unicos = set(numeros)
+print(numeros_unicos)  # {1, 2, 3, 4, 5}
+```
+
+#### Métodos de conjuntos
+Los conjuntos en Python tienen varios métodos útiles para agregar, eliminar y manipular elementos.
+
+| Método | Ejemplo | Descripción |
+| ------ | ------- | ----------- |
+| `add()` | `colores.add('amarillo')` | Agrega un elemento al conjunto. |
+| `remove()` | `colores.remove('verde')` | Elimina un elemento del conjunto. |
+| `clear()` | `colores.clear()` | Elimina todos los elementos del conjunto. |
+| `union()` | `colores.union(numeros)` | Devuelve un nuevo conjunto con todos los elementos de ambos conjuntos. |
+| `intersection()` | `colores.intersection(numeros)` | Devuelve un nuevo conjunto con los elementos comunes a ambos conjuntos. |
+| `difference()` | `colores.difference(numeros)` | Devuelve un nuevo conjunto con los elementos que están en el primer conjunto pero no en el segundo. |
+
+¡Felicidades! Has completado el Día 5. Ahora sabes cómo trabajar con diccionarios y conjuntos, lo que te permitirá manejar datos de manera más eficiente. ¡Nos vemos en el Día 6! 🚀✨

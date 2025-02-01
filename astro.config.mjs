@@ -16,5 +16,9 @@ export default defineConfig({
     {
       applyBaseStyles: false
     }
-  ), react(), mdx(), sitemap()],
+  ), react(), mdx(), sitemap(
+    {
+      lastmod: new Date(),
+    }
+  )],
 });

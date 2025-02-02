@@ -19,6 +19,7 @@ export default defineConfig({
   ), react(), mdx(), sitemap(
     {
       lastmod: new Date(),
+      entryLimit: 50000,
     }
   )],
 });

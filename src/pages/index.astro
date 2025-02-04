@@ -28,7 +28,7 @@ const otherPosts = posts.slice(1, 9)
       <Wrapper>
         <section class="grid grid-cols-1 md:grid-cols-2 gap-10 py-10">
           <article class="col-span-1 md:col-span-2 group">
-            <a href={`/blog/${firstPost.slug}`}>
+            <a href={`/post/${firstPost.slug}`}>
               <div
                 class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
               >
@@ -68,7 +68,7 @@ const otherPosts = posts.slice(1, 9)
           {
             otherPosts.map(post => (
               <article class="group">
-                <a href={`/blog/${post.slug}`}>
+                <a href={`/post/${post.slug}`}>
                   <div class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
                     <div class="">
                       <img

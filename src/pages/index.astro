@@ -30,11 +30,11 @@ const otherPosts = posts.slice(1, 9)
           <article class="col-span-1 md:col-span-2 group">
             <a href={`/post/${firstPost.slug}`}>
               <div
-                class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
+                class="h-auto md:h-[360px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] md:grid-cols-[3fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white dark:bg-black"
               >
                 <div>
                   <img
-                    class="w-full h-full sm:h-[480px] object-cover"
+                    class="w-full h-full sm:h-[360px] object-cover"
                     src={firstPost.data.heroImage}
                     transition:name={firstPost.slug}
                     transition:animate="fade"
@@ -43,20 +43,20 @@ const otherPosts = posts.slice(1, 9)
                 </div>
                 <div class="relative">
                   <div
-                    class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute w-full h-full transition-all duration-300 md:group-hover:-left-20 md:-left-10 group-hover:-top-5 top-0 md:group-hover:top-0 md:top-0"
+                    class="bg-white dark:bg-black px-5 md:px-0 md:pl-10 flex flex-col gap-1 md:gap-2 items-start justify-center absolute w-full h-full transition-all duration-300 md:group-hover:-left-20 md:-left-10 group-hover:-top-5 top-0 md:group-hover:top-0 md:top-0"
                   >
                     <p
-                      class="leading-none text-sm text-primary-500 dark:text-primary-500 dark:opacity-100 uppercase font-semibold font-inter opacity-90"
+                      class="leading-none text-xs text-primary-500 dark:text-primary-500 dark:opacity-100 uppercase font-semibold font-inter opacity-90"
                     >
                       <FormatterDate date={firstPost.data.publishDate} />
                     </p>
                     <h2
-                      class="font-roboto_slab text-xl md:text-3xl font-bold text-gray-700 dark:text-white/90 leading-none"
+                      class="font-roboto_slab text-base leading-none md:text-2xl font-bold text-gray-700 dark:text-white/90"
                     >
                       {firstPost.data.title}
                     </h2>
                     <p
-                      class="font-inter text-black/70 md:text-base text-sm dark:text-white/70"
+                      class="font-inter text-black/70 md:text-base text-xs dark:text-white/70"
                     >
                       {firstPost.data.description.slice(0, 50)}...
                     </p>
@@ -69,7 +69,7 @@ const otherPosts = posts.slice(1, 9)
             otherPosts.map(post => (
               <article class="group">
                 <a href={`/post/${post.slug}`}>
-                  <div class="h-[480px] shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
+                  <div class="h-auto md:h-[480px]  shadow-3xl shadow-black/5 grid grid-rows-[2fr_1fr] rounded-xl overflow-hidden md:rounded-3xl bg-white">
                     <div class="">
                       <img
                         class="w-full h-full object-cover"
@@ -80,15 +80,15 @@ const otherPosts = posts.slice(1, 9)
                       />
                     </div>
                     <div class="relative dark:bg-black">
-                      <div class="bg-white dark:bg-black pl-10 flex flex-col gap-2 items-start justify-center absolute group-hover:-top-5 top-0 left-0 w-full h-full transition-all duration-300">
-                        <p class="leading-none text-sm dark:text-primary-500 dark:opacity-100 uppercase text-primary-500 font-semibold font-inter opacity-90">
+                      <div class="bg-white dark:bg-black px-5 md:pl-10 flex flex-col gap-1 md:gap-2 items-start justify-center absolute group-hover:-top-5 top-0 left-0 w-full h-full transition-all duration-300">
+                        <p class="leading-none text-xs dark:text-primary-500 dark:opacity-100 uppercase text-primary-500 font-semibold font-inter opacity-90">
                           <FormatterDate date={post.data.publishDate} />
                         </p>
-                        <h2 class="font-roboto_slab text-3xl font-bold text-gray-700 dark:text-white/90 leading-none">
+                        <h2 class="font-roboto_slab text-base md:text-2xl font-bold text-gray-700 dark:text-white/90 leading-none">
                           {post.data.title}
                         </h2>
-                        <p class="font-inter text-black/70 dark:text-white/70">
-                          {post.data.description.slice(0, 100)}...
+                        <p class="font-inter md:text-base text-xs text-black/70 dark:text-white/70">
+                          {post.data.description.slice(0, 50)}...
                         </p>
                       </div>
                     </div>

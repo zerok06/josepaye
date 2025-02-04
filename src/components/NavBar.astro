@@ -1,13 +1,11 @@
 ---
-import Github from '../assets/icons/github.astro'
 import Linkedin from '../assets/icons/linkedin.astro'
 import Logo from './Logo.astro'
-import NavFixed from './NavFixed.astro'
+import NavFixed from './NavFixed'
 ---
 
-<!-- nav fixed -->
-<NavFixed />
-
+<!-- nav fixed --><!-- <NavFixed /> -->
+<NavFixed client:load />
 <nav class="h-20 px-4 flex items-center">
   <div class="justify-between flex-1 hidden sm:flex">
     <Logo />

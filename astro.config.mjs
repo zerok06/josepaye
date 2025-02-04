@@ -5,6 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 import react from '@astrojs/react';
 
+import sitemap from '@astrojs/sitemap';
 
 import mdx from '@astrojs/mdx';
 
@@ -15,5 +16,10 @@ export default defineConfig({
     {
       applyBaseStyles: false
     }
-  ), react(), mdx()],
+  ), react(), mdx(), sitemap(
+    {
+      lastmod: new Date(),
+      entryLimit: 50000,
+    }
+  )],
 });

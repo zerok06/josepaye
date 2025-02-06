@@ -8,9 +8,10 @@ interface OptionType {
 export interface QuizType {
   subtitle: string
   quiz: OptionType[]
+  code?: string
 }
 
-const QuizItem: React.FC<QuizType> = ({ quiz, subtitle }) => {
+const QuizItem: React.FC<QuizType> = ({ quiz, subtitle, code }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [isQuizDisabled, setIsQuizDisabled] = useState(false)
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
@@ -24,8 +25,15 @@ const QuizItem: React.FC<QuizType> = ({ quiz, subtitle }) => {
   }
 
   return (
-    <section className="my-6 md:my-10">
-      <p className="text-black mb-2">{subtitle}</p>
+    <section className="my-4 md:my-10">
+      <div>
+        <p className="text-black mb-2 leading-snug">{subtitle}</p>
+        {code && (
+          <pre>
+            <code>{code}</code>
+          </pre>
+        )}
+      </div>
       <div className="flex flex-col gap-2 select-none">
         {quiz.map((question, index) => (
           <div
@@ -42,7 +50,7 @@ const QuizItem: React.FC<QuizType> = ({ quiz, subtitle }) => {
                 name={subtitle}
                 type="radio"
                 autoComplete="off"
-                className="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-primary-400 checked:border-primary-500 transition-all"
+                className="peer h-5 not-prose w-5 cursor-pointer appearance-none rounded-full border border-primary-400 checked:border-primary-500 transition-all"
                 id={subtitle + index}
                 onChange={() => setSelectedOption(index)}
                 disabled={isQuizDisabled}
@@ -50,7 +58,7 @@ const QuizItem: React.FC<QuizType> = ({ quiz, subtitle }) => {
               <span className="absolute bg-primary-400 size-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
             </label>
             <label
-              className="ml-4 text-black/70 cursor-pointer text-base py-3 w-full"
+              className="ml-4 text-black/70 cursor-pointer text-base py-1 md:py-3 w-full "
               htmlFor={subtitle + index}
             >
               {question.text}
@@ -60,7 +68,7 @@ const QuizItem: React.FC<QuizType> = ({ quiz, subtitle }) => {
       </div>
       <button
         onClick={handleClick}
-        className={`py-2 px-4 w-full mt-4 hover:bg-white/80 transition duration-300 bg-white text-primary-500 rounded-full ${
+        className={`py-1 md:py-2 px-4 w-full mt-4 hover:bg-white/80 transition duration-300  text-primary-500 rounded-full ${
           isQuizDisabled ? 'opacity-50 pointer-events-none ' : ''
         } ${
           isCorrect == null

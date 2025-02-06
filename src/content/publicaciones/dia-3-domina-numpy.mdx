@@ -1,0 +1,118 @@
+---
+    title: 'Día 3: Reshaping y Operaciones Diagonales'
+    shortTitle: 'Día 3: Reshaping y Operaciones Diagonales'
+    description: 'Aprenderemos a cambiar la forma de arrays, aplanar matrices y trabajar con diagonales, para mejorar la eficiencia y la calidad de tus programas.'
+    publishDate: 2025-01-03
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-3-domina-numpy.webp'
+    tags: ['coding', 'python', 'numpy']
+    keywords: [ 'Python', 'NumPy', 'matrices', 'operaciones matemáticas' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy es el tercer día de nuestro curso intensivo de **NumPy**, y vamos a explorar dos temas muy útiles: **reshaping**  y **operaciones diagonales** . Aprenderás cómo cambiar la forma de tus arrays, aplanar matrices y trabajar con diagonales. Estas herramientas son esenciales para manipular datos de manera eficiente. ¡Comencemos!
+
+<hr/>
+
+## Reshaping de Arrays
+El reshaping permite cambiar la forma de un array sin modificar sus datos. Esto es útil cuando necesitas reorganizar tus datos para análisis o visualización.
+
+```python
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+# Cambiar su forma a una matriz 2x3
+arr_reshaped = arr.reshape(2, 3)
+print("Array redimensionado:\n", arr_reshaped)
+
+# Cambiar su forma a una matriz 3x2
+arr_reshaped = arr.reshape(3, 2)
+print("Array redimensionado:\n", arr_reshaped)
+```
+
+## Aplanar Matrices
+Aplanar una matriz significa convertirla en un array 1D. Esto es útil cuando necesitas simplificar la estructura de tus datos.
+
+```python
+matriz = np.array([[1, 2], [3, 4]])
+
+matriz_aplanada = matriz.flatten()
+
+print(matriz_aplanada) # Output: [1 2 3 4]
+```
+## Operaciones Diagonales
+Las diagonales son elementos clave en muchas aplicaciones matemáticas. Con **NumPy**, puedes extraer la diagonal de una matriz o crear una matriz diagonal.
+
+### Extraer la diagonal de una matriz
+```python
+matriz = np.array([[1, 2], [3, 4]])
+
+diagonal = np.diag(matriz)
+
+print(diagonal) # Output: [1 4]
+```
+
+### Calcular la traza (suma de la diagonal)
+```python
+matriz = np.array([[1, 2], [3, 4]])
+
+traza = np.trace(matriz)
+
+print(traza) # Output: 5
+```
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 3"
+    desc="Prueba tus conocimientos sobre NumPy"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para cambiar la forma de un array en NumPy?",
+            quiz:[
+                {
+                    text: "np.reshape()",
+                    correct: true
+                },
+                {
+                    text: "np.flatten()",
+                    correct: false
+                },
+                {
+                    text: "np.diag()",
+                    correct: false
+                }
+            ]
+        },{
+            subtitle: "¿Qué devuelve la función np.diag() cuando se aplica a una matriz cuadrada?",
+            quiz:[
+                {
+                    text: "La suma de todos los elementos de la matriz.",
+                    correct: false
+                },
+                {
+                    text: "Los elementos de la diagonal principal de la matriz.",
+                    correct: true
+                },
+                {
+                    text: "La transpuesta de la matriz.",
+                    correct: false
+                }
+            ]
+        }
+    ]} 
+/> 
+
+
+## Ejercicios
+
+1. Convierte un array 1D en una matriz 2x2 y luego aplánala nuevamente.
+2. Calcula la traza de una matriz y extrae su diagonal.
+3. Crea una matriz diagonal de 3x3 y extrae su diagonal.
+
+
+Ahora sabes cómo redimensionar arrays, aplanar matrices y trabajar con diagonales. Mañana nos adentraremos en estadísticas básicas con NumPy. ¡Sigue practicando y no dudes en compartir tus avances! Hasta mañana. 😊
+     

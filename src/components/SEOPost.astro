@@ -4,11 +4,20 @@ interface Props {
   description: string
   url?: string
   keywords: string
+  openGraph?: string
 }
 
-const { description, title, url = Astro.url, keywords } = Astro.props as Props
+const {
+  description,
+  title,
+  url = Astro.url,
+  keywords,
+  openGraph,
+} = Astro.props as Props
 
-const image = `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
+const image =
+  openGraph ||
+  `https://open-graph-blog-image-jose.vercel.app/api/og?title=${title}`
 ---
 
 <!-- SEO -->

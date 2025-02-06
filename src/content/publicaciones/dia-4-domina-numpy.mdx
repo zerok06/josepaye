@@ -1,0 +1,154 @@
+---
+    title: 'Día 4: Estadísticas Básicas con NumPy'
+    shortTitle: 'Día 4: Estadísticas Básicas con NumPy'
+    description: 'Aprenderemos a trabajar con estadísticas básicas en NumPy, como medias, desviaciones estándar y coeficientes de correlación, para obtener información valiosa de tus datos. ¡Comencemos!'
+    publishDate: 2025-01-04
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-4-domina-numpy.webp'
+    tags: ['coding', 'python', 'numpy']
+    keywords: [ 'Python', 'NumPy', 'estadísticas', 'operaciones matemáticas' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy aprenderemos a realizar estadísticas básicas  con **NumPy**. Desde calcular la media y la varianza hasta encontrar valores mínimos y máximos, estas funciones son fundamentales para analizar datos. ¡Vamos a sumergirnos en el mundo de las estadísticas!
+
+<hr/>
+
+## Media
+
+La media es el promedio de un conjunto de datos. En **NumPy**, podemos calcular la media de un array utilizando la función `np.mean()`
+
+![numpy median](/assets/images/publicaciones/recursos/dia-4-domina-numpy-1.png)
+
+Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+datos = np.array([1, 2, 3, 4, 5, 1, 1, 1, 9])
+moda = np.mean(datos)
+print(moda) # Output: 3.0
+```
+En este caso, la media de los datos es 3.
+
+## Mediana
+
+La mediana es el valor central de un conjunto de datos. En **NumPy**, podemos calcular la mediana de un array utilizando la función `np.median()`.
+
+![numpy mean](/assets/images/publicaciones/recursos/dia-4-domina-numpy-2.png)
+
+Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+datos = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+moda = np.median(datos)
+print(moda) # Output: 5.0
+```
+En este caso, la mediana de los datos es 5.
+
+## Varianza
+
+La varianza es una medida de la dispersión de un conjunto de datos. En **NumPy**, podemos calcular la varianza utilizando la función `np.var()`.
+
+```python
+import numpy as np
+
+datos = np.array([1, 2, 3, 4, 5, 6, 8, 9])
+varianza = np.var(datos)
+print(varianza) # Output: 6.9375
+```
+En este caso, la varianza de los datos es 4.
+
+## Desviacion estandar
+
+La desviación estandar es una medida de la dispersión de un conjunto de datos. En **NumPy**, podemos calcular la desviación estandar utilizando la función `np.std()`.
+
+```python
+import numpy as np
+
+datos = np.array([1, 2, 3, 4, 5, 6, 8, 9])
+desviacion_estandar = np.std(datos)
+print(desviacion_estandar) # Output: 2.6339134382131846
+```
+En este caso, la desviación estandar de los datos es 2.
+
+
+## Percentiles
+
+Los percentiles son valores que representan partes especiales de un conjunto de datos. En **NumPy**, podemos calcular percentiles utilizando la función `np.percentile()`.
+
+![grafico de percentiles](/assets/images/publicaciones/recursos/dia-4-domina-numpy-3.png)
+
+Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+percentil_25 = np.percentile(arr, 25)
+percentil_50 = np.percentile(arr, 50)  # Mediana
+percentil_75 = np.percentile(arr, 75)
+print(percentil_25) # Output: 3.0
+print(percentil_50) # Output: 5.0
+print(percentil_75) # Output: 7.0
+```
+
+> El percentil 50% representa la mediana del conjunto de datos porque es el punto medio de la distribución.
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 4"
+    desc="Prueba tus conocimientos sobre NumPy"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para calcular la media de un array en NumPy?",
+            quiz:[
+                {
+                    text: "np.mean()",
+                    correct: true
+                },
+                {
+                    text: "np.median()",
+                    correct: false
+                },
+                {
+                    text: "np.std()",
+                    correct: false
+                }
+            ]
+        },{
+            subtitle: "¿Qué representa el percentil 50 en un conjunto de datos?",
+            quiz:[
+                {
+                    text: "El valor mínimo del conjunto.",
+                    correct: false
+                },
+                {
+                    text: "La mediana del conjunto.",
+                    correct: true
+                },
+                {
+                    text: "El valor máximo del conjunto.",
+                    correct: false
+                }
+            ]
+        }
+    ]} 
+/> 
+
+
+## Ejercicios
+
+- Calcula la **media**, **varianza** y **desviación estándar** de un array.
+- Encuentra el valor **mínimo**, **máximo** y la **suma acumulada** de una matriz.
+- Calcula la **moda** de un conjunto de datos.
+- Encuentra el **percentil** 10, 60 y 90 de un conjunto de datos.
+
+Ahora tienes herramientas para realizar análisis estadísticos básicos con NumPy. Mañana finalizaremos nuestro curso con productos de vectores y matrices. ¡No olvides practicar lo aprendido y compartir tus logros! Nos vemos pronto. 👋

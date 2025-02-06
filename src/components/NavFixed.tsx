@@ -53,12 +53,15 @@ const Navbar = () => {
       <div className="sm:w-auto w-full">
         <nav className="relative px-2 h-10 flex items-center border-primary-100 dark:border-white/20 border bg-white/80 dark:bg-black/30 text-sm backdrop-blur text-white mt-5 rounded-full">
           <div className="justify-between items-center flex sm:hidden w-full">
-            <div className="text-black flex gap-1 items-center dark:text-white">
+            <a
+              href="/"
+              className="text-black flex gap-1 items-center dark:text-white cursor-pointer"
+            >
               <img src={IMAGE} className="size-6 md:size-8" alt={ALT} />
               <span className="font-inter text-base md:text-lg font-bold">
                 JosePaye
               </span>
-            </div>
+            </a>
             {/* Reemplaza esto con tu componente de logo */}
             <div className="flex gap-2">
               <a

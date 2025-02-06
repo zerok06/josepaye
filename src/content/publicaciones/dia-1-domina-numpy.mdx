@@ -1,0 +1,184 @@
+---
+    title: 'Día 1: Introducción a NumPy y operaciones básicas'
+    shortTitle: 'Día 1: Introducción a NumPy y operaciones básicas'
+    description: 'Aprenderemos a trabajar con NumPy en Python, lo que te permitirá trabajar con matrices y realizar operaciones matemáticas en tus programas.'
+    publishDate: 2025-01-01
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-numpy.webp'
+    tags: ['coding', 'python', 'numpy']
+    keywords: [ 'Python', 'NumPy', 'matrices', 'operaciones matemáticas' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy comenzamos nuestro viaje 🚀 para dominar **NumPy** , una de las bibliotecas más poderosas y esenciales para la programación científica en Python. En este primer día, exploraremos qué es **NumPy**, por qué es tan importante y cómo realizar operaciones básicas con arrays. Al finalizar, estarás listo para trabajar con datos numéricos de manera eficiente. ¡Vamos allá! 🏃🏻‍♂️
+
+<hr/>
+
+## ¿Qué es NumPy y por qué es importante?
+
+NumPy (Numerical Python) es una biblioteca fundamental en Python para la computación científica. Proporciona soporte para:
+
+- Arrays **multidimensionales**.
+- Operaciones **matemáticas** rápidas y eficientes.
+- Funciones avanzadas como álgebra lineal, **estadísticas** y generación de números aleatorios.
+
+## Instalación e Importación
+Antes de empezar, asegúrate de tener NumPy instalado. Puedes instalarlo usando pip:
+```shell
+pip install numpy
+```
+
+Una vez instalado, puedes importarlo en tu script o cuaderno de Jupyter:
+
+```python
+import numpy as np
+```
+
+## Creación de Arrays
+
+### Arrays Unidimensionales
+Los arrays unidimensionales son vectores de un solo elemento en cada dimensión
+
+```python
+arr = np.array([1, 2, 3])
+print(arr)  # Output: [1 2 3]
+```   
+
+### Arrays Bidimensionales
+Los arrays bidimensionales son matrices de dos dimensiones.
+
+```python
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr)  # Output: [[1 2 3] [4 5 6]]
+```
+
+### Arrays Multidimensionales
+Los arrays multidimensionales son matrices de varias dimensiones.
+
+```python
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print(arr)  # Output: [[[1 2 3] [4 5 6]] [[7 8 9] [10 11 12]]]
+```
+
+### Arrays de Zeros
+Puedes crear un array de ceros utilizando la función `np.zeros()`.
+
+```python
+arr_zeros = np.zeros(3)
+print(arr_zeros)  # Output: [0. 0. 0.]
+```
+
+### Arrays de Ones
+Puedes crear un array de unos utilizando la función `np.ones()`.
+
+```python
+arr_ones = np.ones(3)
+print(arr_ones)  # Output: [1. 1. 1.]
+```
+
+### Array con un intervalo valores
+Puedes crear un array con un intervalo de valores utilizando la función `np.arange()`.
+
+```python
+arr_range = np.arange(1, 5)  # Crea un array de [1, 5 >
+print(arr_range)
+```
+
+## Operaciones básicas con NumPy
+Podemos realizar operaciones aritméticas directamente sobre los arrays. Por ejemplo:
+
+```python
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Suma
+suma = arr1 + arr2
+print("Suma:", suma) # Output: [5 7 9]
+
+# Resta
+resta = arr1 - arr2
+print("Resta:", resta) # Output: [-3 -3 -3]
+
+# Multiplicación
+multiplicacion = arr1 * arr2
+print("Multiplicación:", multiplicacion) # Output: [4 10 18]
+
+# División
+division = arr1 / arr2
+print("División:", division) # Output: [0.25 0.4 0.5]
+```
+
+### También podemos realizar operaciones con escalares:
+
+```python
+escalar = 2
+arr = np.array([1, 2, 3])
+
+escalar_suma = arr + escalar
+print("Suma por escalar:", escalar_suma) # Output: [3 4 5]
+
+escalar_resta = arr - escalar
+print("Resta por escalar:", escalar_resta) # Output: [-1  0  1]
+
+escalar_multiplicacion = arr * escalar
+print("Multiplicación por escalar:", escalar_multiplicacion) # Output: [2 4 6]
+
+escalar_division = arr / escalar
+print("División por escalar:", escalar_division) # Output: [0.5 1. 1.5]
+```
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre NumPy"
+    questions={[
+        {
+            subtitle: "¿Qué función de NumPy se utiliza para crear un array de ceros? ",
+            quiz:[
+                {
+                    text: "np.zeros()",
+                    correct: true
+                },
+                {
+                    text: "np.ones()",
+                    correct: false
+                },
+                {
+                    text: "np.array()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Cuál es el resultado de la siguiente operación?",
+            code: 'arr = np.array([1, 2, 3])\narr * 2',
+            quiz:[
+                {
+                    text: "[2, 4, 6]",
+                    correct: true
+                },
+                {
+                    text: "[1, 2, 3, 1, 2, 3]",
+                    correct: false
+                },
+                {
+                    text: "Error",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con NumPy
+
+1. Crea un array 1D con valores del 0 al 10 y multiplícalo por 2.
+2. Realiza operaciones básicas (suma, resta, multiplicación y división) entre dos arrays.
+3. Crea un array 2D con valores del 0 al 10 y multiplícalo por 2.
+
+
+Ya tienes una base sólida para trabajar con NumPy y sus operaciones básicas. Mañana profundizaremos en operaciones avanzadas con matrices, incluyendo transposición e inversas. ¡No olvides practicar lo aprendido y mejorar tus habilidades con NumPy! Nos vemos mañana. 😊

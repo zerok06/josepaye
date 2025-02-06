@@ -1,0 +1,97 @@
+---
+    title: 'Día 2: Operaciones Avanzadas en Matrices'
+    shortTitle: 'Día 2: Operaciones Avanzadas en Matrices'
+    description: 'Aprenderemos a realizar operaciones avanzadas en matrices, incluyendo transposición e inversas, para mejorar la eficiencia y la calidad de tus programas.'
+    publishDate: 2025-01-02
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-2-domina-numpy.webp'
+    tags: ['coding', 'python', 'numpy']
+    keywords: [ 'Python', 'NumPy', 'matrices', 'operaciones matemáticas' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy profundizaremos en las operaciones avanzadas con matrices en NumPy. Aprenderás cómo realizar operaciones elemento por elemento, calcular productos punto, transponer matrices y encontrar sus inversas. Estas herramientas son esenciales para resolver problemas complejos en álgebra lineal y ciencia de datos. ¡Comencemos! 🚀
+
+## Operaciones en Matrices
+
+Las matrices son fundamentales en muchas áreas, desde gráficos por computadora hasta inteligencia artificial. Con **NumPy**, podemos realizar operaciones avanzadas de manera sencilla.
+
+```python
+matriz1 = np.array([[1, 2], [3, 4]])
+matriz2 = np.array([[5, 6], [7, 8]])
+
+# Suma
+suma_matrices = matriz1 + matriz2
+print(suma_matrices)
+
+# Resta
+resta_matrices = matriz1 - matriz2
+print(resta_matrices)
+
+# Multiplicación elemento por elemento
+multiplicacion_elemento = matriz1 * matriz2
+print(multiplicacion_elemento)
+
+# División elemento por elemento
+division_elemento = matriz1 / matriz2
+print(division_elemento)
+```
+
+### Transposición de Matrices
+La transposición intercambia filas y columnas de una matriz.
+
+```python
+matriz1 = np.array([[1, 2], [3, 4]])
+
+transpuesta = matriz1.T
+
+print(transpuesta)
+```
+### Inversa de una Matriz
+La inversa de una matriz es una matriz que al multiplicarlo por la original da la matriz identidad.
+
+```python
+matriz1 = np.array([[1, 2], [3, 4]])
+
+inversa = np.linalg.inv(matriz1)
+
+print(inversa)
+```
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 2"
+    desc="Prueba tus conocimientos sobre NumPy"
+    questions={[
+        {
+            subtitle: "¿Qué hace la propiedad .T en una matriz de NumPy?",
+            quiz:[
+                {
+                    text: "Calcula la inversa de la matriz.",
+                    correct: false
+                },
+                {
+                    text: "Transpone la matriz (intercambia filas por columnas).",
+                    correct: true
+                },
+                {
+                    text: "Aplana la matriz a un array 1D.",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios
+
+1. Crea dos matrices y realiza operaciones de suma, resta y multiplicación.
+2. Calcula la inversa de una matriz y verifica que al multiplicarla por la matriz original obtienes la matriz identidad.
+3. Transpone una matriz y verifica que la transposición sea la inversa de la original.
+
+Ahora tienes herramientas avanzadas para trabajar con matrices. Mañana aprenderemos sobre reshaping, aplanamiento y operaciones diagonales. ¡Sigue practicando y no dudes en preguntar si tienes dudas! Hasta luego. 👋

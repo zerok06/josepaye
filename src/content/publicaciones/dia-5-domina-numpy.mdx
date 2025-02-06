@@ -1,0 +1,148 @@
+---
+    title: 'Día 5: Productos de Vectores y Matrices'
+    shortTitle: 'Día 5: Productos de Vectores y Matrices'
+    description: 'Aprenderemos a realizar productos de vectores y matrices, para mejorar la eficiencia y la calidad de tus programas.'
+    publishDate: 2025-01-05
+    timeReadMins: 10
+    heroImage: '/assets/images/publicaciones/dia-5-domina-numpy.webp'
+    tags: ['coding', 'python', 'numpy']
+    keywords: [ 'Python', 'NumPy', 'matrices', 'operaciones matemáticas', 'productos de vectores', 'normas de vectores' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy culminaremos nuestro viaje dominando productos de vectores y matrices  en NumPy. Aprenderás sobre productos punto, productos cruz, multiplicación de matrices y normas de vectores. Estas operaciones son fundamentales en álgebra lineal y ciencia de datos. ¡Vamos a cerrar con broche de oro!
+
+<hr/>
+
+## Producto Punto
+
+El producto punto es una operación matemática que se utiliza para calcular el producto de dos vectores. En **NumPy**, podemos realizar el producto punto utilizando la función `np.dot()`.
+
+### Formula de Producto Punto
+
+![formula de producto punto](/assets/images/publicaciones/recursos/dia-5-domina-numpy-2.png)
+
+> Cada componente sigue el siguiente orden de signos y operaciones: `+[]i -[]j +[]k -[]w + ... +[]n`.
+
+### Calculo del Producto Punto:
+
+![numpy dot](/assets/images/publicaciones/recursos/dia-5-domina-numpy-1.png)
+
+### Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+producto_punto = np.dot(arr1, arr2)
+
+print(producto_punto) # Output: 32
+```
+
+## Producto Cruz
+
+El producto cruz es una operación matemática que se utiliza para calcular el producto cruz entre dos vectores. En **NumPy**, podemos realizar el producto cruz utilizando la función `np.cross()`.
+
+### Calculo del Producto Punto:
+
+![numpy cross](/assets/images/publicaciones/recursos/dia-5-domina-numpy-3.png)
+
+### Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+producto_cruz = np.cross(arr1, arr2)
+
+print(producto_cruz) # Output: [-3  6 -3]
+```
+
+## Normas de Vectores
+
+Las normas de vectores son medidas que representan la longitud o magnitud de un vector. En **NumPy**, podemos calcular las normas de vectores utilizando la función `np.linalg.norm()`.
+
+### Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+vector = np.array([1, 2, 3])
+
+norma = np.linalg.norm(vector)
+print(norma) # Output: 3.7416573867739413
+```
+
+## Multiplicación de Matrices
+
+Las matrices son fundamentales en muchas aplicaciones, desde gráficos por computadora hasta inteligencia artificial. Con **NumPy**, podemos realizar operaciones avanzadas de manera sencilla.
+
+### Codigo de ejemplo en Python:
+
+```python
+import numpy as np
+
+matriz1 = np.array([[1, 2], [3, 4]])
+matriz2 = np.array([[5, 6], [7, 8]])
+multiplicacion = np.matmul(matriz1, matriz2)
+print(multiplicacion)
+```
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 5"
+    desc="Prueba tus conocimientos sobre NumPy"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para calcular el producto cruz entre dos vectores en NumPy?",
+            quiz:[
+                {
+                    text: "np.cross()",
+                    correct: true
+                },
+                {
+                    text: "np.dot()",
+                    correct: false
+                },
+                {
+                    text: "np.matmul()",
+                    correct: false
+                }
+            ]
+        },{
+            subtitle: "¿Qué hace la función np.linalg.norm() en NumPy?",
+            quiz:[
+                {
+                    text: "Calcula la suma acumulada de un vector.",
+                    correct: false
+                },
+                {
+                    text: "Calcula la longitud o magnitud de un vector.",
+                    correct: true
+                },
+                {
+                    text: "Calcula la traza de una matriz.",
+                    correct: false
+                }
+            ]
+        }
+    ]} 
+/> 
+
+
+## Ejercicios
+
+- Calcula el producto punto y cruz de dos vectores.
+- Multiplica dos matrices y verifica el resultado.
+- Calcula la norma de un vector.
+
+**¡Felicidades!** 🎊 Has completado este curso intensivo de NumPy. Ahora tienes las herramientas necesarias para trabajar con **arrays**, **matrices** y **operaciones** avanzadas en Python. ¡**Sigue practicando** y explorando nuevas bibliotecas para fortalecer tus habilidades en programación científica! **Gracias por acompañarme en este viaje**. ¡Nos vemos en futuros proyectos! 😊
+
+

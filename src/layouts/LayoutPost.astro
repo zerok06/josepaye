@@ -7,10 +7,11 @@ import '../styles/base.css'
 interface Props {
   shortTitle: string
   description: string
+  openGraph?: string
   keywordsArr: string[]
 }
 
-const { description, shortTitle, keywordsArr } = Astro.props
+const { description, shortTitle, keywordsArr, openGraph } = Astro.props
 const keywords = keywordsArr.join(', ')
 ---
 
@@ -34,7 +35,12 @@ const keywords = keywordsArr.join(', ')
     />
     <ClientRouter />
 
-    <SEOPost title={shortTitle} description={description} keywords={keywords} />
+    <SEOPost
+      title={shortTitle}
+      description={description}
+      keywords={keywords}
+      openGraph={openGraph}
+    />
   </head>
   <body class="dark:bg-black bg-white dark:text-white text-black antialiased">
     <slot />

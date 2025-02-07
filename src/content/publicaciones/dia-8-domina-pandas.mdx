@@ -1,0 +1,125 @@
+---
+    title: 'Día 8: Operaciones Avanzadas - Pivot Tables y Melt'
+    shortTitle: 'Día 8: Operaciones Avanzadas - Pivot Tables y Melt'
+    description: 'En este octavo dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-13
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-8-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'pivot_table', 'melt', 'stack', 'unstack' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 📊 Hoy aprenderemos sobre tablas dinámicas  (`pivot_table`) y transformaciones avanzadas como `.melt()`. Estas herramientas son esenciales para resumir y reorganizar datos en proyectos de machine learning. ¡Comencemos!
+
+<hr/>
+
+## Creación de Tablas Dinámicas
+### Sentencia `pivot_table()`
+Crea tablas dinámicas para resumir datos.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'fruta': ['naranja', 'manzana', 'melon', 'naranja'], 'venta': [4, 5, 6, 10]})
+
+pivot_table = df.pivot_table(values='venta', index='fruta', aggfunc='sum')
+
+print(pivot_table)
+```
+## Transformación de DataFrames
+Transforma un DataFrame de ancho a largo en resumen convierte las columnas en variables y las filas en observaciones.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+melted_df = df.melt(id_vars=['A'], value_vars=['B', 'C'])
+
+print(melted_df)
+```
+
+## Apilamiento de DataFrames
+### Sentencia `stack()`
+Apila columnas en una sola columna.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+stacked_df = df.stack()
+
+print(stacked_df)
+```
+
+### Sentencia `unstack()`
+Desapila una columna en varias columnas.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+unstacked_df = df.unstack()
+
+print(unstacked_df)
+```
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 8"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para crear tablas dinámicas en Pandas?",
+            quiz:[
+                {
+                    text: ".pivot_table()",
+                    correct: true
+                },
+                {
+                    text: ".melt()",
+                    correct: false
+                },
+                {
+                    text: ".groupby()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué método se usa para transformar un DataFrame de ancho a largo?",
+            quiz:[
+                {
+                    text: ".stack()",
+                    correct: false
+                },
+                {
+                    text: ".melt()",
+                    correct: true
+                },
+                {
+                    text: ".unstack()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea una tabla dinámica a partir de un DataFrame.
+- Transforma un DataFrame usando `.melt()`.
+
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora puedes crear tablas dinámicas y transformar DataFrames, habilidades clave para análisis avanzados. Mañana aprenderemos sobre optimización de memoria y rendimiento , fundamentales para manejar grandes volúmenes de datos. ¡Nos vemos pronto! 😊
+

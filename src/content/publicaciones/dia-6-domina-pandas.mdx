@@ -1,0 +1,114 @@
+---
+    title: 'Día 6: Lectura y Escritura de Archivos'
+    shortTitle: 'Día 6: Lectura y Escritura de Archivos'
+    description: 'En este sexto día de aprendizaje, aprenderás a leer y escribir archivos en Python, una habilidad esencial para trabajar con datos.'
+    publishDate: 2025-01-11
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-6-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'csv', 'excel', 'json', 'html' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 📂 Hoy aprenderemos a leer y escribir archivos en diferentes formatos usando Pandas. Esta habilidad es fundamental para trabajar con datos reales en proyectos de machine learning. ¡Comencemos!
+
+<hr/>
+
+## Lectura de Archivos
+
+```python
+# Leer un archivo CSV
+df_csv = pd.read_csv('archivo.csv')
+
+# Leer un archivo Excel
+df_excel = pd.read_excel('archivo.xlsx')
+
+# Leer un archivo JSON
+df_json = pd.read_json('archivo.json')
+
+# Leer un archivo HTML
+df_html = pd.read_html('archivo.html')
+```
+
+## Escritura de Archivos
+
+```python
+# Guardar un DataFrame como CSV
+df.to_csv('archivo_guardado.csv', index=False)
+
+# Guardar un DataFrame como Excel
+df.to_excel('archivo_guardado.xlsx', index=False)
+
+# Guardar un DataFrame como JSON
+df.to_json('archivo_guardado.json')
+
+# Guardar un DataFrame como HTML
+df.to_html('archivo_guardado.html')
+```
+> La propiedad `index=False` se utiliza para indicar que no se desea guardar el índice del DataFrame en el archivo.
+
+## Manejo de Archivos Grandes
+
+```python
+# Leer un archivo grande en bloques
+chunks = pd.read_csv('archivo_grande.csv', chunksize=1000)
+for chunk in chunks:
+    print(chunk.head())
+```
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 6"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para leer un archivo CSV en Pandas?",
+            quiz:[
+                {
+                    text: "pd.read_excel()",
+                    correct: false
+                },
+                {
+                    text: "pd.read_csv()",
+                    correct: true
+                },
+                {
+                    text: "pd.read_json()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué parámetro se usa para evitar guardar el índice al exportar un DataFrame a CSV?",
+            quiz:[
+                {
+                    text: "index=True",
+                    correct: false
+                },
+                {
+                    text: "index=False",
+                    correct: true
+                },
+                {
+                    text: "header=False",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Lee un archivo CSV y guárdalo en formato Excel.
+- Lee un archivo grande en bloques y procesa cada bloque.
+
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora puedes leer y escribir archivos en diferentes formatos, una habilidad clave para trabajar con datos reales. Mañana aprenderemos sobre series temporales , fundamentales para análisis basados en tiempo. ¡Nos vemos pronto! 😊
+

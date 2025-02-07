@@ -1,0 +1,109 @@
+---
+    title: 'Día 5: Concatenación y Unión de DataFrames'
+    shortTitle: 'Día 5: Concatenación y Unión de DataFrames'
+    description: 'En este quinto dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-10
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-5-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'concat', 'merge' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🌟 Hoy aprenderemos a concatenar  y unir  DataFrames, habilidades esenciales para trabajar con múltiples fuentes de datos en proyectos de machine learning. ¡Comencemos!
+
+## Concatenación de DataFrames
+
+### Sentencia `concat()`
+Combina DataFrames vertical u horizontalmente.
+
+```python
+import pandas as pd
+
+df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df2 = pd.DataFrame({'C': [7, 8, 9], 'D': [10, 11, 12]})
+
+df = pd.concat([df1, df2], axis=1)
+
+print(df)
+```
+
+### Sentencia `merge()`
+Une DataFrames basados en una columna común.
+
+```python
+import pandas as pd
+
+df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+
+df2 = pd.DataFrame({'A': [1, 2, 3], 'C': [7, 8, 9]})
+
+
+df = pd.merge(df1, df2, on='A', how='inner')
+
+print(df)
+```
+> La propiedad how define el comportamiento de la operación de unión. Puedes usar 'inner', 'left', 'right', o 'outer' para definir el comportamiento.
+
+
+
+
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 5"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué método se utiliza para concatenar DataFrames?",
+            quiz:[
+                {
+                    text: ".merge()",
+                    correct: false
+                },
+                {
+                    text: ".join()",
+                    correct: false
+                },
+                {
+                    text: ".concat()",
+                    correct: true
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué tipo de unión incluye solo las filas que coinciden en ambos DataFrames?",
+            quiz:[
+                {
+                    text: "outer",
+                    correct: false
+                },
+                {
+                    text: "inner",
+                    correct: true
+                },
+                {
+                    text: "left",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Concatena dos DataFrames vertical y horizontalmente.
+- Une dos DataFrames usando una columna común con diferentes tipos de unión.
+
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora puedes combinar múltiples DataFrames de manera efectiva. Mañana aprenderemos sobre lectura y escritura de archivos , habilidades clave para trabajar con datos reales. ¡Nos vemos pronto! 😊
+

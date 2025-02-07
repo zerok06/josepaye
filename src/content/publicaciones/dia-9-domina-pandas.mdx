@@ -1,0 +1,143 @@
+---
+    title: 'Día 9: Optimización de Memoria y Rendimiento'
+    shortTitle: 'Día 9: Optimización de Memoria y Rendimiento'
+    description: 'En este septimo dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-14
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-9-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'memory', 'optimization', 'performance' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 💻 Hoy aprenderemos a optimizar el uso de memoria y mejorar el rendimiento en Pandas. Estas técnicas son esenciales para manejar grandes conjuntos de datos en proyectos de machine learning. ¡Comencemos!
+
+<hr/>
+
+## Reducción del Uso de Memoria
+
+Pandas proporciona dos métodos para reducir el uso de memoria:
+
+### Sentencia `memory_usage()`
+Muestra el uso de memoria de cada columna en bytes.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.memory_usage())
+```
+
+### Sentencia `df.astype()`
+Convierte un DataFrame a un tipo de dato especificado.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+df = df.astype({'A': 'int8', 'B': 'int16', 'C': 'int32'})
+```
+
+## Optimización de consultas
+
+Pandas proporciona varias funciones para optimizar consultas en un DataFrame:
+
+### Sentencia `query()`
+Filtra datos de manera eficiente.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+filtered_df = df.query('A > 2')
+```
+
+### Sentencia `eval()`
+Evaluación de expresiones complejas de manera eficiente en un DataFrame.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+evaluated_df = df.eval('A + B')
+```
+
+## Comparando Rendimiento
+
+Pandas proporciona varias funciones para comparar el rendimiento de diferentes operaciones en un DataFrame:
+
+### Sentencia `compare()`
+Comparación de dos DataFrames.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+%timeit df[df['A'] > 1]
+%timeit df.query('A > 1')
+```
+
+> `%timeit` muestra el tiempo de ejecución de una sentencia.
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 9"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué método se utiliza para cambiar los tipos de datos en un DataFrame?",
+            quiz:[
+                {
+                    text: ".astype()",
+                    correct: true
+                },
+                {
+                    text: ".eval()",
+                    correct: false
+                },
+                {
+                    text: ".query()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se usa para evaluar expresiones complejas de manera eficiente?",
+            quiz:[
+                {
+                    text: ".eval()",
+                    correct: true
+                },
+                {
+                    text: ".query()",
+                    correct: false
+                },
+                {
+                    text: ".apply()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Reduce el uso de memoria de un DataFrame cambiando los tipos de datos.
+- Compara el rendimiento de .query() vs filtrado tradicional.
+- Optimiza la velocidad de evaluación de expresiones complejas en un DataFrame.
+
+<hr/>
+
+¡Felicidades por completar este curso intensivo de **Pandas**! 🎊 Ahora tienes las herramientas necesarias para manipular, analizar y optimizar datos en Python. Estas habilidades son fundamentales para proyectos de machine learning. ¡Sigue practicando y explorando nuevas bibliotecas para fortalecer tus conocimientos! Gracias por acompañarme en este viaje. ¡Nos vemos en futuros proyectos! 😊
+

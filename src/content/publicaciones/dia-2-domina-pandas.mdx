@@ -1,0 +1,157 @@
+---
+    title: 'Día 2: Indexación, Selección y Filtrado'
+    shortTitle: 'Día 2: Indexación, Selección y Filtrado'
+    description: 'En este segundo dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-07
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-2-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 🌟 Hoy profundizaremos en cómo acceder y filtrar datos en Pandas. La indexación  y el filtrado  son fundamentales para seleccionar subconjuntos de datos relevantes en proyectos de machine learning. ¡Comencemos!
+
+<hr/>
+
+## Indexación Básica
+
+Pandas proporciona varias funciones para acceder a los datos en un DataFrame:
+
+### Selección de columnas
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+# Seleccionar una sola columna
+print(df['A'])  # Imprime: [1, 2, 3]
+
+# Seleccionar varias columnas
+print(df[['A', 'B']])  # Imprime: [1, 2, 3]  [4, 5, 6]
+```
+
+
+### Sentencia `loc[]` 
+Esta función permite acceder a los datos mediante el uso de indices de fila, columnas o etiquetas. Por ejemplo:
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.loc[0, 'A'])  # Imprime: 1
+print(df.loc[:, 'B'])  # Imprime: [4, 5, 6]
+print(df.loc['A'])  # Imprime: [1, 2, 3]
+```
+
+### Sentencia `iloc[]`
+Esta función permite acceder a los datos mediante el uso de indices numéricos. Por ejemplo:
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.iloc[0, 0])  # Imprime: 1
+print(df.iloc[:, 1])  # Imprime: [4, 5, 6]
+print(df.iloc[0])  # Imprime: [1, 2, 3]
+```
+
+> Puedes usar `loc[]` para acceder a datos específicos mediante etiquetas, y `iloc[]` para acceder a datos mediante indices numéricos.
+
+## Filtrado de Datos
+
+Pandas proporciona varias funciones para filtrar datos en un DataFrame:
+
+### Filtrado con condiciones booleanas
+
+Seleccionar valores de la columna `A` que sean mayores a 2.
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df[df['A'] > 2])  # Imprime: [3, 4, 5]
+```
+
+### Filtrado con múltiples condiciones
+
+Seleccionar valores de la columna `A` que sean mayores a 2 y menores a 5.
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df[(df['A'] > 2) & (df['A'] < 5)])  # Imprime: [3, 4]
+```
+
+> Para anidar multiples condiciones, puedes usar el operador `&` para combinarlas o el operador `|` para seleccionar valores que cumplan con al menos una de las condiciones.
+
+### Filtrado usando la sentencia `query()`
+
+Seleccionar valores de la columna `A` que sean mayores a 2 y menores a 5.
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.query('A > 2 and A < 5'))  # Imprime: [3, 4]
+```
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 2"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué método se utiliza para seleccionar filas basadas en etiquetas?",
+            quiz:[
+                {
+                    text: ".loc[]",
+                    correct: true
+                },
+                {
+                    text: ".iloc[]",
+                    correct: false
+                },
+                {
+                    text: ".query[]",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué operador se usa para combinar condiciones booleanas en Pandas?",
+            quiz:[
+                {
+                    text: "and",
+                    correct: false
+                },
+                {
+                    text: "&",
+                    correct: true
+                },
+                {
+                    text: "||",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Selecciona la primera fila de un DataFrame usando loc[] e iloc[].
+- Filtra un DataFrame para obtener solo las filas donde una columna específica cumpla una condición.
+     
+
+
+¡Excelente trabajo hoy! 🙌 Ahora sabes cómo acceder y filtrar datos en Pandas. Mañana aprenderemos a manejar valores faltantes  y realizar transformaciones, habilidades cruciales para limpiar datos antes de entrenar modelos de machine learning. ¡Nos vemos mañana! 👋

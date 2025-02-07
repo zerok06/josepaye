@@ -1,0 +1,182 @@
+---
+    title: 'Día 1: Introducción a Pandas y Estructuras de Datos'
+    shortTitle: 'Día 1: Introducción a Pandas y Estructuras de Datos'
+    description: 'En este primer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-06
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+Hoy comenzamos nuestro viaje con Pandas , una biblioteca esencial para la manipulación y análisis de datos en Python. En este primer día, exploraremos qué es Pandas, sus estructuras principales (Series  y DataFrames ) y cómo crearlas desde diferentes fuentes. Estos conceptos son fundamentales para preparar datos en proyectos de machine learning. ¡Vamos allá! 🏃🏻‍♂️
+
+<hr/>
+
+## ¿Qué es Pandas y por qué es útil?
+Pandas es una biblioteca diseñada para el análisis y manipulación de datos estructurados. Es ampliamente utilizada en ciencia de datos y machine learning debido a su capacidad para manejar grandes volúmenes de datos de manera eficiente.
+
+## Instalación e Importación
+
+Para instalar y importar Pandas, puedes usar la función `import pandas as pd`.
+
+```shell
+pip install pandas
+```
+Luego, puedes importarlo en tu código:
+
+```python
+import pandas as pd
+```
+## Estructuras de Datos Principales
+
+### Series
+Una estructura de datos unidimensional que representa una serie de valores con un etiquetado de índice.
+
+```python
+serie = pd.Series([1, 2, 3])
+```
+| Indices    | Data     |
+|------|-------|
+| 0    | 1       |
+| 1    | 2       |
+| 2    | 3       |
+
+Ademas, puedes renombrar los índices de la serie:
+
+```python
+serie = pd.Series([1, 2, 3], index=['a', 'b', 'c'])
+```
+
+
+
+### DataFrames
+Una estructura de datos bidimensional que representa una tabla con filas y columnas.
+
+```python
+data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
+```
+| A    | B     |
+|------|-------|
+| 1    | 4       |
+| 2    | 5       |
+| 3    | 6       |
+
+
+## Creación de DataFrames desde Archivos
+
+Puedes crear un DataFrame a través de un archivo CSV o Excel. Para hacerlo, puedes usar la función `read_csv()`, `read_excel()` o `read_json()` de Pandas.
+
+```python
+# Desde CSV
+df_csv = pd.read_csv('archivo.csv')
+
+# Desde Excel
+df_excel = pd.read_excel('archivo.xlsx')
+
+# Desde JSON
+df_json = pd.read_json('archivo.json')
+```
+> Puedes explorar los otros métodos de lectura de archivos en la [documentación oficial](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html).
+
+## Atributos Básicos de los DataFrames
+
+### Columnas
+Puedes acceder a las columnas de un DataFrame utilizando el atributo `columns`:
+
+```python
+print(df.columns)
+```
+
+### Filas
+Puedes acceder a las filas de un DataFrame utilizando el atributo `index`:
+
+```python
+print(df.index)
+```
+
+### Valores
+Puedes acceder a los valores de un DataFrame utilizando el atributo `values`:
+
+```python
+print(df.values)
+```
+
+### Dimensiones
+Puedes obtener el tamaño de un DataFrame utilizando el atributo `shape`:
+
+```python
+print(df.shape)
+```
+
+### Tipos de Datos
+Puedes obtener los tipos de datos de las columnas de un DataFrame utilizando el atributo `dtypes`:
+
+```python
+print(df.dtypes)
+```
+
+### Información del DataFrame
+Puedes obtener información sobre el DataFrame utilizando el atributo `info`:
+
+```python
+print(df.info())
+```
+
+
+
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Cuál es la diferencia entre una Serie  y un DataFrame  en Pandas?",
+            quiz:[
+                {
+                    text: "Una Serie es unidimensional, mientras que un DataFrame es bidimensional.",
+                    correct: true
+                },
+                {
+                    text: "Una Serie no tiene índices, mientras que un DataFrame sí los tiene.",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué atributo se utiliza para conocer los tipos de datos de las columnas en un DataFrame?",
+            quiz:[
+                {
+                    text: ".shape",
+                    correct: false
+                },
+                {
+                    text: ".dtypes",
+                    correct: true
+                },
+                {
+                    text: ".index",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea una Serie  a partir de una lista y un diccionario.
+- Crea un DataFrame  desde un diccionario y explora sus atributos básicos (**.shape**, **.columns**, **.dtypes**).
+- Accede a las filas y columnas de un DataFrame.
+
+
+¡Gran inicio! 🎉 Ahora tienes una base sólida para trabajar con Pandas. Mañana aprenderemos sobre indexación, selección y filtrado , habilidades clave para acceder a los datos que necesitas. ¡Sigue practicando y nos vemos pronto! 😊

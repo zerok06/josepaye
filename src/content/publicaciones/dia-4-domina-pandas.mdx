@@ -1,0 +1,158 @@
+---
+    title: 'Día 4: Operaciones Avanzadas - GroupBy y Agregación'
+    shortTitle: 'Día 4: Operaciones Avanzadas - GroupBy y Agregación'
+    description: 'En este cuarto dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-09
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-4-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'groupby', 'aggregation' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 🚀 Hoy exploraremos GroupBy  y agregación , herramientas poderosas para analizar datos agrupados. Estas operaciones son fundamentales en análisis estadístico y machine learning. ¡Comencemos!
+
+<hr/>
+
+## Agrupación de Datos
+### Sentencia `groupby()`
+
+Pandas proporciona varias funciones para agrupar datos:
+
+#### Sentencia `groupby()`
+Agrupa los datos en base a una o varias columnas.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'fruta': ['naranja', 'manzana', 'melon', 'naranja'], 'venta': [4, 5, 6, 10]})
+
+grouped = df.groupby('fruta').sum()
+
+print(grouped)
+```
+
+#### Operaciones de agrupación
+
+| Operación | Descripción |
+| --- | --- |
+| `sum()` | Suma los valores de una columna. |
+| `mean()` | Calcula la media de los valores de una columna. |
+| `min()` | Encuentra el valor mínimo de una columna. |
+| `max()` | Encuentra el valor máximo de una columna. |
+| `count()` | Conta el número de valores no nulos en una columna. |
+| `std()` | Calcula la desviación estandard de los valores de una columna. |
+| `var()` | Calcula la varianza de los valores de una columna. |
+| `median()` | Calcula la mediana de los valores de una columna. |
+| `cumsum()` | Calcula la suma acumulativa de los valores de una columna. |
+| `cumprod()` | Calcula el producto acumulativo de los valores de una columna. |
+
+
+#### Sentencia `agg()`
+Aplica funciones de agregación a los datos agrupados.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'fruta': ['naranja', 'manzana', 'melon', 'naranja'], 'venta': [4, 5, 6, 10]})
+
+grouped = df.groupby('fruta').agg({'venta': ['sum', 'mean']})
+
+print(grouped)
+```
+
+#### Sentencia `pivot_table()`
+Crea una tabla pivot de datos agrupados.
+
+```python
+import pandas as pds
+
+df = pd.DataFrame({'fruta': ['naranja', 'manzana', 'melon', 'naranja'], 'venta': [4, 5, 6, 10]})
+
+grouped = df.pivot_table(index='fruta', columns='fruta', values='venta', aggfunc='sum')
+
+print(grouped)
+```
+
+#### Sentencia `melt()`
+Crea una tabla pivot de datos agrupados.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'fruta': ['naranja', 'manzana', 'melon', 'naranja'], 'venta': [4, 5, 6, 10]})
+
+grouped = df.melt(id_vars='fruta', value_vars='venta')
+
+print(grouped)
+```
+
+### Funciones Personalizadas
+
+Puedes crear funciones personalizadas para realizar operaciones avanzadas en tus datos. Por ejemplo:
+
+```python
+def my_function(x):
+    return x * 2
+
+df['doble_venta'] = df['venta'].apply(my_function)
+```
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 4"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué método se utiliza para agrupar datos en Pandas?",
+            quiz:[
+                {
+                    text: ".groupby()",
+                    correct: true
+                },
+                {
+                    text: ".pivot_table()",
+                    correct: false
+                },
+                {
+                    text: ".melt()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se usa para aplicar múltiples operaciones de agregación?",
+            quiz:[
+                {
+                    text: ".sum()",
+                    correct: false
+                },
+                {
+                    text: ".mean()",
+                    correct: false
+                },
+                {
+                    text: ".agg()",
+                    correct: true
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Agrupa un DataFrame por una columna y calcula estadísticas agregadas (suma, media).
+- Aplica una función personalizada en una operación de agregación.
+
+<hr/>
+
+¡Excelente trabajo hoy! 🙌 Ahora puedes agrupar y agregar datos de manera eficiente. Mañana aprenderemos sobre concatenación y unión de DataFrames , habilidades clave para combinar múltiples fuentes de datos. ¡Nos vemos pronto! 👋
+

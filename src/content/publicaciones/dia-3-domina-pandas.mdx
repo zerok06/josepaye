@@ -1,0 +1,179 @@
+---
+    title: 'Día 3: Manipulación de Datos - Missing Values y Transformaciones'
+    shortTitle: 'Día 3: Manipulación de Datos - Missing Values y Transformaciones'
+    description: 'En este tercer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-08
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-3-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'missing values', 'fillna', 'dropna' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🌟 Hoy aprenderemos a manejar valores faltantes  y realizar transformaciones  en Pandas. Estos conceptos son esenciales para limpiar y preparar datos antes de entrenar modelos de machine learning. ¡Vamos allá!
+
+<hr/>
+
+## Manipulación de Datos con Pandas
+
+Pandas es una biblioteca de Python que proporciona una amplia gama de funciones para trabajar con datos. Algunas de las principales funciones que puedes utilizar son:
+
+### Detección de Valores Faltantes
+
+Pandas proporciona varias funciones para manejar valores faltantes en tus datos:
+
+#### Sentencia `isna()`
+Identifica valores faltantes.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.isna())  # Imprime: [False, False, False]
+```
+
+#### Sentencia `isnull()`
+Identifica valores faltantes.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+print(df.isnull())  # Imprime: [False, False, False]
+```
+
+### Eliminación de Valores Faltantes
+
+Pandas proporciona varias funciones para manejar valores faltantes en tus datos:
+
+#### Sentencia `dropna()`
+Elimina filas con valores faltantes.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, None], 'C': [7, None, 9]})
+
+df, df.dropna() # Output: [1  4  7]
+```
+
+> Puedes usar `dropna()` para eliminar filas con valores faltantes.
+
+#### Sentencia `fillna()`
+Rellena valores faltantes con un valor especificado.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, None], 'C': [7, None, 9]})
+
+df, df.fillna(0) # Output: [1  4  7]
+```
+
+Si deseas rellenar los valores de una columna especifica con un valor especificado, puedes usar la sentencia `fillna()`.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, None, 3], 'B': [4, 5, 6], 'C': [7, None, 9]})
+
+df['A'] = df['A'].fillna(df['A'].mean())
+```
+
+> Puedes usar `fillna()` para rellenar valores faltantes con un valor especificado.
+
+### Transformaciones de Datos
+
+Pandas proporciona varias funciones para realizar transformaciones en tus datos:
+
+#### Sentencia `apply()`
+Aplica una función a cada elemento de una columna.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+df['A'] = df['A'].apply(lambda x: x * 2)
+```
+
+#### Sentencia `map()`
+Aplica una función a cada elemento de una columna.
+
+```python
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})
+
+df['A'] = df['A'].map({1: 'a', 2: 'b', 3: 'c'})
+```
+
+#### Sentencia `replace()`
+Reemplaza valores faltantes con un valor especificado.
+
+```python
+import pandas as pd 
+
+df = pd.DataFrame({'A': [1, None, 3], 'B': [4, 5, 6], 'C': [7, None, 9]})
+
+df['A'] = df['A'].replace({None: 0})
+```
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 3"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué método se utiliza para identificar valores faltantes en un DataFrame?",
+            quiz:[
+                {
+                    text: ".fillna()",
+                    correct: false
+                },
+                {
+                    text: ".isna()",
+                    correct: true
+                },
+                {
+                    text: ".dropna()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se usa para rellenar valores faltantes con un valor específico?",
+            quiz:[
+                {
+                    text: ".dropna()",
+                    correct: false
+                },
+                {
+                    text: ".fillna()",
+                    correct: true
+                },
+                {
+                    text: ".replace()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Identifica y elimina filas con valores faltantes en un DataFrame.
+- Imputa valores faltantes en una columna usando la media y la mediana.
+- Aplica una transformación de datos a una columna del DataFrame.
+
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora sabes cómo manejar valores faltantes y transformar datos en Pandas. Mañana aprenderemos sobre agrupación y agregación , habilidades clave para extraer insights de grandes conjuntos de datos. ¡Nos vemos pronto! 😊
+

@@ -1,0 +1,138 @@
+---
+    title: 'Día 7: Manipulación de Series Temporales'
+    shortTitle: 'Día 7: Manipulación de Series Temporales'
+    description: 'En este septimo dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-12
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-7-domina-pandas.webp'
+    tags: ['coding', 'python', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'datetime', 'date', 'time', 'frequency', 'resampling' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! ⏳ Hoy exploraremos cómo trabajar con series temporales  en Pandas. Este tema es crucial en aplicaciones de machine learning como pronósticos y análisis de tendencias. ¡Comencemos!
+
+<hr/>
+
+## Creación de Series Temporales
+### Sentencia `to_datetime()`
+Convierte cadenas o números en objetos de fecha y hora.
+
+```python
+import pandas as pd
+
+fechas = pd.to_datetime(['2023-01-01', '2023-01-02', '2023-01-03'])
+serie_temporal = pd.Series([1, 2, 3], index=fechas)
+print(serie_temporal)
+```
+
+## Indexación de Series Temporales
+
+```python
+import pandas as pd
+
+fechas = pd.to_datetime(['2024-01-01', '2023-01-02', '2023-01-03'])
+serie_temporal = pd.Series([1, 2, 3], index=fechas)
+
+serie_temporal['2024']
+```
+
+## Operaciones con Fechas
+
+
+Son propiedades fundamentales para extraer información con fechas en Pandas.
+
+```python
+import pandas as pd
+
+fechas = pd.to_datetime(['2023-01-01', '2023-01-02', '2023-01-03'])
+serie_temporal = pd.Series([1, 2, 3], index=fechas)
+
+serie_temporal.index.year
+```
+
+Existen propiedades adicionales para trabajar con fechas y horas en Pandas. Por ejemplo:
+| Propiedad | Descripción |
+| --- | --- |
+| `day` | Día del mes |
+| `month` | Mes |
+| `year` | Año |
+| `hour` | Hora |
+| `minute` | Minuto |
+| `second` | Segundo |
+| `dayofweek` | Día de la semana (0 = Lunes, 1 = Martes, etc.) |
+| `dayofyear` | Día del año |
+
+
+## Cambio de Frecuencia
+
+```python
+import pandas as pd
+
+fechas = pd.to_datetime(['2023-01-01', '2023-01-02', '2023-01-03'])
+serie_temporal = pd.Series([1, 2, 3], index=fechas)
+
+serie_temporal.resample('D').mean()
+```
+
+> Existen otros tipos de resampling, como `W` para semana, `M` para mes, `Q` para trimestre y `Y` para año.
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 7"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para convertir cadenas en objetos de fecha y hora en Pandas?",
+            quiz:[
+                {
+                    text: "pd.to_datetime()",
+                    correct: true
+                },
+                {
+                    text: "pd.date_range()",
+                    correct: false
+                },
+                {
+                    text: "pd.Timestamp()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué método se usa para cambiar la frecuencia de una serie temporal?",
+            quiz:[
+                {
+                    text: ".groupby()",
+                    correct: false
+                },
+                {
+                    text: ".resample()",
+                    correct: true
+                },
+                {
+                    text: ".pivot_table()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea una serie temporal y realiza operaciones basadas en fechas (extraer año, mes, día).
+- Cambia la frecuencia de una serie temporal a mensual.
+     
+
+<hr/>
+
+¡Excelente trabajo hoy! 🙌 Ahora puedes manipular series temporales, una habilidad clave para análisis basados en tiempo. Mañana aprenderemos sobre tablas dinámicas  y transformaciones avanzadas. ¡Nos vemos pronto! 👋
+

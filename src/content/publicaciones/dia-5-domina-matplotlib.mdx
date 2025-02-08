@@ -1,0 +1,132 @@
+---
+    title: 'Día 5: Gráficos Avanzados (Boxplots, Heatmaps y Gráficos 3D)'
+    shortTitle: 'Día 5: Gráficos Avanzados (Boxplots, Heatmaps y Gráficos 3D)'
+    description: 'En este dia, aprenderemos gráficos avanzados  como boxplots , heatmaps y gráficos 3D , herramientas esenciales para explorar relaciones complejas y visualizar distribuciones de datos. ¡Vamos allá!'
+    publishDate: 2025-01-19
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-matplotlib/5.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index', 'boxplots', 'heatmaps', 'gráficos 3D' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🌟 Hoy exploraremos gráficos avanzados  como boxplots , heatmaps  y gráficos 3D . Estos tipos de visualizaciones son útiles para analizar distribuciones, correlaciones y relaciones multidimensionales en tus datos. ¡Comencemos!
+
+<hr/>
+
+## Grafico de caja (Boxplot)
+
+Un boxplot muestra la distribución de una variable numérica. Puedes crear un boxplot utilizando la función `plt.boxplot()` en Matplotlib. Aqui tienes un ejemplo:
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+
+# Crear el boxplot
+plt.boxplot(datos)
+
+# Personalización
+plt.title('Boxplot')
+plt.xlabel('Variable')
+plt.ylabel('Valores')
+plt.show()
+```
+
+Resultado de ejecución:
+![boxplot](/assets/images/publicaciones/recursos/domina-matplotlib/11.png)
+
+## Grafico de calor (Heatmap)
+
+Un heatmap muestra la correlación entre dos variables numéricas.
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Crear el heatmap
+plt.imshow(matriz, cmap='hot', interpolation='nearest')
+
+# Personalización
+plt.title('Heatmap')
+plt.xlabel('Variable 1')
+plt.ylabel('Variable 2')
+plt.colorbar()
+plt.show()
+```
+
+Resultado de ejecución:
+![heatmap](/assets/images/publicaciones/recursos/domina-matplotlib/12.png)
+
+> **Nota**: Podemos personalizar el heatmap con la función `plt.imshow()` para agregar una leyenda modificando el parámetro `cmap` y `interpolation`.
+
+## Gráficos 3D
+
+En Matplotlib, puedes crear gráficos 3D utilizando la biblioteca `mpl_toolkits.mplot3d`. Aqui tienes un ejemplo:
+
+```python
+from mpl_toolkits.mplot3d import Axes3D
+
+# Datos
+x = [1, 2, 3, 4]
+y = [2, 4, 6, 8]
+z = [3, 6, 9, 12]
+
+# Crear la figura
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+
+# Gráfico 3D
+ax.scatter(x, y, z, color='blue')
+ax.set_title('Gráfico 3D')
+ax.set_xlabel('Eje X')
+ax.set_ylabel('Eje Y')
+ax.set_zlabel('Eje Z')
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico 3d](/assets/images/publicaciones/recursos/domina-matplotlib/13.png)
+
+> **Nota**: La biblioteca `mpl_toolkits.mplot3d` proporciona herramientas para crear gráficos 3D avanzados. Puedes explorar muchos ejemplos y opciones para personalizar tus gráficos 3D.
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué tipo de gráfico es ideal para mostrar la distribución de datos y sus estadísticas clave?",
+            quiz:[
+                {
+                    text: "Scatter Plot",
+                    correct: false
+                },
+                {
+                    text: "Boxplot",
+                    correct: true
+                },
+                {
+                    text: "Pie Chart",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea un boxplot para visualizar la distribución de un conjunto de datos.
+- Crea un heatmap para mostrar una matriz de correlaciones.
+     
+<hr/>
+
+¡Felicidades por completar este curso intensivo de Matplotlib! 🎊 Ahora tienes las herramientas necesarias para crear visualizaciones claras, profesionales y avanzadas en Python. Estas habilidades son fundamentales para proyectos de análisis de datos y machine learning. ¡Sigue practicando y explorando nuevas técnicas para fortalecer tus conocimientos! Gracias por acompañarme en este viaje. ¡Nos vemos en futuros proyectos! 😊

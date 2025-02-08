@@ -1,0 +1,174 @@
+---
+    title: 'Día 3: Formatos de Líneas y Personalización de Gráficos'
+    shortTitle: 'Día 3: Formatos de Líneas y Personalización de Gráficos'
+    description: 'En este primer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-17
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-pandas.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🎨 Hoy aprenderemos a personalizar nuestros gráficos utilizando formatos de líneas , etiquetas y otras opciones avanzadas. La personalización es crucial para crear visualizaciones claras y profesionales. ¡Comencemos!
+
+<hr/>
+
+## Format Strings en Plots
+
+Format strings en Matplotlib permiten personalizar el formato de los ejes, las etiquetas y los gráficos. Aqui tienes algunos ejemplos:
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.plot(x, y, 'ro--')
+plt.xlabel('Eje X')
+plt.ylabel('Eje Y')
+plt.title('Gráfico de Dispersión')
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de dispersión](/assets/images/publicaciones/recursos/domina-matplotlib/7.png)
+
+La función `plt.plot()` admite un tercer argumento opcional para configurar el estilo de la linea.
+
+| Argumento | Descripción |
+| --- | --- |
+| 'r' | Color rojo |
+| 'g' | Color verde |
+| 'b' | Color azul |
+| 'y' | Color amarillo |
+| 'k' | Color negro |
+| 'm' | Color morado |
+| 'c' | Color celeste |
+| 'w' | Color blanco |
+| '--' | Estilo de linea discontinua |
+| '-' | Estilo de linea continua |
+| ':' | Estilo de linea punto a punto |
+| '-.' | Estilo de linea discontinua punto a punto |
+| 'o' | Estilo de marcador circulo |
+| 'v' | Estilo de marcador triángulo |
+| '^' | Estilo de marcador triángulo invertido |
+| 's' | Estilo de marcador cuadrado |
+| 'p' | Estilo de marcador pentágono |
+| '*' | Estilo de marcador estrella |
+| 'h' | Estilo de marcador hexágono |
+| 'D' | Estilo de marcador diamante |
+| 'x' | Estilo de marcador cruz |
+| 'X' | Estilo de marcador cruz invertido |
+| 'd' | Estilo de marcador diamante invertido |
+| 'P' | Estilo de marcador pentágono invertido |
+| 'H' | Estilo de marcador hexágono invertido |
+| 'o' | Estilo de marcador circulo |
+| 'O' | Estilo de marcador circulo invertido |
+
+Se puede realizar diferentes combinaciones de estilos para crear gráficos personalizados siguiendo el siguiente orden.
+
+```
+'color' + 'estilo' + 'tipo de linea'
+# Ejemplo: 'ro--'
+
+```
+
+
+## Etiquetas y Títulos
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.plot(x, y) # Sin etiquetas ni títulos
+plt.title('Título del Gráfico') # Agregar títulos
+plt.xlabel('Eje X') # Agregar etiquetas
+plt.ylabel('Eje Y') # Agregar etiquetas
+plt.show() # Mostrar el gráfico
+```
+
+## Leyendas
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.plot(x, y, label='Relación Lineal')
+plt.title('Gráfico de Dispersión')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de dispersión](/assets/images/publicaciones/recursos/domina-matplotlib/8.png)
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué significa el formato 'ro--' en Matplotlib?",
+            quiz:[
+                {
+                    text: "Rojo, círculos, línea continua",
+                    correct: false
+                },
+                {
+                    text: "Rojo, círculos, línea discontinua",
+                    correct: true
+                },
+                {
+                    text: "Azul, triángulos, línea discontinua",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se usa para agregar un título a un gráfico?",
+            quiz:[
+                {
+                    text: "plt.title()",
+                    correct: true
+                },
+                {
+                    text: "plt.xlabel()",
+                    correct: false
+                },
+                {
+                    text: "plt.ylabel()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea un gráfico con líneas discontinuas y marcadores de triángulo.
+- Agrega títulos y etiquetas a un gráfico existente.
+     
+     
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora puedes personalizar tus gráficos con estilos y etiquetas. Mañana aprenderemos sobre subgráficos  y gráficos múltiples , útiles para comparar diferentes conjuntos de datos. ¡Nos vemos pronto! 😊

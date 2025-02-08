@@ -1,0 +1,136 @@
+---
+    title: 'Día 4: Subgráficos y Gráficos Múltiples'
+    shortTitle: 'Día 4: Subgráficos y Gráficos Múltiples'
+    description: 'En este primer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-18
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-pandas.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 📈 Hoy aprenderemos a crear subgráficos  y combinar múltiples gráficos en una sola figura. Esta habilidad es esencial para comparar diferentes conjuntos de datos o visualizar múltiples perspectivas de un análisis. ¡Comencemos!
+
+<hr/>
+
+## Subgráficos (Subplots)
+
+Un subgráfico es una gráfica dentro de una figura. En Matplotlib, puedes crear subgráficos utilizando la función `plt.subplot()`. Aqui tienes un ejemplo:
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear la figura y los subgráficos
+fig, (ax1, ax2) = plt.subplots(1, 2)
+
+# Gráfico 1
+ax1.plot(x, y)
+
+# Gráfico 2
+ax2.scatter(x, y)
+
+# Ajustar el espacio entre los subgráficos
+fig.tight_layout()
+
+# Mostrar la figura
+plt.show()
+```
+
+Resultado de ejecución:
+![subgráfico](/assets/images/publicaciones/recursos/domina-matplotlib/9.png)
+
+
+## Gráficos Múltiples en una Figura
+
+En Matplotlib, puedes crear gráficos múltiples en una sola figura. Aqui tienes un ejemplo:
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4]
+y1 = [1, 4, 9, 16]
+y2 = [2, 4, 6, 8]
+
+# Crear la figura
+plt.figure(figsize=(8, 6))
+
+# Gráfico 1
+plt.plot(x, y1, label='Cuadrados', color='red', linestyle='--')
+
+# Gráfico 2
+plt.plot(x, y2, label='Lineal', color='blue', marker='o')
+
+# Personalización
+plt.title('Gráficos Múltiples')
+plt.xlabel('Eje X')
+plt.ylabel('Eje Y')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+Resultado de ejecución:
+![gráficos múltiples](/assets/images/publicaciones/recursos/domina-matplotlib/10.png)
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para crear subgráficos en Matplotlib?",
+            quiz:[
+                {
+                    text: "plt.subplots()",
+                    correct: true
+                },
+                {
+                    text: "plt.plot()",
+                    correct: false
+                },
+                {
+                    text: "plt.bar()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué parámetro se usa para ajustar automáticamente el diseño de subgráficos?",
+            quiz:[
+                {
+                    text: "plt.tight_layout()",
+                    correct: true
+                },
+                {
+                    text: "plt.legend()",
+                    correct: false
+                },
+                {
+                    text: "plt.grid()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea una figura con 2x2 subgráficos que incluya un gráfico de barras, un gráfico circular, un histograma y un gráfico de dispersión.
+- Combina dos gráficos de líneas en una sola figura y personaliza su apariencia.
+     
+<hr/>
+
+¡Gran trabajo hoy! 🎉 Ahora puedes crear subgráficos y combinar múltiples gráficos en una sola figura. Mañana aprenderemos sobre gráficos avanzados  como boxplots, heatmaps y gráficos 3D. ¡Nos vemos pronto! 😊

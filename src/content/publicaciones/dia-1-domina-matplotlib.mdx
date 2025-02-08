@@ -1,0 +1,174 @@
+---
+    title: 'Día 1: Introducción a Matplotlib y Gráficos Básicos'
+    shortTitle: 'Día 1: Introducción a Matplotlib y Gráficos Básicos'
+    description: 'En este primer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-15
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-pandas.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola a todos! 🌟 Hoy comenzamos nuestro viaje con **Matplotlib** , una de las bibliotecas más poderosas para la visualización de datos en **Python**. En este primer día, aprenderemos los conceptos básicos de **Matplotlib** y cómo crear gráficos simples como **Bar Charts**  y **Pie Charts** . ¡Comencemos!
+
+## ¿Qué es Matplotlib?
+Matplotlib es una biblioteca de visualización de datos en Python que permite crear gráficos estáticos, animados e interactivos. Es ampliamente utilizada en ciencia de datos y machine learning para explorar y comunicar resultados.
+
+## Instalación e Importación
+
+Para instalar Matplotlib, puedes usar la función `pip install matplotlib`.
+
+```shell
+pip install matplotlib
+```
+
+Para importar Matplotlib, puedes usar la función `import matplotlib.pyplot as plt`.
+
+```shell
+pip install matplotlib
+```
+
+## Estructura de un Gráfico en Matplotlib
+
+Un gráfico en Matplotlib se compone de cuatro componentes principales:
+
+1. **Figura**: Representa la ventana en la que se muestra el gráfico.
+2. **Eje X**: Representa el eje horizontal del gráfico.
+3. **Eje Y**: Representa el eje vertical del gráfico.
+4. **Elementos**: Son los elementos que se muestran en el gráfico, como puntos, lineas, barras, etc.
+
+## Dibujar un punto
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.scatter(x, y)
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de puntos](/assets/images/publicaciones/recursos/domina-matplotlib/3.png)
+
+
+## Dibujar una linea
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.plot(x, y)
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de linea](/assets/images/publicaciones/recursos/domina-matplotlib/2.png)
+
+## Graficos Básicoss
+### Gráfico de Barras (Bar Chart)
+Un gráfico de barras es útil para comparar categorías.
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+categorias = ['A', 'B', 'C', 'D']
+valores = [3, 7, 2, 5]
+
+# Crear el gráfico
+plt.bar(categorias, valores)
+plt.title('Gráfico de Barras')
+plt.xlabel('Categorías')
+plt.ylabel('Valores')
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de barras](/assets/images/publicaciones/recursos/domina-matplotlib/1.png)
+
+
+### Gráfico de Pastel (Pie Chart)
+Un gráfico de pastel es usado para representar porcentajes.
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+categorias = ['A', 'B', 'C', 'D']
+porcentajes = [30, 40, 20, 10]
+
+# Crear el gráfico
+plt.pie(porcentajes, labels=categorias, autopct='%1.1f%%')
+plt.title('Gráfico de Pastel')
+plt.show()
+```
+
+Resultado de ejecución:
+![grafico de pastel](/assets/images/publicaciones/recursos/domina-matplotlib/4.png)
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué tipo de gráfico es ideal para mostrar proporciones?",
+            quiz:[
+                {
+                    text: "Bar Chart",
+                    correct: false
+                },
+                {
+                    text: "Pie Chart",
+                    correct: true
+                },
+                {
+                    text: "Scatter Plot",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se utiliza para crear un gráfico de barras en Matplotlib?",
+            quiz:[
+                {
+                    text: "plt.scatter()",
+                    correct: false
+                },
+                {
+                    text: "plt.bar()",
+                    correct: true
+                },
+                {
+                    text: "plt.pie()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea un gráfico de barras para comparar las ventas de 4 productos.
+- Crea un gráfico circular para mostrar la distribución de porcentajes de 4 categorías.
+     
+
+
+¡Gran inicio! 🎉 Ahora tienes una base sólida para trabajar con gráficos básicos en Matplotlib. Mañana aprenderemos sobre Histogramas  y Gráficos de Dispersión , herramientas clave para analizar distribuciones y relaciones entre variables. ¡Nos vemos pronto! 😊

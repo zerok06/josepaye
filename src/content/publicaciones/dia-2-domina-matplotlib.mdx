@@ -1,0 +1,117 @@
+---
+    title: 'Día 2: Histogramas y Gráficos de Dispersión'
+    shortTitle: 'Día 2: Histogramas y Gráficos de Dispersión'
+    description: 'En este primer dia, aprenderemos a trabajar con Pandas, una poderosa biblioteca de Python para el manejo de datos. Descubrirás su potencia para manipular y analizar datos de manera eficiente.'
+    publishDate: 2025-01-16
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/dia-1-domina-pandas.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'pandas', 'series', 'dataframe', 'index' ]
+---
+
+import QuizPost from '../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 📊 Hoy exploraremos dos tipos de gráficos esenciales: **Histogramas**  y **Gráficos de Dispersión** . Estos son fundamentales para entender distribuciones de datos y relaciones entre variables en proyectos de análisis de datos y **machine learning**. ¡Vamos allá!
+
+<hr/>
+
+## Histograma
+Un histograma muestra la distribución de una variable numérica.
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+
+# Crear el histograma
+plt.hist(datos, bins=4, edgecolor='black')
+plt.title('Histograma')
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.show()
+```
+
+Resultado de ejecución:
+![histograma](/assets/images/publicaciones/recursos/domina-matplotlib/5.png)
+
+## Gráfico de Dispersión (Scatter Plot)
+Un gráfico de dispersión muestra la relación entre dos variables numéricas.
+
+```python
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+plt.scatter(x, y, color='blue', label='Relación Lineal')
+plt.title('Gráfico de Dispersión')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.legend()
+plt.show()
+```
+
+> **Nota**: La función `plt.legend()` agrega una leyenda al gráfico.
+
+Resultado de ejecución:
+![grafico de dispersión](/assets/images/publicaciones/recursos/domina-matplotlib/6.png)
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Pandas"
+    questions={[
+        {
+            subtitle: "¿Qué gráfico se utiliza para mostrar la distribución de una variable numérica?",
+            quiz:[
+                {
+                    text: "Histogram",
+                    correct: true
+                },
+                {
+                    text: "Scatter Plot",
+                    correct: false
+                },
+                {
+                    text: "Pie Chart",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se usa para agregar una leyenda a un gráfico en Matplotlib?",
+            quiz:[
+                {
+                    text: "plt.title()",
+                    correct: false
+                },
+                {
+                    text: "plt.legend()",
+                    correct: true
+                },
+                {
+                    text: "plt.xlabel()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Pandas
+
+- Crea un histograma para visualizar la distribución de edades en un conjunto de datos.
+- Crea un gráfico de dispersión para mostrar la relación entre horas de estudio y calificaciones.
+     
+     
+
+
+¡Excelente trabajo hoy! 🙌 Ahora puedes crear histogramas y gráficos de dispersión, herramientas clave para analizar datos. Mañana aprenderemos sobre **formatos de líneas y personalización de gráficos** . ¡Nos vemos pronto! 👋

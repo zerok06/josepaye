@@ -54,14 +54,14 @@ const { Content, headings } = await post.render()
           <h3 class="text-2xl font-medium font-roboto_slab mb-2">
             Tabla de contenido
           </h3>
-          <ul>
+          <ul class="list-disc list-inside">
             {
               headings.map(heading => (
                 <li
-                  class="text-base font-inter py-0.5 text-black/70 w-full dark:text-white/70 hover:text-primary-500 hover:underline transition duration-300 cursor-pointer"
+                  class="text-base font-inter py-0.5 text-black/70 w-full dark:text-white/70 hover:text-primary-500  transition duration-300 cursor-pointer"
                   style={{ marginLeft: `${heading.depth - 1}rem` }}
                 >
-                  <a href={`#${heading.slug}`} class="w-full">
+                  <a href={`#${heading.slug}`} class="w-full underline">
                     {heading.text}
                   </a>
                 </li>

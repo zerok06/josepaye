@@ -1,0 +1,167 @@
+---
+    title: 'Día 4: Personalización y Temas en Seaborn'
+    shortTitle: 'Día 4: Personalización y Temas en Seaborn'
+    description: 'En este dia, aprenderemos sobre personalización y temas en Seaborn, habilidades clave para crear gráficos profesionales y atractivos. ¡Comencemos!'
+    publishDate: 2025-01-23
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-seaborn/4.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'python', 'matplotlib', 'graficos', 'pandas', 'seaborn', 'domina-seaborn' ]
+---
+
+import QuizPost from '../../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 🎨 Hoy aprenderemos sobre **personalización y temas  en Seaborn**. La personalización es clave para crear gráficos profesionales y atractivos que se adapten a tus necesidades. ¡Comencemos!
+
+## Temas Predefinidos
+Seaborn ofrece varios temas predefinidos que puedes aplicar fácilmente.
+
+```python
+import seaborn as sns
+
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 10]
+
+# Aplicar un tema
+sns.set_theme(style="darkgrid")
+
+# Crear un gráfico con el tema aplicado
+sns.violinplot(y=datos)
+```
+
+Existen otros temas que puedes aplicar a gráficos en Seaborn.
+
+| Tema | Descripción |
+| --- | --- |
+| darkgrid | Tema oscuro con grillas |
+| whitegrid | Tema blanco con grillas |
+| dark | Tema oscuro sin grillas |
+| white | Tema blanco sin grillas |
+| ticks | Tema con ejes y grillas |
+
+Resultado de ejecución:
+![temas predefinidos](/assets/images/publicaciones/recursos/domina-seaborn/10.png)
+
+## Paletas de Colores
+Seaborn ofrece una amplia variedad de paletas de colores predefinidas que facilitan la creación de gráficos profesionales.
+
+```python
+import seaborn as sns
+
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 10]
+
+# Aplicar una paleta de colores
+sns.set_palette("pastel")
+
+# Crear un gráfico con la paleta de colores aplicada
+sns.violinplot(y=datos)
+```
+
+Existen otras paletas de colores que puedes utilizar en gráficos en Seaborn.
+
+| Paleta de Colores | Descripción |
+| --- | --- |
+| Set1 | Paleta de colores Set1 |
+| Set2 | Paleta de colores Set2 |
+| Set3 | Paleta de colores Set3 |
+| pastel | Paleta de colores pastel |
+| dark | Paleta de colores oscuro |
+| muted | Paleta de colores muted |
+| deep | Paleta de colores profundo |
+| bright | Paleta de colores brillante |
+| colorblind | Paleta de colores colorblind |
+| coolwarm | Paleta de colores coolwarm |
+| cubehelix | Paleta de colores cubehelix |
+| rainbow | Paleta de colores rainbow |
+
+Resultado de ejecución:
+![paletas de colores](/assets/images/publicaciones/recursos/domina-seaborn/11.png)
+
+## Personalización Avanzada
+Seaborn ofrece una amplia variedad de opciones avanzadas para personalizar tus gráficos.
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Datos
+x = [1, 2, 3, 4]
+y = [1, 4, 9, 16]
+
+# Crear el gráfico
+sns.lineplot(x=x, y=y, color='red', linestyle='--', marker='o')
+
+# Personalización
+plt.title('Gráfico Personalizado', fontsize=16)
+plt.xlabel('Eje X', fontsize=12)
+plt.ylabel('Eje Y', fontsize=12)
+plt.legend(['Línea Roja'], loc='upper left')
+plt.grid(True)
+plt.show()
+```
+
+Donde:
+- `plt.title()` establece el título del gráfico.
+- `plt.xlabel()` establece el titulo del eje X.
+- `plt.ylabel()` establece el titulo del eje Y.
+- `plt.legend()` establece la leyenda del gráfico.
+- `plt.grid(True)` muestra las grillas en el gráfico.
+
+Resultado de ejecución:
+![gráfico personalizado](/assets/images/publicaciones/recursos/domina-seaborn/12.png)
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 4"
+    desc="Prueba tus conocimientos sobre Seaborn"
+    questions={[
+        {
+            subtitle: "¿Qué función se utiliza para aplicar un tema en Seaborn?",
+            quiz:[
+                {
+                    text: "sns.set_theme()",
+                    correct: true
+                },
+                {
+                    text: "sns.set_palette()",
+                    correct: false
+                },
+                {
+                    text: "sns.lineplot()",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué parámetro se usa para cambiar la paleta de colores en Seaborn?",
+            quiz:[
+                {
+                    text: "sns.set_theme()",
+                    correct: false
+                },
+                {
+                    text: "sns.set_palette()",
+                    correct: true
+                },
+                {
+                    text: "sns.barplot()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Seaborn
+
+- Aplica el tema "whitegrid" y crea un gráfico de barras.
+- Cambia la paleta de colores a "coolwarm" y crea un heatmap.
+     
+     
+<hr/> 
+
+¡Gran trabajo hoy! 🎉 Ahora puedes personalizar tus gráficos con temas y paletas de colores. Mañana cerraremos el curso con un resumen y ejercicios finales para consolidar todo lo aprendido. ¡Nos vemos pronto! 😊

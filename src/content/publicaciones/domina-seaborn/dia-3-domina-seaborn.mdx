@@ -1,0 +1,136 @@
+---
+    title: 'Día 3: Visualización de Datos Categóricos'
+    shortTitle: 'Día 3: Visualización de Datos Categóricos'
+    description: 'En este dia, aprenderás a visualizar datos categóricos usando Seaborn para comparar grupos y categorías. ¡Comencemos!'
+    publishDate: 2025-01-22
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-seaborn/3.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'python', 'matplotlib', 'graficos', 'pandas', 'seaborn', 'categoricos' ]
+---
+
+import QuizPost from '../../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🌟 Hoy aprenderemos a visualizar datos **categóricos**  usando Seaborn. Los datos categóricos son comunes en análisis de datos, y Seaborn ofrece herramientas especializadas para comparar grupos y categorías. ¡Comencemos!
+
+## Gráficos de Barras Agrupadas (Count Plot)
+
+Los gráficos de barras agrupadas son usados para comparar la distribución de variables categóricas.
+
+```python
+import seaborn as sns
+
+# Datos
+categorias = ['A', 'B', 'A', 'B', 'C', 'A', 'C']
+
+# Crear el gráfico
+sns.countplot(x=categorias)
+```
+
+Resultado de ejecución:
+![grafico de barras agrupadas](/assets/images/publicaciones/recursos/domina-seaborn/7.png)
+
+## Gráficos de Caja por Categoría (Boxplot)
+
+Los gráficos de caja por categoría son usados para comparar la distribución de variables numéricas en diferentes categorías.
+
+```python
+import seaborn as sns
+import pandas as pd
+
+# Datos
+df = pd.DataFrame({
+    'Categorías': ['A', 'A', 'B', 'B', 'C', 'C'],
+    'Valores': [1, 2, 3, 4, 5, 6]
+})
+
+# Crear el gráfico
+sns.boxplot(x='Categorías', y='Valores', data=df)
+```
+
+| Categorías | Valores |
+| --- | --- |
+| A | 1 |
+| A | 2 |
+| B | 3 |
+| B | 4 |
+| C | 5 |
+| C | 6 |
+
+Resultado de ejecución:
+![grafico de caja por categoría](/assets/images/publicaciones/recursos/domina-seaborn/8.png)
+
+## Gráficos de Barras Agrupadas (Bar Plot)
+
+Los gráficos de barras agrupadas son usados para comparar la distribución de variables categóricas.
+
+```python
+import seaborn as sns
+import pandas as pd
+
+# Datos
+df = pd.DataFrame({
+    'Categorías': ['A', 'A', 'B', 'B', 'C', 'C'],
+    'Valores': [1, 2, 3, 4, 5, 6]
+})
+
+# Crear el gráfico
+sns.barplot(x='Categorías', y='Valores', data=df)
+```
+
+Resultado de ejecución:
+![grafico de barras agrupadas](/assets/images/publicaciones/recursos/domina-seaborn/9.png)
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 3"
+    desc="Prueba tus conocimientos sobre Seaborn"
+    questions={[
+        {
+            subtitle: "¿Qué tipo de gráfico es ideal para comparar conteos de categorías?",
+            quiz:[
+                {
+                    text: "Count Plot",
+                    correct: true
+                },
+                {
+                    text: "Bar Plot",
+                    correct: false
+                },
+                {
+                    text: "Boxplot",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué gráfico muestra la distribución de valores dentro de cada categoría?",
+            quiz:[
+                {
+                    text: "Boxplot",
+                    correct: true
+                },
+                {
+                    text: "Violin Plot",
+                    correct: false
+                },
+                {
+                    text: "Count Plot",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Seaborn
+
+- Crea un count plot para visualizar la frecuencia de diferentes categorías en un conjunto de datos.
+- Crea un boxplot para comparar la distribución de valores entre diferentes grupos.
+     
+<hr/> 
+
+¡Gran trabajo hoy! 🎉 Ahora puedes visualizar datos categóricos de manera efectiva. Mañana aprenderemos sobre **personalización y temas**  en Seaborn, habilidades clave para crear gráficos profesionales y atractivos. ¡Nos vemos pronto! 😊

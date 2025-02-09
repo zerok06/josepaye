@@ -1,0 +1,146 @@
+---
+    title: 'Día 1: Introducción a Seaborn y Tipos de Gráficos'
+    shortTitle: 'Día 1: Introducción a Seaborn y Tipos de Gráficos'
+    description: 'En este primer dia, aprenderemos sobre Seaborn, una biblioteca de visualización de datos en Python. ¡Comencemos!'
+    publishDate: 2025-01-20
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-seaborn/1.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'python', 'matplotlib', 'graficos', 'pandas', 'seaborn', 'domina-seaborn' ]
+---
+
+import QuizPost from '../../../components/QuizPost'
+
+## Bienvenida
+
+Hoy comenzamos nuestro viaje con **Seaborn** , una biblioteca de visualización de datos basada en Matplotlib que facilita la creación de gráficos estadísticos elegantes y sofisticados. En este primer día, aprenderemos los conceptos básicos de **Seaborn** y exploraremos una amplia gama de tipos de gráficos. ¡Comencemos!
+
+## ¿Qué es Seaborn?
+Seaborn es una biblioteca de visualización de datos en Python que se construye sobre Matplotlib. Ofrece una interfaz de alto nivel para crear gráficos estadísticos atractivos y está especialmente diseñada para trabajar con datos tabulares (como Pandas DataFrames). Además, Seaborn incluye conjuntos de datos integrados y paletas de colores predefinidas que facilitan la creación de gráficos profesionales.
+
+## Instalación e Importación
+
+Para instalar Seaborn, puedes usar la función `pip install seaborn`.
+
+```shell
+pip install seaborn
+```
+
+Luego, puedes importarlo en tu código:
+
+```shell
+import seaborn as sns
+```
+
+## Tipos de Gráficos en Seaborn
+Seaborn ofrece una amplia variedad de gráficos para diferentes propósitos. Aquí hay algunos ejemplos:
+
+### Gráfico de Líneas (Line Plot)
+El gráfico de líneas es útil para mostrar tendencias a lo largo del tiempo o en relación con una variable continua.
+
+```python
+import seaborn as sns
+
+# Datos
+x = [1, 2, 3, 4]
+y = [1, 4, 9, 16]
+
+# Crear el gráfico
+sns.lineplot(x=x, y=y)
+```
+Resultado de ejecución:
+![grafico de lineas](/assets/images/publicaciones/recursos/domina-seaborn/1.png)
+
+### Gráfico de Barras (Bar Plot)
+
+El gráfico de barras es ideal para comparar valores entre categorías.
+
+```python
+import seaborn as sns
+
+# Datos
+categorias = ['A', 'B', 'C', 'D']
+valores = [3, 7, 2, 5]
+
+# Crear el gráfico
+sns.barplot(x=categorias, y=valores)
+```
+
+Resultado de ejecución:
+![grafico de barras](/assets/images/publicaciones/recursos/domina-seaborn/2.png)
+
+### Gráfico de Dispersión (Scatter Plot)
+
+El gráfico de dispersión muestra la relacion entre dos variables numéricas.
+
+```python
+import seaborn as sns
+
+# Datos
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Crear el gráfico
+sns.scatterplot(x=x, y=y)
+```
+Este tipo de gráfico es útil para identificar patrones o correlaciones entre variables.
+
+Resultado de ejecución:
+![grafico de dispersión](/assets/images/publicaciones/recursos/domina-seaborn/3.png)
+
+Si notas que los gráficos se crean con facilidad.
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 1"
+    desc="Prueba tus conocimientos sobre Seaborn"
+    questions={[
+        {
+            subtitle: "¿En que biblioteca esta basada Seaborn?",
+            quiz:[
+                {
+                    text: "Pandas",
+                    correct: false
+                },
+                {
+                    text: "NumPy",
+                    correct: false
+                },
+                {
+                    text: "Matplotlib",
+                    correct: true
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué tipo de gráfico es ideal para mostrar tendencias a lo largo del tiempo?",
+            quiz:[
+                {
+                    text: "Bar Plot",
+                    correct: false
+                },
+                {
+                    text: "Line Plot",
+                    correct: true
+                },
+                {
+                    text: "Scatter Plot",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Seaborn
+
+- Crea un gráfico de líneas para mostrar la evolución de las ventas mensuales.
+- Crea un gráfico de barras para comparar las calificaciones de diferentes productos.
+     
+<hr/> 
+
+
+¡Gran inicio! 🎉 Ahora tienes una base sólida para trabajar con **Seaborn** y explorar diferentes tipos de gráficos. Mañana aprenderemos sobre mejoras estadísticas  y cómo usar Seaborn para análisis avanzados. ¡Nos vemos pronto! 😊

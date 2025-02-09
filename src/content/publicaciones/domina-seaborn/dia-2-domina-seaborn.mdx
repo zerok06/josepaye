@@ -1,0 +1,139 @@
+---
+    title: 'Día 2: Mejoras Estadísticas en Seaborn'
+    shortTitle: 'Día 2: Mejoras Estadísticas en Seaborn'
+    description: 'En este segundo dia, aprenderemos sobre mejoras estadísticas  y qué usar Seaborn para análisis avanzados. ¡Comencemos!'
+    publishDate: 2025-01-21
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-seaborn/2.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'python', 'matplotlib', 'graficos', 'pandas', 'seaborn', 'domina-seaborn' ]
+---
+
+import QuizPost from '../../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola nuevamente! 📊 Hoy exploraremos las mejoras estadísticas  que ofrece **Seaborn**. Esta biblioteca no solo permite crear gráficos, sino también realizar análisis estadísticos directamente en las visualizaciones. ¡Vamos allá!
+
+## Gráficos de Distribución (Distribution Plots)
+
+Los gráficos de distribución son útiles para entender la distribución de una variable. 
+
+
+### Histograma con KDE (Kernel Density Estimate)
+El histograma muestra la frecuencia de los datos, mientras que el KDE estima la densidad de probabilidad.
+
+```python
+import seaborn as sns
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+
+# Crear el gráfico
+sns.histplot(datos, kde=True)
+```
+
+> EL KDE genera una curva que representa la densidad o suavisado de la distribución de los datos.
+
+Puedes profundizar mas el tema de [KDE](https://cienciadedatos.net/documentos/pystats02-kernel-density-estimation-kde-python) (Kernel Density Estimate).
+
+Resultado de ejecución:
+![histograma con kde](/assets/images/publicaciones/recursos/domina-seaborn/4.png)
+
+
+### Grafico de caja y violin (Boxplot and Violin Plot)
+
+El boxplot muestra estadísticas clave (mediana, cuartiles, valores atípicos), mientras que el violin plot combina un boxplot con una estimación de densidad.
+
+
+```python
+import seaborn as sns
+
+# Datos
+datos = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 10]
+
+# Boxplot
+sns.boxplot(y=datos)
+
+# Violin Plot
+sns.violinplot(y=datos)
+```
+
+Resultado de ejecución:
+![boxplot](/assets/images/publicaciones/recursos/domina-seaborn/5.png)
+
+### Regresión Lineal (Regression Plots)
+
+El gráfico de regresión lineal muestra la correlación entre dos variables numéricas.
+
+```python
+import seaborn as sns
+
+# Datos
+x = [1, 2, 3, 4, 15]
+y = [2, 4, 6, 8, 15]
+
+# Crear el gráfico
+sns.regplot(x=x, y=y)
+```
+
+> Este grafico nos brinda mas informacion como la pendiente y la interseccion
+
+Resultado de ejecución:
+![regresion lineal](/assets/images/publicaciones/recursos/domina-seaborn/6.png)
+
+
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 2"
+    desc="Prueba tus conocimientos sobre Seaborn"
+    questions={[
+        {
+            subtitle: "¿Qué tipo de gráfico muestra tanto la distribución como la densidad de los datos?",
+            quiz:[
+                {
+                    text: "Histograma",
+                    correct: false
+                },
+                {
+                    text: "Violin Plot",
+                    correct: true
+                },
+                {
+                    text: "Boxplot",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se utiliza para agregar una línea de regresión en Seaborn?",
+            quiz:[
+                {
+                    text: "sns.regplot()",
+                    correct: true
+                },
+                {
+                    text: "sns.scatterplot()",
+                    correct: false
+                },
+                {
+                    text: "sns.lineplot()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Seaborn
+
+- Crea un histograma con KDE para visualizar la distribución de edades en un conjunto de datos.
+- Crea un gráfico de regresión lineal para analizar la relación entre horas de estudio y calificaciones.
+     
+     
+<hr/> 
+
+
+¡Excelente trabajo hoy! 🙌 Ahora puedes usar Seaborn para realizar análisis estadísticos directamente en tus gráficos. Mañana aprenderemos sobre **visualización de datos categóricos** , una habilidad clave para comparar grupos en tus datos. ¡Nos vemos pronto! 👋

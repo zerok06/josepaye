@@ -1,0 +1,133 @@
+---
+    title: 'Día 5: Resumen y Ejercicios Finales'
+    shortTitle: 'Día 5: Resumen y Ejercicios Finales'
+    description: 'En este dia, haremos el resumen de conceptos clave y realizaremos ejercicios finales para consolidar tus conocimientos. ¡Vamos a cerrar con broche de oro!'
+    publishDate: 2025-01-24
+    timeReadMins: 2
+    heroImage: '/assets/images/publicaciones/domina-seaborn/5.webp'
+    tags: ['coding', 'python', 'matplotlib', 'pandas']
+    keywords: [ 'python', 'matplotlib', 'graficos', 'pandas', 'seaborn' ]
+---
+
+import QuizPost from '../../../components/QuizPost'
+
+## Bienvenida
+
+¡Hola de nuevo! 🌟 Hoy es el último día de nuestro curso de **Seaborn** . Repasaremos los conceptos clave y realizaremos ejercicios finales para consolidar tus conocimientos. ¡Vamos a cerrar con broche de oro!
+
+## Resumen de Conceptos Clave  
+
+- **Tipos de Gráficos** : Line plots, bar plots, scatter plots, heatmaps, boxplots, violin plots, etc.
+- **Mejoras Estadísticas** : Histogramas con KDE, regresiones lineales, distribuciones.
+- **Datos Categóricos** : Count plots, bar plots por categoría, boxplots.
+- **Personalización** : Temas, paletas de colores, ajustes de estilo.
+     
+
+Ejercicio Final  
+
+Crea un conjunto de gráficos que incluya: 
+
+1. Un **line plot**  para mostrar tendencias.
+2. Un **heatmap**  para visualizar correlaciones.
+3. Un **boxplot**  para comparar distribuciones.
+4. Un **scatter plot**  con una línea de regresión.
+     
+```python
+# Datos
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# DataFrame de ejemplo
+df = pd.DataFrame({
+    'X': [1, 2, 3, 4, 5],
+    'Y': [2, 4, 6, 8, 10],
+    'Categoria': ['A', 'B', 'A', 'B', 'C']
+})
+
+# Line Plot
+sns.lineplot(x='X', y='Y', data=df)
+plt.title('Line Plot')
+plt.show()
+
+# Heatmap
+matriz = df.corr()
+sns.heatmap(matriz, annot=True, cmap='coolwarm')
+plt.title('Heatmap')
+plt.show()
+
+# Boxplot
+sns.boxplot(x='Categoria', y='Y', data=df)
+plt.title('Boxplot')
+plt.show()
+
+# Scatter Plot con Regresión
+sns.regplot(x='X', y='Y', data=df)
+plt.title('Scatter Plot con Regresión')
+plt.show()
+```
+
+Resultado de Ejecución:
+
+![resultado de ejercicio](/assets/images/publicaciones/recursos/domina-seaborn/13.png)
+
+![resultado de ejercicio](/assets/images/publicaciones/recursos/domina-seaborn/14.png)
+
+![resultado de ejercicio](/assets/images/publicaciones/recursos/domina-seaborn/15.png)
+
+![resultado de ejercicio](/assets/images/publicaciones/recursos/domina-seaborn/16.png)
+
+
+<QuizPost 
+    client:load
+    title="Preguntas del Día 5"
+    desc="Prueba tus conocimientos sobre Seaborn"
+    questions={[
+        {
+            subtitle: "¿Qué tipo de gráfico es ideal para visualizar correlaciones entre variables?",
+            quiz:[
+                {
+                    text: "Heatmap",
+                    correct: true
+                },
+                {
+                    text: "Scatter Plot",
+                    correct: false
+                },
+                {
+                    text: "Bar Plot",
+                    correct: false
+                }
+            ]
+            },
+            {
+            subtitle: "¿Qué función se utiliza para agregar una línea de regresión en un scatter plot?",
+            quiz:[
+                {
+                    text: "sns.regplot()",
+                    correct: true
+                },
+                {
+                    text: "sns.scatterplot()",
+                    correct: false
+                },
+                {
+                    text: "sns.lineplot()",
+                    correct: false
+                }
+            ]
+            }
+    ]} 
+/> 
+
+
+## Ejercicios con Seaborn
+
+- Crea un heatmap para visualizar la matriz de correlaciones de un DataFrame.
+- Combina un scatter plot con una línea de regresión para analizar la relación entre dos variables.
+     
+     
+     
+<hr/> 
+
+¡Felicidades por completar este curso intensivo de **Seaborn**! 🎊 Ahora tienes las herramientas necesarias para crear visualizaciones sofisticadas y profesionales en **Python**. Estas habilidades son fundamentales para proyectos de **análisis de datos y machine learning**. ¡Sigue practicando y explorando nuevas técnicas para fortalecer tus conocimientos! Gracias por acompañarme en este viaje. **¡Nos vemos en futuros proyectos!** 😊

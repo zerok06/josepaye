@@ -23,6 +23,12 @@ const {
   slug,
 } = post
 
+const otherPosts = (
+  await getCollection('publicaciones', ({ id }) => {
+    return id !== post.id
+  })
+).slice(0, 3)
+
 const { Content, headings } = await post.render()
 ---
 
@@ -50,31 +56,160 @@ const { Content, headings } = await post.render()
         </div>
       </section>
       <WrapperPost>
-        <section class="p-4 border border-gray-500/20 rounded-2xl my-10">
-          <h3 class="text-2xl font-medium font-roboto_slab mb-2">
-            Tabla de contenido
-          </h3>
-          <ul class="list-disc list-inside">
-            {
-              headings.map(heading => (
-                <li
-                  class="text-base font-inter py-0.5 text-black/70 w-full dark:text-white/70 hover:text-primary-500  transition duration-300 cursor-pointer"
-                  style={{ marginLeft: `${heading.depth - 1}rem` }}
-                >
-                  <a href={`#${heading.slug}`} class="w-full underline">
+        <section class="w-[180px] relative md:block hidden">
+          <div class="sticky top-20">
+            <h2
+              class="text-xs font-roboto_slab tracking-wider text-black/60 uppercase font-medium mb-2"
+            >
+              Contenido
+            </h2>
+            <div>
+              <hr class="border-gray-500/30 mb-3" />
+              {
+                headings.map(heading => (
+                  <a
+                    href={`#${heading.slug}`}
+                    class="text-sm font-inter py-0.5 block pl-1 border-l-2 border-transparent hover:border-gray-500/20 text-black/50 w-full dark:text-white/70 hover:bg-gray-500/5 hover:text-black transition duration-300 cursor-pointer"
+                    style={{ marginLeft: `${(heading.depth - 2) * 10}px` }}
+                  >
                     {heading.text}
                   </a>
-                </li>
-              ))
-            }
-          </ul>
+                ))
+              }
+              <hr class="border-gray-500/30 mt-3" />
+            </div>
+            <h2
+              class="text-xs font-inter tracking-wider text-black/60 uppercase font-medium mt-6 mb-2"
+            >
+              Compartir
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              <a
+                href={`https://twitter.com/intent/tweet?text=${title}&url=https://josepaye.vercel.app/post/${slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="size-8 rounded-full hover:bg-primary-100 transition duration-300 hover:text-primary-500 text-gray-500 flex items-center justify-center bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  ><path
+                    fill="currentColor"
+                    d="M17.751 2.96h3.067l-6.7 7.659L22 21.039h-6.172l-4.833-6.32l-5.531 6.32h-3.07l7.167-8.19L2 2.96h6.328l4.37 5.777zm-1.076 16.243h1.7L7.404 4.7H5.58z"
+                  ></path></svg
+                ></a
+              >
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://josepaye.vercel.app/post/${slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="size-8 rounded-full hover:bg-primary-100 transition duration-300 hover:text-primary-500 text-gray-500 flex items-center justify-center bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  ><path
+                    fill="currentColor"
+                    d="M13 21H9V9h4v2a4.618 4.618 0 0 1 3.525-1.763A4.5 4.5 0 0 1 21 13.75V21h-4v-6.75a2.265 2.265 0 0 0-2.247-1.944A1.815 1.815 0 0 0 13 14.25V21Zm-6 0H3V9h4v12ZM5 7a2 2 0 1 1 0-4a2 2 0 0 1 0 4Z"
+                  ></path></svg
+                ></a
+              >
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://josepaye.vercel.app/post/${slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="size-8 rounded-full hover:bg-primary-100 transition duration-300 hover:text-primary-500 text-gray-500 flex items-center justify-center bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  ><path
+                    fill="currentColor"
+                    d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396z"
+                  ></path></svg
+                >
+              </a>
+              <a
+                href={`https://api.whatsapp.com/send?text=https://josepaye.vercel.app/post/${slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="size-8 rounded-full hover:bg-primary-100 transition duration-300 hover:text-primary-500 text-gray-500 flex items-center justify-center bg-gray-200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  ><path
+                    fill="currentColor"
+                    d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"
+                  ></path></svg
+                >
+              </a>
+            </div>
+          </div>
         </section>
-        <MarkdownContainer>
-          <Content />
-        </MarkdownContainer>
+        <section class="flex-1">
+          <MarkdownContainer>
+            <Content />
+          </MarkdownContainer>
+        </section>
+        <section class="w-[180px] hidden md:block">
+          <div class="sticky top-20">
+            <h2
+              class="text-xs font-roboto_slab tracking-wider text-black/80 uppercase font-medium mb-2"
+            >
+              Autor
+            </h2>
+
+            <div class="flex flex-col">
+              <img
+                src="/assets/images/portada-light.png"
+                alt="jose paye author"
+                class="size-20 rounded-full"
+              />
+              <p
+                class="dark:text-white text-black/60 font-inter mt-4 mb-2 font-semibold text-sm"
+              >
+                Jose Paye
+              </p>
+              <p class="dark:text-white/60 text-light/50 text-sm font-inter">
+                Web Developer + Student Aspiring to Machine Learning Engineer
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-col gap-2 mt-8">
+                {
+                  otherPosts.map(post => (
+                    <a
+                      href={`/post/${post.slug}`}
+                      class="dark:text-white text-black/60 font-inter text-sm"
+                    >
+                      <img
+                        src={post.data.heroImage}
+                        alt={post.data.title}
+                        class="aspect-video rounded-2xl"
+                        transition:name={post.slug}
+                        transition:animate="fade"
+                      />
+                      <p class="mt-2 text-black/50 font-medium font-inter text-sm">
+                        {post.data.title}
+                      </p>
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </section>
       </WrapperPost>
     </main>
   </RootLayout>
-
-  <Footer />
 </LayoutPost>
+<Footer />
